@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Examples &#8212; PyML</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster_pyml.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.py" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Function Reference" href="function_reference.py" /> 
+  </head><body>
+<div class="navbar">
+ <a href="index.py"><img alt="pyml_logo" src="_images/pyml_activity_diagram.svg" width=100/><img alt="pyml banner" src="_images/pyml_banner.svg" width=140/><img alt="pyml requirements tree" src="_images/pyml_requirements_tree.svg" width=70/></a>
+ <a href="index.py">Home</a>&nbsp;&nbsp;
+ <a href="installation.py">Installation</a>&nbsp;&nbsp;
+ <a href="function_reference.py">Function Reference</a>&nbsp;&nbsp;
+ <a class="active" href="examples.py">Examples</a>&nbsp;&nbsp;
+ <a href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
+<p>These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing pyml, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.</p>
+<section id="use-case-model">
+<h2>Use Case Model<a class="headerlink" href="#use-case-model" title="Permalink to this heading">¶</a></h2>
+<p>Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyml</span>
+
+<span class="c1"># system model</span>
+<span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Course Portal&quot;</span>
+<span class="n">actors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Student&#39;</span><span class="p">,</span> <span class="s1">&#39;Instructor&#39;</span><span class="p">]</span>
+<span class="n">use_cases</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Post Discussion&#39;</span><span class="p">,</span> <span class="s1">&#39;Take Quiz&#39;</span><span class="p">,</span> <span class="s1">&#39;Create Quiz&#39;</span><span class="p">]</span>
+<span class="n">interactions</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Student&#39;</span><span class="p">,</span> <span class="s1">&#39;Post Discussion&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Instructor&#39;</span><span class="p">,</span> <span class="s1">&#39;Post Discussion&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Student&#39;</span><span class="p">,</span> <span class="s1">&#39;Take Quiz&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Instructor&#39;</span><span class="p">,</span> <span class="s1">&#39;Create Quiz&#39;</span><span class="p">)]</span>
+<span class="n">use_case_relationships</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># create diagram</span>
+<span class="n">pyml</span><span class="o">.</span><span class="n">use_case_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">actors</span><span class="p">,</span> <span class="n">use_cases</span><span class="p">,</span> <span class="n">interactions</span><span class="p">,</span> <span class="n">use_case_relationships</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">system_name</span><span class="o">+</span><span class="s1">&#39;use case diagram.pdf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/Course_Portal_use_case_diagram.svg">
+</object>
+</div>
+</section>
+<section id="sequence-model">
+<h2>Sequence Model<a class="headerlink" href="#sequence-model" title="Permalink to this heading">¶</a></h2>
+<p>A sequence diagram can be constructed per the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># system model</span>
+<span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Battle Simulator&quot;</span>
+<span class="n">actors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Battle Planner&#39;</span><span class="p">]</span>
+<span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">]</span>
+<span class="n">actions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">(</span><span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;run()&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;request for side 1 name&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;side 1 name&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;request for side 2 name&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;side 2 name&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;request for side 1 starting level&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;side 1 starting level&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;request for side 1 lethality coefficient&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;side 1 lethality coefficient&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;request for side 2 starting level&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;side 2 starting level&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;request for side 2 lethality coefficient&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;side 2 lethality coefficient&#39;</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;Battle Planner&#39;</span><span class="p">,</span> <span class="s1">&#39;time history of troops and victor&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># create diagram</span>
+<span class="n">pyml</span><span class="o">.</span><span class="n">sequence_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">actors</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">system_name</span><span class="o">+</span><span class="s2">&quot;_sequence_diagram&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/Battle_Simulator_sequence_diagram.svg">
+</object>
+</div>
+</section>
+<section id="context-model">
+<h2>Context Model<a class="headerlink" href="#context-model" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># system model</span>
+<span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Python Interpreter with PyML&quot;</span>
+<span class="n">external_actors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="s2">&quot;OS&quot;</span><span class="p">,</span> <span class="s2">&quot;Graphviz&quot;</span><span class="p">]</span>
+<span class="c1"># create context diagram</span>
+<span class="n">pyml</span><span class="o">.</span><span class="n">context_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">external_actors</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;pyml_context_diagram_offline&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/pyml_context_diagram_offline.svg">
+</object>
+</div>
+</section>
+<section id="work-breakdown-structure">
+<h2>Work Breakdown Structure<a class="headerlink" href="#work-breakdown-structure" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># project work breakdown structure</span>
+<span class="n">wbs_decompositions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Hardware&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Software&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Integration and Test&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;Hardware&#39;</span><span class="p">,</span> <span class="s1">&#39;Board&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Hardware&#39;</span><span class="p">,</span> <span class="s1">&#39;Wheels&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Hardware&#39;</span><span class="p">,</span> <span class="s1">&#39;Mounting&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;Software&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Software&#39;</span><span class="p">,</span> <span class="s1">&#39;GPS Driver&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Software&#39;</span><span class="p">,</span> <span class="s1">&#39;Route Tracking&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;Integration and Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Fixed Platform&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Integration and Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Street Testing&#39;</span><span class="p">)]</span>
+
+<span class="c1"># create diagram</span>
+<span class="n">pyml</span><span class="o">.</span><span class="n">wbs_diagram</span><span class="p">(</span><span class="n">wbs_decompositions</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;skateboard_wbs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object width="700px" data="_images/skateboard_wbs.svg">
+</object>
+</div>
+</section>
+<section id="critical-path-analysis">
+<h2>Critical Path Analysis<a class="headerlink" href="#critical-path-analysis" title="Permalink to this heading">¶</a></h2>
+<p>A critical path can be computed from a set of tasks with associated time durations and dependencies as below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># tasks, durations and dependencies</span>
+<span class="n">tasks</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}),</span>
+         <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}),</span>
+         <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
+         <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}),</span>
+         <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">})]</span>
+
+<span class="n">task_dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)]</span>
+
+<span class="c1"># create diagram</span>
+<span class="n">pyml</span><span class="o">.</span><span class="n">critical_path_diagram</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;critical_path&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/critical_path.svg">
+</object>
+</div>
+</section>
+<section id="design-structure-matrix">
+<h2>Design Structure Matrix<a class="headerlink" href="#design-structure-matrix" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Make Board&#39;</span><span class="p">,</span> <span class="s1">&#39;Acquire Wheels&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">]</span>
+<span class="n">task_dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Make Board&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Acquire Wheels&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Assemble&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">)]</span>
+<span class="n">pyml</span><span class="o">.</span><span class="n">design_structure_matrix</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;skateboard_task_dsm_with_feedback&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: dsm Pages: 1 -->
+<svg width="387pt" height="121pt"
+ viewBox="0.00 0.00 387.00 121.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 117)">
+<title>dsm</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-117 383,-117 383,4 -4,4"/>
+<!-- dsm -->
+<g id="node1" class="node">
+<title>dsm</title>
+<polygon fill="none" stroke="#000000" points="8.5,-87.5 8.5,-108.5 105.5,-108.5 105.5,-87.5 8.5,-87.5"/>
+<polygon fill="none" stroke="#000000" points="105.5,-87.5 105.5,-108.5 181.5,-108.5 181.5,-87.5 105.5,-87.5"/>
+<text text-anchor="start" x="108.5" y="-94.3" font-family="Times,serif" font-size="14.00" fill="#000000">Make Board</text>
+<polygon fill="none" stroke="#000000" points="181.5,-87.5 181.5,-108.5 278.5,-108.5 278.5,-87.5 181.5,-87.5"/>
+<text text-anchor="start" x="184.5" y="-94.3" font-family="Times,serif" font-size="14.00" fill="#000000">Acquire Wheels</text>
+<polygon fill="none" stroke="#000000" points="278.5,-87.5 278.5,-108.5 340.5,-108.5 340.5,-87.5 278.5,-87.5"/>
+<text text-anchor="start" x="281.5" y="-94.3" font-family="Times,serif" font-size="14.00" fill="#000000">Assemble</text>
+<polygon fill="none" stroke="#000000" points="340.5,-87.5 340.5,-108.5 371.5,-108.5 371.5,-87.5 340.5,-87.5"/>
+<text text-anchor="start" x="343.5" y="-94.3" font-family="Times,serif" font-size="14.00" fill="#000000">Test</text>
+<polygon fill="none" stroke="#000000" points="8.5,-66.5 8.5,-87.5 105.5,-87.5 105.5,-66.5 8.5,-66.5"/>
+<text text-anchor="start" x="22" y="-73.3" font-family="Times,serif" font-size="14.00" fill="#000000">Make Board</text>
+<polygon fill="#000000" stroke="transparent" points="105.5,-66.5 105.5,-87.5 181.5,-87.5 181.5,-66.5 105.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="105.5,-66.5 105.5,-87.5 181.5,-87.5 181.5,-66.5 105.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="181.5,-66.5 181.5,-87.5 278.5,-87.5 278.5,-66.5 181.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="278.5,-66.5 278.5,-87.5 340.5,-87.5 340.5,-66.5 278.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="340.5,-66.5 340.5,-87.5 371.5,-87.5 371.5,-66.5 340.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="8.5,-45.5 8.5,-66.5 105.5,-66.5 105.5,-45.5 8.5,-45.5"/>
+<text text-anchor="start" x="11.5" y="-52.3" font-family="Times,serif" font-size="14.00" fill="#000000">Acquire Wheels</text>
+<polygon fill="none" stroke="#000000" points="105.5,-45.5 105.5,-66.5 181.5,-66.5 181.5,-45.5 105.5,-45.5"/>
+<polygon fill="#000000" stroke="transparent" points="181.5,-45.5 181.5,-66.5 278.5,-66.5 278.5,-45.5 181.5,-45.5"/>
+<polygon fill="none" stroke="#000000" points="181.5,-45.5 181.5,-66.5 278.5,-66.5 278.5,-45.5 181.5,-45.5"/>
+<polygon fill="none" stroke="#000000" points="278.5,-45.5 278.5,-66.5 340.5,-66.5 340.5,-45.5 278.5,-45.5"/>
+<polygon fill="none" stroke="#000000" points="340.5,-45.5 340.5,-66.5 371.5,-66.5 371.5,-45.5 340.5,-45.5"/>
+<polygon fill="none" stroke="#000000" points="8.5,-24.5 8.5,-45.5 105.5,-45.5 105.5,-24.5 8.5,-24.5"/>
+<text text-anchor="start" x="29" y="-31.3" font-family="Times,serif" font-size="14.00" fill="#000000">Assemble</text>
+<polygon fill="none" stroke="#000000" points="105.5,-24.5 105.5,-45.5 181.5,-45.5 181.5,-24.5 105.5,-24.5"/>
+<text text-anchor="start" x="138" y="-31.3" font-family="Times,serif" font-size="14.00" fill="#000000">X</text>
+<polygon fill="none" stroke="#000000" points="181.5,-24.5 181.5,-45.5 278.5,-45.5 278.5,-24.5 181.5,-24.5"/>
+<text text-anchor="start" x="224.5" y="-31.3" font-family="Times,serif" font-size="14.00" fill="#000000">X</text>
+<polygon fill="#000000" stroke="transparent" points="278.5,-24.5 278.5,-45.5 340.5,-45.5 340.5,-24.5 278.5,-24.5"/>
+<polygon fill="none" stroke="#000000" points="278.5,-24.5 278.5,-45.5 340.5,-45.5 340.5,-24.5 278.5,-24.5"/>
+<polygon fill="none" stroke="#000000" points="340.5,-24.5 340.5,-45.5 371.5,-45.5 371.5,-24.5 340.5,-24.5"/>
+<text text-anchor="start" x="350.5" y="-31.3" font-family="Times,serif" font-size="14.00" fill="#000000">X</text>
+<polygon fill="none" stroke="#000000" points="8.5,-3.5 8.5,-24.5 105.5,-24.5 105.5,-3.5 8.5,-3.5"/>
+<text text-anchor="start" x="44.5" y="-10.3" font-family="Times,serif" font-size="14.00" fill="#000000">Test</text>
+<polygon fill="none" stroke="#000000" points="105.5,-3.5 105.5,-24.5 181.5,-24.5 181.5,-3.5 105.5,-3.5"/>
+<polygon fill="none" stroke="#000000" points="181.5,-3.5 181.5,-24.5 278.5,-24.5 278.5,-3.5 181.5,-3.5"/>
+<polygon fill="none" stroke="#000000" points="278.5,-3.5 278.5,-24.5 340.5,-24.5 340.5,-3.5 278.5,-3.5"/>
+<text text-anchor="start" x="304" y="-10.3" font-family="Times,serif" font-size="14.00" fill="#000000">X</text>
+<polygon fill="#000000" stroke="transparent" points="340.5,-3.5 340.5,-24.5 371.5,-24.5 371.5,-3.5 340.5,-3.5"/>
+<polygon fill="none" stroke="#000000" points="340.5,-3.5 340.5,-24.5 371.5,-24.5 371.5,-3.5 340.5,-3.5"/>
+</g>
+</g>
+</svg>
+</div>
+</section>
+<section id="requirements-diagram">
+<h2>Requirements Diagram<a class="headerlink" href="#requirements-diagram" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Intelligence, Surveillance, &amp; Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements</span>
+<span class="n">requirements</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Performance&quot;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;Performance&quot;</span><span class="p">,</span> 
+                <span class="p">(</span><span class="s2">&quot;The UUV shall be capable of completing a mission of 6 hours duration.&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;The UUV shall be capable of a top speed of 14 knots.&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;The UUV shall avoid detection.&quot;</span><span class="p">)),</span>
+                <span class="p">(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Communication&quot;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;Communication&quot;</span><span class="p">,</span> 
+                <span class="p">(</span><span class="s2">&quot;Mission parameters shall be uploadable to the UUV&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall receive remote commands&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall commence its mission when commanded&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall be capable of transmitting data in a host ship compatible format&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall indicate that it is ready for recovery&quot;</span><span class="p">)),]</span>
+
+<span class="c1"># draw requirements diagram as horizontal tree left -&gt; right</span>
+<span class="n">requirements_diagram</span><span class="p">(</span><span class="n">requirements</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s1">&#39;LR&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;uuv_requirements_tree&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/uuv_requirements_tree.svg">
+</object>
+</div>
+</section>
+<section id="fault-tree">
+<h2>Fault Tree<a class="headerlink" href="#fault-tree" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lamp_circuit_fault_tree</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Missing Indication&quot;</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Resistor Fails&quot;</span><span class="p">,</span> <span class="s2">&quot;Capacitor Fails&quot;</span><span class="p">,</span> <span class="s2">&quot;Both Lamps Out&quot;</span><span class="p">]),</span>
+           <span class="p">(</span><span class="s1">&#39;Both Lamps Out&#39;</span><span class="p">,</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Lamp 1 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;Lamp 2 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;Lamp 3 Fails&#39;</span><span class="p">]),</span>
+           <span class="p">(</span><span class="s1">&#39;Resistor Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
+           <span class="p">(</span><span class="s1">&#39;Capacitor Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
+           <span class="p">(</span><span class="s1">&#39;Lamp 1 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;BASIC&#39;</span><span class="p">,</span> <span class="p">[]),</span>
+           <span class="p">(</span><span class="s1">&#39;Lamp 2 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
+           <span class="p">(</span><span class="s1">&#39;Lamp 3 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
+                          <span class="p">]</span>
+
+<span class="n">pyml</span><span class="o">.</span><span class="n">fault_tree_diagram</span><span class="p">(</span><span class="n">lamp_circuit_fault_tree</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;lamp_circuit_fault_tree&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/lamp_circuit_fault_tree.png" width=500px>
+</object>
+</div>
+</section>
+<section id="read-fault-tree-from-excel">
+<h2>Read Fault Tree from Excel<a class="headerlink" href="#read-fault-tree-from-excel" title="Permalink to this heading">¶</a></h2>
+<p>Portion of example Excel file <em>aav_fault_tree.xlsx</em>:</p>
+<p><img alt="aav_fault_tree_excel.png" src="_images/aav_fault_tree_excel.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># read fault tree from Excel file into list of nodes</span>
+<span class="n">fault_tree_list</span> <span class="o">=</span> <span class="n">pyml</span><span class="o">.</span><span class="n">read_fault_tree_excel</span><span class="p">(</span><span class="s1">&#39;aav_fault_tree.xlsx&#39;</span><span class="p">)</span>
+
+<span class="c1"># create fault tree diagram</span>
+<span class="n">pyml</span><span class="o">.</span><span class="n">fault_tree_diagram</span><span class="p">(</span><span class="n">fault_tree_list</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p><img alt="aav_fault_tree.png" src="_images/aav_fault_tree.png" /></p>
+</section>
+<section id="causal-diagram">
+<h2>Causal Diagram<a class="headerlink" href="#causal-diagram" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># causal relationships</span>
+<span class="n">relationships</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Available personnel&#39;</span><span class="p">,</span><span class="s2">&quot;Workforce gap&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Required personnel&#39;</span><span class="p">,</span><span class="s2">&quot;Workforce gap&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Workforce gap&quot;</span><span class="p">,</span> <span class="s2">&quot;Hiring rate&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Hiring rate&quot;</span><span class="p">,</span> <span class="s2">&quot;Available personnel&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">),</span>
+                <span class="p">]</span>
+
+<span class="c1"># draw diagram</span>
+<span class="n">causal_diagram</span><span class="p">(</span><span class="n">relationships</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/workforce_gap_cld.svg">
+</object>
+</div>
+</section>
+<section id="system-dynamics-model">
+<h2>System Dynamics Model<a class="headerlink" href="#system-dynamics-model" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rayleigh curve staffing model</span>
+
+<span class="n">model_init</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+
+<span class="n">add_stock</span><span class="p">(</span><span class="s2">&quot;cumulative_effort&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;effort rate&quot;</span><span class="p">])</span>
+<span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;effort rate&quot;</span><span class="p">,</span> <span class="s2">&quot;learning_function * (estimated_total_effort - cumulative_effort)&quot;</span><span class="p">)</span>
+<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;learning_function&quot;</span><span class="p">,</span> <span class="s2">&quot;manpower_buildup_parameter * time&quot;</span><span class="p">)</span>
+<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;manpower_buildup_parameter&quot;</span><span class="p">,</span> <span class="mf">.5</span><span class="p">)</span>
+<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;estimated_total_effort&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">model_run</span><span class="p">()</span>
+<span class="n">plot_output</span><span class="p">(</span><span class="s1">&#39;cumulative_effort&#39;</span><span class="p">,</span> <span class="s1">&#39;effort rate&#39;</span><span class="p">,</span> <span class="s2">&quot;learning_function&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/rayleigh_curve_model_output.png" width=450px>
+</object>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+
+
+
+
+
+
+
+
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.py">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.py">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_reference.py">Function Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#use-case-model">Use Case Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sequence-model">Sequence Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#context-model">Context Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#work-breakdown-structure">Work Breakdown Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#critical-path-analysis">Critical Path Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-structure-matrix">Design Structure Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements-diagram">Requirements Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fault-tree">Fault Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#read-fault-tree-from-excel">Read Fault Tree from Excel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#causal-diagram">Causal Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-dynamics-model">System Dynamics Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="master_doc.html">Documentation overview</a><ul>
+      <li>Previous: <a href="function_reference.py" title="previous chapter">Function Reference</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, PyML Development Team.
+      Last updated on Feb 10, 2023.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<meta content="Python Modeling Library (PyML) Function Reference" name="title" />
+<meta content="Python Modeling Library (PyML) Function Reference" name="description" />
+<meta content="python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation" name="keywords" />
+
+    <title>Function Reference &#8212; PyML</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster_pyml.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.py" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.py" />
+    <link rel="prev" title="Installation" href="installation.py" /> 
+  </head><body>
+<div class="navbar">
+ <a href="index.py"><img alt="pyml_logo" src="_images/pyml_activity_diagram.svg" width=100/><img alt="pyml banner" src="_images/pyml_banner.svg" width=140/><img alt="pyml requirements tree" src="_images/pyml_requirements_tree.svg" width=70/></a>
+ <a href="index.py">Home</a>&nbsp;&nbsp;
+ <a href="installation.py">Installation</a>&nbsp;&nbsp;
+ <a class="active" href="function_reference.py">Function Reference</a>&nbsp;&nbsp;
+ <a href="examples.py">Examples</a>&nbsp;&nbsp;
+ <a href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="function-reference">
+<h1>Function Reference<a class="headerlink" href="#function-reference" title="Permalink to this heading">¶</a></h1>
+<p>To use PyML, first import it before using any functions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyml</span>
+</pre></div>
+</div>
+<p>These function definitions follow the convention whereby required input parameters are shown first, then optional parameters are shown with an equal sign indicating the default values. A graph here is a generic set of nodes representing system elements connected by edges shown as non-directed or directed lines.</p>
+<section id="diagrams">
+<h2>Diagrams<a class="headerlink" href="#diagrams" title="Permalink to this heading">¶</a></h2>
+<section id="context-diagram">
+<h3>context_diagram<a class="headerlink" href="#context-diagram" title="Permalink to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyml.context_diagram">
+<span class="sig-prename descclassname"><span class="pre">pyml.</span></span><span class="sig-name descname"><span class="pre">context_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_systems</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'neato'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyml.context_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a context diagram.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>system_name</strong> (<em>string</em>) – The name of the system to label the diagram.</p></li>
+<li><p><strong>external_systems</strong> (<em>list</em><em> of </em><em>strings</em>) – Names of the external systems that interact with the system in a list.</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – Save the graph source code to file, and open the rendered result in its default viewing application. PyML calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="critical-path-diagram">
+<h3>critical_path_diagram<a class="headerlink" href="#critical-path-diagram" title="Permalink to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyml.critical_path_diagram">
+<span class="sig-prename descclassname"><span class="pre">pyml.</span></span><span class="sig-name descname"><span class="pre">critical_path_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_dependencies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyml.critical_path_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute and draw the critical path between dependent tasks as the longest in duration from start to finish.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tasks</strong> (<em>list</em><em> of </em><em>tuples where each contains a task name and dictionary for duration time</em>) – A list of tuples where each one contains a task name and dictionary for its duration time (where keyword = “Duration” and value is a number).</p></li>
+<li><p><strong>task_dependencies</strong> (<em>list</em><em> of </em><em>tuples</em>) – A list of tuples describing the dependency relationships between tasks. Each relationship is a tuple containing the predecessor task followed by its successor task. These must be the same named tasks in the task list input above.</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – The rendered graph for display. It will be automatically displayed in Jupyter Notebooks or IPython consoles. With other Python editors it can be displayed in the associated console by typing the returned graph name (e.g., call the function with an assignment such as <code class="docutils literal notranslate"><span class="pre">critical_path</span> <span class="pre">=</span> <span class="pre">critical_path_diagram(...)</span></code> and then type <code class="docutils literal notranslate"><span class="pre">critical_path</span></code> in the console). If a filename is optionally provided, the rendered graph will also be saved as a file in the specified format. PyML calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="design-structure-matrix">
+<h3>design_structure_matrix<a class="headerlink" href="#design-structure-matrix" title="Permalink to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyml.design_structure_matrix">
+<span class="sig-prename descclassname"><span class="pre">pyml.</span></span><span class="sig-name descname"><span class="pre">design_structure_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_dependencies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyml.design_structure_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a design structure matrix of system elements and their dependencies. Matrix elements may represent tasks (process activities), system parameters or attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>elements</strong> (<em>list</em><em> of </em><em>strings</em>) – Names of the matrix elements as the row and column headings in a list.</p></li>
+<li><p><strong>element_dependencies</strong> (<em>list</em><em> of </em><em>tuples</em>) – A list of tuples describing the relationships between elements. Each relationship is a tuple containing the relationship input element, output element and optionally a custom label (or other object) to mark the relationship in the form (“input element”, “output element”, “relationship label”). The default marking denoting a relationship is an uppercase ‘X’, therefore, the shortened tuple relationship (“input element”, “output element”) is equivalent to (“input element”, “output element”, “X”). A custom label can be specified as html code for styling of the font type, font color, cell color, etc. Images and unicode characters can be inserted this way, or other html markup for lists, tables, etc.</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – The rendered graph for display. It will be automatically displayed in Jupyter Notebooks or IPython consoles. With other Python editors it can be displayed in the associated console by typing the returned graph name (e.g., call the function with an assignment such as <code class="docutils literal notranslate"><span class="pre">dsm</span> <span class="pre">=</span> <span class="pre">design_structure_matrix(...)</span></code> and then type <code class="docutils literal notranslate"><span class="pre">dsm</span></code> in the console). If a filename is optionally provided, the rendered graph will also be saved as a file in the specified format. PyML calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="fault-tree-diagram">
+<h3>fault_tree_diagram<a class="headerlink" href="#fault-tree-diagram" title="Permalink to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyml.fault_tree_diagram">
+<span class="sig-prename descclassname"><span class="pre">pyml.</span></span><span class="sig-name descname"><span class="pre">fault_tree_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyml.fault_tree_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a fault tree diagram.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ft</strong> (<em>list</em><em> of </em><em>tuples</em>) – <p>A list of the faults as a tree hierarchy. Each fault is defined in a tuple containing the fault name, type, and underlying faults (if any) in the form
+<code class="docutils literal notranslate"><span class="pre">(&quot;fault</span> <span class="pre">name&quot;,</span> <span class="pre">&quot;fault</span> <span class="pre">name&quot;,</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">fault</span> <span class="pre">branches)</span></code>
+with the branches as a list in the form
+<code class="docutils literal notranslate"><span class="pre">[&quot;branch</span> <span class="pre">1</span> <span class="pre">name&quot;,</span> <span class="pre">&quot;branch</span> <span class="pre">2</span> <span class="pre">name&quot;,</span> <span class="pre">...</span> <span class="pre">&quot;branch</span> <span class="pre">n</span> <span class="pre">name&quot;]</span></code>
+to identify the adjoining faults. All basic events will have a blank list
+<code class="docutils literal notranslate"><span class="pre">[]</span></code> since they are the bottom leaves in the tree.</p>
+<p>The top event must be in the first row, but all other events can be in any order. They may begrouped by their event paths or by hierarchical levels as convenient. Event types can be conditional “and”s, conditional “or”s, or basic events (leaves). The following spellings are recognized as valid designations for event types:</p>
+<p>And: “And” “and” “AND”</p>
+<p>Or: “Or” “or” “OR”</p>
+<p>Basic: “Basic” “basic” “BASIC”</p>
+</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – Save the graph source code to file, and open the rendered result in its default viewing application. PyML calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="sequence-diagram">
+<h3>sequence_diagram<a class="headerlink" href="#sequence-diagram" title="Permalink to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyml.sequence_diagram">
+<span class="sig-prename descclassname"><span class="pre">pyml.</span></span><span class="sig-name descname"><span class="pre">sequence_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objects</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyml.sequence_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a sequence diagram.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>system_name</strong> (<em>string</em>) – The name of the system to label the diagram.</p></li>
+<li><p><strong>actors</strong> (<em>list</em><em> of </em><em>strings</em>) – Names of the outside actors that participate in the activity sequence in a list.</p></li>
+<li><p><strong>objects</strong> (<em>list</em><em> of </em><em>strings</em>) – Names of the system objects that participate in the activity sequence in a list.</p></li>
+<li><p><strong>actions</strong> (<em>list</em><em> of </em><em>tuples</em>) – A chronologically ordered list describing the sequence of actions to be drawn. Each action is a tuple containing the action source, target and action name (or data/control passed) in the form (“source”, “target”, “action name”) indicating a labeled horizontal arrow drawn between them.</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – Save the graph source code to file, and open the rendered result in its default viewing application. PyML calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="use-case-diagram">
+<span id="id1"></span><h3>use_case_diagram<a class="headerlink" href="#use-case-diagram" title="Permalink to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyml.use_case_diagram">
+<span class="sig-prename descclassname"><span class="pre">pyml.</span></span><span class="sig-name descname"><span class="pre">use_case_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interactions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_case_relationships</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyml.use_case_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a use case diagram.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>system_name</strong> (<em>string</em>) – The name of the system to label the diagram.</p></li>
+<li><p><strong>actors</strong> (<em>list</em><em> of </em><em>strings</em>) – Names of the outside actors that interact with the system in the use cases in a list.</p></li>
+<li><p><strong>use_cases</strong> (<em>list</em><em> of </em><em>strings</em>) – Names of the use cases in a list.</p></li>
+<li><p><strong>interactions</strong> (<em>list</em><em> of </em><em>tuples</em>) – A list of the interactions to be drawn between actors and use cases. Each interaction is a tuple containing an actor and use case in the form (“actor name”, “use case name”) indicating an arrow drawn from the actor to the use case. Interactions are graph edges.</p></li>
+<li><p><strong>use_case_relationships</strong> (<em>list</em><em> of </em><em>tuples</em><em>, </em><em>optional</em>) – A list of the relationships, or associations to be drawn between use cases. Each relationship is a tuple containing a use case pair and type relationship in the form (“use case 1”, “use case 2”, “relationship”) indicating an arrow drawn from the first to the second use case. Relationship types are “&lt;&lt;include&gt;&gt;”, “&lt;&lt;extend&gt;&gt;” and “generalization”.</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – Save the graph source code to file, and open the rendered result in its default viewing application. PyML calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="wbs-diagram">
+<h3>wbs_diagram<a class="headerlink" href="#wbs-diagram" title="Permalink to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyml.wbs_diagram">
+<span class="sig-prename descclassname"><span class="pre">pyml.</span></span><span class="sig-name descname"><span class="pre">wbs_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decompositions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rankdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TB'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyml.wbs_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a work breakdown structure as a tree hierarchy. Decompositions describe the parent-child relationships.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>decompositions</strong> (<em>list</em><em> of </em><em>tuples</em>) – A list of tuples describing the work decomposition relationships. Each relationship is a tuple containing the parent element followed by the child element.</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+<li><p><strong>rankdir</strong> (<em>string</em><em>, </em><em>optional</em>) – The direction to display the tree from the parent node. The default <code class="docutils literal notranslate"><span class="pre">rankdir='TB'</span></code> denotes top to bottom for a vertical tree decomposition. It can diagrammed horizontally by providing rankdir=’LR’ to designate left to right.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – The rendered graph for display. It will be automatically displayed in Jupyter Notebooks or IPython consoles. With other Python editors it can be displayed in the associated console by typing the returned graph name (e.g., call the function with an assignment such as <code class="docutils literal notranslate"><span class="pre">wbs</span> <span class="pre">=</span> <span class="pre">wbs_diagram(...)</span></code> and then type <code class="docutils literal notranslate"><span class="pre">wbs</span></code> in the console). If a filename is optionally provided, the rendered graph will also be saved as a file in the specified format. PyML calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="analyses">
+<h2>Analyses<a class="headerlink" href="#analyses" title="Permalink to this heading">¶</a></h2>
+<section id="fault-tree-cutsets">
+<h3>fault_tree_cutsets<a class="headerlink" href="#fault-tree-cutsets" title="Permalink to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyml.fault_tree_cutsets">
+<span class="sig-prename descclassname"><span class="pre">pyml.</span></span><span class="sig-name descname"><span class="pre">fault_tree_cutsets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fault_tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyml.fault_tree_cutsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a fault tree cutset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ft</strong> (<em>list</em><em> of </em><em>tuples</em>) – <p>A list of the faults as a tree hierarchy. Each fault is defined in a tuple containing the fault name, type, and underlying faults (if any) in the form
+<code class="docutils literal notranslate"><span class="pre">(&quot;fault</span> <span class="pre">name&quot;,</span> <span class="pre">&quot;fault</span> <span class="pre">name&quot;,</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">fault</span> <span class="pre">branches)</span></code>
+with the branches as a list in the form
+<code class="docutils literal notranslate"><span class="pre">[&quot;branch</span> <span class="pre">1</span> <span class="pre">name&quot;,</span> <span class="pre">&quot;branch</span> <span class="pre">2</span> <span class="pre">name&quot;,</span> <span class="pre">...</span> <span class="pre">&quot;branch</span> <span class="pre">n</span> <span class="pre">name&quot;]</span></code>
+to identify the adjoining faults. All basic events will have a blank list
+<code class="docutils literal notranslate"><span class="pre">[]</span></code> since they are the bottom leaves in the tree.</p>
+<p>The top event must be in the first row, but all other events can be in any order. They may begrouped by their event paths or by hierarchical levels as convenient. Event types can be conditional “and”s, conditional “or”s, or basic events (leaves). The following spellings are recognized as valid designations for event types:</p>
+<p>And: “And” “and” “AND”</p>
+<p>Or: “Or” “or” “OR”</p>
+<p>Basic: “Basic” “basic” “BASIC”</p>
+</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>cutsets</strong> – Returns a list of cutsets, where each is defined as a list of events.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of lists</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="simulations">
+<h2>Simulations<a class="headerlink" href="#simulations" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+
+
+
+
+
+
+
+
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.py">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.py">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Function Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#diagrams">Diagrams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#context-diagram">context_diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#critical-path-diagram">critical_path_diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#design-structure-matrix">design_structure_matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fault-tree-diagram">fault_tree_diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sequence-diagram">sequence_diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-case-diagram">use_case_diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wbs-diagram">wbs_diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#analyses">Analyses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fault-tree-cutsets">fault_tree_cutsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simulations">Simulations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.py">Examples</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="master_doc.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.py" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="examples.py" title="next chapter">Examples</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, PyML Development Team.
+      Last updated on Feb 10, 2023.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+  </body>
+</html>
