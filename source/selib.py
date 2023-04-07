@@ -1,7 +1,7 @@
 """
-PyML Version .19
+se-lib Version .196
 
-Copyright (c) 2022 Ray Madachy
+Copyright (c) 2022-2023 Ray Madachy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -1368,3 +1368,43 @@ def mocus(fault_tree):
     if verbose: print(f'***{css=}') # rm
     ft = copy
     return(css)
+
+# system dynamics simulation functions
+def add_flow(name, equation):
+    """
+    Adds a flow to the model
+
+    Parameters
+    ----------
+    name: str
+      The name of the flow 
+    equation: str
+      Equation for the flow using other named model variables
+    """
+    global model
+    model += f"""
+                <flow name="{name}">
+                    <doc>{name}</doc>
+                    <eqn>{equation}</eqn>
+                </flow>"""
+    build_model()
+
+def plot_graph(*outputs):
+    """
+    displays matplotlib graph for each model variable
+
+    Parameters
+    ----------
+    variables: variable name or list of variable names to plot on graph
+
+    Returns:
+    ----------
+    matplotlib graph
+    """
+    #print (outputs, len(outputs))
+    for var in outputs:
+        fig, axis = plot.subplots(figsize=(4, 3))
+        axis.set(xlabel='Time', ylabel=var)
+        axis.plot(output.index, output[var].values, label=var)
+        if len(outputs) > 1: axis.legend(loc="best", )
+        plot.show()

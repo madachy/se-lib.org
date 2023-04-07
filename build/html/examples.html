@@ -1,16 +1,20 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta content="Python Modeling Library (PyML) Examples" name="description" />
+<meta content="python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation" name="keywords" />
+
     <title>Examples &#8212; se-lib</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster_pyml.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,11 +35,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
 <p>These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing pyml, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.</p>
-<div class="section" id="use-case-model">
-<h2>Use Case Model<a class="headerlink" href="#use-case-model" title="Permalink to this headline">¶</a></h2>
+<section id="use-case-model">
+<h2>Use Case Model<a class="headerlink" href="#use-case-model" title="Permalink to this heading">¶</a></h2>
 <p>Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyml</span>
 
@@ -54,9 +58,9 @@
 <object data="_images/Course_Portal_use_case_diagram.svg">
 </object>
 </div>
-</div>
-<div class="section" id="sequence-model">
-<h2>Sequence Model<a class="headerlink" href="#sequence-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sequence-model">
+<h2>Sequence Model<a class="headerlink" href="#sequence-model" title="Permalink to this heading">¶</a></h2>
 <p>A sequence diagram can be constructed per the following.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># system model</span>
 <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Battle Simulator&quot;</span>
@@ -87,9 +91,9 @@
 <object data="_images/Battle_Simulator_sequence_diagram.svg">
 </object>
 </div>
-</div>
-<div class="section" id="context-model">
-<h2>Context Model<a class="headerlink" href="#context-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="context-model">
+<h2>Context Model<a class="headerlink" href="#context-model" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># system model</span>
 <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Python Interpreter with PyML&quot;</span>
 <span class="n">external_actors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="s2">&quot;OS&quot;</span><span class="p">,</span> <span class="s2">&quot;Graphviz&quot;</span><span class="p">]</span>
@@ -101,9 +105,9 @@
 <object data="_images/pyml_context_diagram_offline.svg">
 </object>
 </div>
-</div>
-<div class="section" id="work-breakdown-structure">
-<h2>Work Breakdown Structure<a class="headerlink" href="#work-breakdown-structure" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="work-breakdown-structure">
+<h2>Work Breakdown Structure<a class="headerlink" href="#work-breakdown-structure" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># project work breakdown structure</span>
 <span class="n">wbs_decompositions</span> <span class="o">=</span> <span class="p">[</span>
 <span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Hardware&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Software&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Integration and Test&#39;</span><span class="p">),</span>
@@ -119,9 +123,9 @@
 <object width="700px" data="_images/skateboard_wbs.svg">
 </object>
 </div>
-</div>
-<div class="section" id="critical-path-analysis">
-<h2>Critical Path Analysis<a class="headerlink" href="#critical-path-analysis" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="critical-path-analysis">
+<h2>Critical Path Analysis<a class="headerlink" href="#critical-path-analysis" title="Permalink to this heading">¶</a></h2>
 <p>A critical path can be computed from a set of tasks with associated time durations and dependencies as below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># tasks, durations and dependencies</span>
 <span class="n">tasks</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}),</span>
@@ -144,9 +148,9 @@
 <object data="_images/critical_path.svg">
 </object>
 </div>
-</div>
-<div class="section" id="design-structure-matrix">
-<h2>Design Structure Matrix<a class="headerlink" href="#design-structure-matrix" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="design-structure-matrix">
+<h2>Design Structure Matrix<a class="headerlink" href="#design-structure-matrix" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Make Board&#39;</span><span class="p">,</span> <span class="s1">&#39;Acquire Wheels&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">]</span>
 <span class="n">task_dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Make Board&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Acquire Wheels&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Assemble&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">)]</span>
 <span class="n">pyml</span><span class="o">.</span><span class="n">design_structure_matrix</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;skateboard_task_dsm_with_feedback&quot;</span><span class="p">)</span>
@@ -212,9 +216,9 @@
 </g>
 </svg>
 </div>
-</div>
-<div class="section" id="requirements-diagram">
-<h2>Requirements Diagram<a class="headerlink" href="#requirements-diagram" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="requirements-diagram">
+<h2>Requirements Diagram<a class="headerlink" href="#requirements-diagram" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Intelligence, Surveillance, &amp; Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements</span>
 <span class="n">requirements</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Performance&quot;</span><span class="p">),</span>
                 <span class="p">(</span><span class="s2">&quot;Performance&quot;</span><span class="p">,</span> 
@@ -238,9 +242,9 @@
 <object data="_images/uuv_requirements_tree.svg">
 </object>
 </div>
-</div>
-<div class="section" id="fault-tree">
-<h2>Fault Tree<a class="headerlink" href="#fault-tree" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="fault-tree">
+<h2>Fault Tree<a class="headerlink" href="#fault-tree" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lamp_circuit_fault_tree</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Missing Indication&quot;</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Resistor Fails&quot;</span><span class="p">,</span> <span class="s2">&quot;Capacitor Fails&quot;</span><span class="p">,</span> <span class="s2">&quot;Both Lamps Out&quot;</span><span class="p">]),</span>
            <span class="p">(</span><span class="s1">&#39;Both Lamps Out&#39;</span><span class="p">,</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Lamp 1 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;Lamp 2 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;Lamp 3 Fails&#39;</span><span class="p">]),</span>
            <span class="p">(</span><span class="s1">&#39;Resistor Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
@@ -257,9 +261,9 @@
 <object data="_images/lamp_circuit_fault_tree.png" width=500px>
 </object>
 </div>
-</div>
-<div class="section" id="read-fault-tree-from-excel">
-<h2>Read Fault Tree from Excel<a class="headerlink" href="#read-fault-tree-from-excel" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="read-fault-tree-from-excel">
+<h2>Read Fault Tree from Excel<a class="headerlink" href="#read-fault-tree-from-excel" title="Permalink to this heading">¶</a></h2>
 <p>Portion of example Excel file <em>aav_fault_tree.xlsx</em>:</p>
 <p><img alt="aav_fault_tree_excel.png" src="_images/aav_fault_tree_excel.png" /></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># read fault tree from Excel file into list of nodes</span>
@@ -271,9 +275,9 @@
 </pre></div>
 </div>
 <p><img alt="aav_fault_tree.png" src="_images/aav_fault_tree.png" /></p>
-</div>
-<div class="section" id="causal-diagram">
-<h2>Causal Diagram<a class="headerlink" href="#causal-diagram" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="causal-diagram">
+<h2>Causal Diagram<a class="headerlink" href="#causal-diagram" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># causal relationships</span>
 <span class="n">relationships</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Available personnel&#39;</span><span class="p">,</span><span class="s2">&quot;Workforce gap&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;Required personnel&#39;</span><span class="p">,</span><span class="s2">&quot;Workforce gap&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">),</span>
@@ -289,9 +293,9 @@
 <object data="_images/workforce_gap_cld.svg">
 </object>
 </div>
-</div>
-<div class="section" id="system-dynamics-model">
-<h2>System Dynamics Model<a class="headerlink" href="#system-dynamics-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="system-dynamics-model">
+<h2>System Dynamics Model<a class="headerlink" href="#system-dynamics-model" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rayleigh curve staffing model</span>
 
 <span class="n">model_init</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
@@ -310,8 +314,8 @@
 <object data="_images/rayleigh_curve_model_output.png" width=450px>
 </object>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -368,7 +372,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -383,8 +387,8 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2023, se-lib Development Team.
-      Last updated on Apr 05, 2023.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+      Last updated on Apr 07, 2023.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>
 </html>

@@ -21,40 +21,40 @@ Diagrams
 context_diagram
 ------------------------
 
-.. autofunction:: pyml.context_diagram
+.. autofunction:: selib.context_diagram
 
 critical_path_diagram
 ------------------------
 
-.. autofunction:: pyml.critical_path_diagram
+.. autofunction:: selib.critical_path_diagram
 
 design_structure_matrix
 ------------------------
 
-.. autofunction:: pyml.design_structure_matrix
+.. autofunction:: selib.design_structure_matrix
 
 fault_tree_diagram
 ------------------------
 
-.. autofunction:: pyml.fault_tree_diagram
+.. autofunction:: selib.fault_tree_diagram
 
 
 sequence_diagram
 ------------------------
 
-.. autofunction:: pyml.sequence_diagram
+.. autofunction:: selib.sequence_diagram
 
 .. _use_case_diagram:
 
 use_case_diagram
 ------------------------
 
-.. autofunction:: pyml.use_case_diagram
+.. autofunction:: selib.use_case_diagram
 
 wbs_diagram
 ------------------------
 
-.. autofunction:: pyml.wbs_diagram
+.. autofunction:: selib.wbs_diagram
 
 
 
@@ -64,8 +64,20 @@ Analyses
 fault_tree_cutsets
 ------------------------
 
-.. autofunction:: pyml.fault_tree_cutsets
+.. autofunction:: selib.fault_tree_cutsets
 
 
 Simulations
 ========================
+
+System Dynamics
+------------------------
+
+add_flow
+^^^^^^^^^^^^
+
+.. autofunction:: selib.add_flow
+
+plot_graph
+^^^^^^^^^^^^
+.. autofunction:: selib.plot_graph
