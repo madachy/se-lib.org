@@ -1,4 +1,4 @@
-![image](images/pyml_banner.svg)
+![image](images/se-lib_banner.svg)
 
 ![image](images/pyml_requirements_tree.svg)
 
