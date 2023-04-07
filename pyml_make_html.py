@@ -8,7 +8,7 @@ for file_name in ['index.html', 'function_reference.html', 'examples.html', 'ins
     filedata = filedata.replace('Quick search', 'Search')
     filedata = filedata.replace('<h3>Navigation</h3>', '<h3>Contents</h3>')
     filedata = filedata.replace(
-        """<h1 class="logo"><a href="master_doc.html">PyML</a></h1>""", '')
+        """<h1 class="logo"><a href="master_doc.html">se-lib</a></h1>""", '')
 
     # set navbar active class
     filedata = filedata.replace(
