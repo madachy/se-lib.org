@@ -7,12 +7,12 @@ Introduction
 
 
 .. meta::
-   :title: Python Modeling Library (PyML)
-   :description: Python Modeling Library (PyML)
+   :title: Systems Engineering Library (se-lib)
+   :description: Systems Engineering Library (se-lib)
    :keywords: python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation, continuous systems
 
 
-Welcome to the Python Modeling Library (PyML) for systems modeling, analysis, documentation and code generation. It includes the SysML and UML modeling languages with additional capabilities enabling advanced analysis with Python libraries and language features. PyML is built with Graphviz, Matplotlib, NetworkX, NumPy and SciPy using Python as glue code with all systems modeling. It's fun to be powerful with Python.
+Welcome to the Systems Engineering Library (se-lib)) for systems modeling, analysis, documentation and code generation. It includes the SysML and UML modeling languages with additional capabilities enabling advanced analysis with Python libraries and language features. PyML is built with Graphviz, Matplotlib, NetworkX, NumPy and SciPy using Python as glue code with all systems modeling. It's fun to be powerful with Python.
 
 **New Online Capability and Simulation**
 

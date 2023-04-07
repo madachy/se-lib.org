@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'PyML'
-copyright = '2023, PyML Development Team'
+project = 'se-lib'
+copyright = '2023, se-lib Development Team'
 author = 'Ray Madachy'
 
 # The full version, including alpha/beta/rc tags
@@ -64,7 +64,7 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 html_style = 'alabaster_pyml.css'
 
-html_title = 'PyML'
+html_title = 'se-lib'
 
 html_last_updated_fmt = "%b %d, %Y"
 
