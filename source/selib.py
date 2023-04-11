@@ -1,5 +1,5 @@
 """
-se-lib Version .23
+se-lib Version .24
 
 Copyright (c) 2022-2023 Ray Madachy
 
@@ -1410,15 +1410,15 @@ def build_model():
   xmile_string = xmile_header + model_specs + model_string + xmile_closing
   with open('test.xmile', 'w') as f:
     f.write(xmile_string)
-    
+
 def add_stock(name, initial, inflows=[], outflows=[]):
   """
   Adds a stock to the model
-    
+
   Parameters
   ----------
   name: str
-    The name of the stock 
+    The name of the stock
   initial: float
     Initial value of stock at start of simulation
   inflows: list of float
@@ -1440,7 +1440,7 @@ def add_stock(name, initial, inflows=[], outflows=[]):
                     <eqn>{initial}</eqn>
                 </stock>"""
   build_model()
-  
+
 def add_auxiliary(name, equation):
   """
   Adds auxiliary equation or constant to the model
@@ -1448,11 +1448,11 @@ def add_auxiliary(name, equation):
   Parameters
   ----------
   name: str
-    The name of the auxiliary 
+    The name of the auxiliary
   equation: str
     Equation for the auxiliary using other named model variables
   """
-  if "random()" in str(equation): equation = convert_random_to_xmile(equation) 
+  if "random()" in str(equation): equation = convert_random_to_xmile(equation)
   if "random.uniform(" in str(equation): equation = convert_random_to_xmile(equation)
   if "RANDOM" in str(equation): equation = equation.replace("RANDOM", '(GET_TIME_VALUE(0,0,0) + .00001) / (GET_TIME_VALUE(0,0,0) + .00001) * RANDOM')
   global model
@@ -1462,7 +1462,7 @@ def add_auxiliary(name, equation):
                     <eqn>{equation}</eqn>
                 </aux>"""
   build_model()
-    
+
 def add_flow(name, equation):
     """
     Adds a flow to the model
@@ -1470,11 +1470,11 @@ def add_flow(name, equation):
     Parameters
     ----------
     name: str
-      The name of the flow 
+      The name of the flow
     equation: str
       Equation for the flow using other named model variables
     """
-    if "random()" in str(equation): equation = convert_random_to_xmile(equation) 
+    if "random()" in str(equation): equation = convert_random_to_xmile(equation)
     if "random.uniform(" in str(equation): equation = convert_random_to_xmile(equation)
     if "RANDOM" in str(equation): equation = equation.replace("RANDOM", '(GET_TIME_VALUE(0,0,0) + .00001) / (GET_TIME_VALUE(0,0,0) + .00001) * RANDOM')
     global model
@@ -1508,10 +1508,10 @@ def plot_graph(*outputs):
     for var in outputs:
         fig, axis = plt.subplots(figsize=(4, 3))
         axis.set(xlabel='Time', ylabel=var)
-        axis.plt(output.index, output[var].values, label=var)
+        axis.plot(output.index, output[var].values, label=var)
         if len(outputs) > 1: axis.legend(loc="best", )
         plt.show()
-  
+
 def save_graph(*outputs, filename="graph.png"):
   """
   save graph to file
@@ -1525,15 +1525,15 @@ def save_graph(*outputs, filename="graph.png"):
     #print(var)
     fig, axis = plt.subplots()
     axis.set(xlabel='Time', ylabel=var)
-    axis.plt(output.index, output[var].values, label=var)
+    axis.plot(output.index, output[var].values, label=var)
     axis.legend(loc="best", )
     #plot.show()
     plt.savefig(filename)
-            
+
 def run_model():
     """
     Executes the model
-    
+
     Returns
     ----------
     Pandas dataframe containing run outputs for each variable each timestep
@@ -1544,26 +1544,26 @@ def run_model():
     model = pysd.read_xmile('./test.xmile')
     output = model.run(progress=False)
     return (output)
-    
+
 def set_logical_run_time(condition):
     """
-    Enables a run time to be measured based on a logical condition for when the simulation should be run (like a while statement).  The logical end time will be available from the 'get_logical_end_time()' function in lieu of the fixed end time for a simulation. 
+    Enables a run time to be measured based on a logical condition for when the simulation should be run (like a while statement).  The logical end time will be available from the 'get_logical_end_time()' function in lieu of the fixed end time for a simulation.
     """
     add_flow("time_flow", 'if_then_else('+str(condition)+', 1, 0)')
     #add_flow("time_flow", 'if_then_else(not '+str(condition)+', 1, 0)')
     #add_flow("time_flow", 'if_then_else('+condition+', 0, 1)')
     add_stock("logical_end_time", 0, inflows=["time_flow"])
-    
+
 def get_logical_end_time():
     """
-    Returns the logical end time as specified in a previous 'set_logical_run_time()' function call, in lieu of the fixed end time for a simulation. 
-    
+    Returns the logical end time as specified in a previous 'set_logical_run_time()' function call, in lieu of the fixed end time for a simulation.
+
     Returns
     ----------
     logical_end_time: float
         end time when the 'set_logical_run_time()'' condition expires
     """
-    return (get_final_value("logical_end_time"))  
-    
+    return (get_final_value("logical_end_time"))
+
 def get_final_value(variable):
-    return (output[variable][model['FINAL TIME']]) 
+    return (output[variable][model['FINAL TIME']])
