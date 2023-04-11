@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Python Modeling Library (PyML) Examples"
-    "keywords": "python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation"
+    "description": "Systems Engineering Library (se-lib) Examples"
+    "keywords": "se-lib, systems engineering, system modeling, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation"
 ---
 
 ## Examples
@@ -300,7 +300,7 @@ Portion of example Excel file *aav_fault_tree.xlsx*:
 
 ```
 # read fault tree from Excel file into list of nodes
-fault_tree_list = pyml.read_fault_tree_excel('aav_fault_tree.xlsx')
+fault_tree_list = se.read_fault_tree_excel('aav_fault_tree.xlsx')
 
 # create fault tree diagram
 se.fault_tree_diagram(fault_tree_list)
