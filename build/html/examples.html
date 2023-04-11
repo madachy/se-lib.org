@@ -37,11 +37,11 @@
             
   <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
-<p>These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing pyml, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.</p>
+<p>These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing se-lib, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.</p>
 <section id="use-case-model">
 <h2>Use Case Model<a class="headerlink" href="#use-case-model" title="Permalink to this heading">¶</a></h2>
 <p>Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyml</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">selib</span> <span class="k">as</span> <span class="nn">se</span>
 
 <span class="c1"># system model</span>
 <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Course Portal&quot;</span>
@@ -51,7 +51,7 @@
 <span class="n">use_case_relationships</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># create diagram</span>
-<span class="n">pyml</span><span class="o">.</span><span class="n">use_case_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">actors</span><span class="p">,</span> <span class="n">use_cases</span><span class="p">,</span> <span class="n">interactions</span><span class="p">,</span> <span class="n">use_case_relationships</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">system_name</span><span class="o">+</span><span class="s1">&#39;use case diagram.pdf&#39;</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">use_case_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">actors</span><span class="p">,</span> <span class="n">use_cases</span><span class="p">,</span> <span class="n">interactions</span><span class="p">,</span> <span class="n">use_case_relationships</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">system_name</span><span class="o">+</span><span class="s1">&#39;use case diagram.pdf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -84,7 +84,7 @@
 <span class="p">]</span>
 
 <span class="c1"># create diagram</span>
-<span class="n">pyml</span><span class="o">.</span><span class="n">sequence_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">actors</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">system_name</span><span class="o">+</span><span class="s2">&quot;_sequence_diagram&quot;</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">sequence_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">actors</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">system_name</span><span class="o">+</span><span class="s2">&quot;_sequence_diagram&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -98,7 +98,7 @@
 <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Python Interpreter with PyML&quot;</span>
 <span class="n">external_actors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="s2">&quot;OS&quot;</span><span class="p">,</span> <span class="s2">&quot;Graphviz&quot;</span><span class="p">]</span>
 <span class="c1"># create context diagram</span>
-<span class="n">pyml</span><span class="o">.</span><span class="n">context_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">external_actors</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;pyml_context_diagram_offline&quot;</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">context_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">external_actors</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;pyml_context_diagram_offline&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -116,7 +116,7 @@
                 <span class="p">(</span><span class="s1">&#39;Integration and Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Fixed Platform&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Integration and Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Street Testing&#39;</span><span class="p">)]</span>
 
 <span class="c1"># create diagram</span>
-<span class="n">pyml</span><span class="o">.</span><span class="n">wbs_diagram</span><span class="p">(</span><span class="n">wbs_decompositions</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;skateboard_wbs&quot;</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">wbs_diagram</span><span class="p">(</span><span class="n">wbs_decompositions</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;skateboard_wbs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -141,7 +141,7 @@
                 <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)]</span>
 
 <span class="c1"># create diagram</span>
-<span class="n">pyml</span><span class="o">.</span><span class="n">critical_path_diagram</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;critical_path&quot;</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">critical_path_diagram</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;critical_path&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -153,7 +153,7 @@
 <h2>Design Structure Matrix<a class="headerlink" href="#design-structure-matrix" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Make Board&#39;</span><span class="p">,</span> <span class="s1">&#39;Acquire Wheels&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">]</span>
 <span class="n">task_dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Make Board&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Acquire Wheels&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Assemble&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">)]</span>
-<span class="n">pyml</span><span class="o">.</span><span class="n">design_structure_matrix</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;skateboard_task_dsm_with_feedback&quot;</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">design_structure_matrix</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;skateboard_task_dsm_with_feedback&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -235,7 +235,7 @@
                 <span class="s2">&quot;The UUV shall indicate that it is ready for recovery&quot;</span><span class="p">)),]</span>
 
 <span class="c1"># draw requirements diagram as horizontal tree left -&gt; right</span>
-<span class="n">requirements_diagram</span><span class="p">(</span><span class="n">requirements</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s1">&#39;LR&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;uuv_requirements_tree&quot;</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">requirements_diagram</span><span class="p">(</span><span class="n">requirements</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s1">&#39;LR&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;uuv_requirements_tree&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -254,7 +254,7 @@
            <span class="p">(</span><span class="s1">&#39;Lamp 3 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
                           <span class="p">]</span>
 
-<span class="n">pyml</span><span class="o">.</span><span class="n">fault_tree_diagram</span><span class="p">(</span><span class="n">lamp_circuit_fault_tree</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;lamp_circuit_fault_tree&quot;</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">fault_tree_diagram</span><span class="p">(</span><span class="n">lamp_circuit_fault_tree</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;lamp_circuit_fault_tree&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -270,7 +270,7 @@
 <span class="n">fault_tree_list</span> <span class="o">=</span> <span class="n">pyml</span><span class="o">.</span><span class="n">read_fault_tree_excel</span><span class="p">(</span><span class="s1">&#39;aav_fault_tree.xlsx&#39;</span><span class="p">)</span>
 
 <span class="c1"># create fault tree diagram</span>
-<span class="n">pyml</span><span class="o">.</span><span class="n">fault_tree_diagram</span><span class="p">(</span><span class="n">fault_tree_list</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">fault_tree_diagram</span><span class="p">(</span><span class="n">fault_tree_list</span><span class="p">)</span>
 
 </pre></div>
 </div>
@@ -286,7 +286,7 @@
                 <span class="p">]</span>
 
 <span class="c1"># draw diagram</span>
-<span class="n">causal_diagram</span><span class="p">(</span><span class="n">relationships</span><span class="p">)</span>
+<span class="n">se</span><span class="o">.</span><span class="n">causal_diagram</span><span class="p">(</span><span class="n">relationships</span><span class="p">)</span>
 </pre></div>
 </div>
 <div style="text-align: center">
@@ -298,7 +298,7 @@
 <h2>System Dynamics Model<a class="headerlink" href="#system-dynamics-model" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rayleigh curve staffing model</span>
 
-<span class="n">model_init</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+<span class="n">init_model</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
 
 <span class="n">add_stock</span><span class="p">(</span><span class="s2">&quot;cumulative_effort&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;effort rate&quot;</span><span class="p">])</span>
 <span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;effort rate&quot;</span><span class="p">,</span> <span class="s2">&quot;learning_function * (estimated_total_effort - cumulative_effort)&quot;</span><span class="p">)</span>
@@ -306,7 +306,7 @@
 <span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;manpower_buildup_parameter&quot;</span><span class="p">,</span> <span class="mf">.5</span><span class="p">)</span>
 <span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;estimated_total_effort&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 
-<span class="n">model_run</span><span class="p">()</span>
+<span class="n">run_model</span><span class="p">()</span>
 <span class="n">plot_output</span><span class="p">(</span><span class="s1">&#39;cumulative_effort&#39;</span><span class="p">,</span> <span class="s1">&#39;effort rate&#39;</span><span class="p">,</span> <span class="s2">&quot;learning_function&quot;</span><span class="p">)</span>
 </pre></div>
 </div>

@@ -7,14 +7,14 @@ myst:
 
 ## Examples
 
-These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing pyml, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.
+These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing se-lib, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.
  
 ### Use Case Model
 
 Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.
    
 ```{code-block} python
-import pyml
+import selib as se
 
 # system model
 system_name = "Course Portal"
@@ -24,7 +24,7 @@ interactions = [('Student', 'Post Discussion'), ('Instructor', 'Post Discussion'
 use_case_relationships = []
 
 # create diagram
-pyml.use_case_diagram(system_name, actors, use_cases, interactions, use_case_relationships, filename=system_name+'use case diagram.pdf')
+se.use_case_diagram(system_name, actors, use_cases, interactions, use_case_relationships, filename=system_name+'use case diagram.pdf')
  ```
  
 <div style="text-align: center">
@@ -66,7 +66,7 @@ actions = [
 ]
 
 # create diagram
-pyml.sequence_diagram(system_name, actors, objects, actions, filename=system_name+"_sequence_diagram")
+se.sequence_diagram(system_name, actors, objects, actions, filename=system_name+"_sequence_diagram")
 ```
 
 <div style="text-align: center">
@@ -87,7 +87,7 @@ pyml.sequence_diagram(system_name, actors, objects, actions, filename=system_nam
 system_name = "Python Interpreter with PyML"
 external_actors = ["User", "OS", "Graphviz"]
 # create context diagram
-pyml.context_diagram(system_name, external_actors, filename="pyml_context_diagram_offline")
+se.context_diagram(system_name, external_actors, filename="pyml_context_diagram_offline")
 ```
 
 <div style="text-align: center">
@@ -112,7 +112,7 @@ wbs_decompositions = [
                 ('Integration and Test', 'Fixed Platform'), ('Integration and Test', 'Street Testing')]
 
 # create diagram
-pyml.wbs_diagram(wbs_decompositions, filename="skateboard_wbs")
+se.wbs_diagram(wbs_decompositions, filename="skateboard_wbs")
 ```
 
 <div style="text-align: center">
@@ -145,7 +145,7 @@ task_dependencies = [('A', 'C'),
                 ('D', 'E')]
 
 # create diagram
-pyml.critical_path_diagram(tasks, task_dependencies, filename="critical_path")
+se.critical_path_diagram(tasks, task_dependencies, filename="critical_path")
 ```
 
 <div style="text-align: center">
@@ -165,7 +165,7 @@ pyml.critical_path_diagram(tasks, task_dependencies, filename="critical_path")
 ```
 tasks = ['Make Board', 'Acquire Wheels', 'Assemble', 'Test']
 task_dependencies = [('Make Board', 'Assemble'), ('Acquire Wheels', 'Assemble'), ('Assemble', 'Test'), ('Test', 'Assemble')]
-pyml.design_structure_matrix(tasks, task_dependencies, filename="skateboard_task_dsm_with_feedback")
+se.design_structure_matrix(tasks, task_dependencies, filename="skateboard_task_dsm_with_feedback")
 ```
 
 
@@ -250,7 +250,7 @@ requirements = [("ISR UUV", "Performance"),
                 "The UUV shall indicate that it is ready for recovery")),]
 
 # draw requirements diagram as horizontal tree left -> right
-requirements_diagram(requirements, rankdir='LR', filename="uuv_requirements_tree")
+se.requirements_diagram(requirements, rankdir='LR', filename="uuv_requirements_tree")
 ```
 
 <div style="text-align: center">
@@ -277,7 +277,7 @@ lamp_circuit_fault_tree = [("Missing Indication", "and", ["Resistor Fails", "Cap
            ('Lamp 3 Fails', 'basic', []),
                           ]
 
-pyml.fault_tree_diagram(lamp_circuit_fault_tree, filename="lamp_circuit_fault_tree")
+se.fault_tree_diagram(lamp_circuit_fault_tree, filename="lamp_circuit_fault_tree")
 ```
 
 <div style="text-align: center">
@@ -303,7 +303,7 @@ Portion of example Excel file *aav_fault_tree.xlsx*:
 fault_tree_list = pyml.read_fault_tree_excel('aav_fault_tree.xlsx')
 
 # create fault tree diagram
-pyml.fault_tree_diagram(fault_tree_list)
+se.fault_tree_diagram(fault_tree_list)
 
 ```
 
@@ -320,7 +320,7 @@ relationships = [('Available personnel',"Workforce gap", "-"),
                 ]
 
 # draw diagram
-causal_diagram(relationships)
+se.causal_diagram(relationships)
 ```
 
 <div style="text-align: center">
@@ -340,7 +340,7 @@ causal_diagram(relationships)
 ```
 # Rayleigh curve staffing model
 
-model_init(start=0, stop=6, dt=.2)
+init_model(start=0, stop=6, dt=.2)
 
 add_stock("cumulative_effort", 0, inflows=["effort rate"])
 add_flow("effort rate", "learning_function * (estimated_total_effort - cumulative_effort)")
@@ -348,7 +348,7 @@ add_auxiliary("learning_function", "manpower_buildup_parameter * time")
 add_auxiliary("manpower_buildup_parameter", .5)
 add_auxiliary("estimated_total_effort", 15)
 
-model_run()
+run_model()
 plot_output('cumulative_effort', 'effort rate', "learning_function")
 ```
 
