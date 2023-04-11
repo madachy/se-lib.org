@@ -73,11 +73,44 @@ Simulations
 System Dynamics
 ------------------------
 
+init_model
+^^^^^^^^^^^^ 
+
+.. autofunction:: selib.init_model
+
+add_stock
+^^^^^^^^^^^^ 
+
+.. autofunction:: selib.add_stock
+
 add_flow
 ^^^^^^^^^^^^
 
 .. autofunction:: selib.add_flow
 
+add_auxiliary
+^^^^^^^^^^^^
+.. autofunction:: selib.add_auxiliary
+
+
 plot_graph
 ^^^^^^^^^^^^
 .. autofunction:: selib.plot_graph
+
+save_graph
+^^^^^^^^^^^^
+.. autofunction:: selib.save_graph
+
+run_model
+^^^^^^^^^^^^ 
+.. autofunction:: selib.run_model
+
+
+set_logical_run_time
+^^^^^^^^^^^^ 
+.. autofunction:: selib.set_logical_run_time
+
+
+get_logical_end_time
+^^^^^^^^^^^^ 
+.. autofunction:: selib.get_logical_end_time
