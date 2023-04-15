@@ -7,7 +7,7 @@ myst:
 
 # Installation
 
-Download the PyML library file [pyml.py](https://github.com/madachy/PyML) and copy it to your local development folder or elsewhere on your Python path. If you use the recommended [Anaconda](https://www.anaconda.com/products/individual) Python distribution it will come with all of the required packages below except for Graphviz and Pdflatex. These are required:
+se-lib is available on [PyPI](https://pypi.org/project/se-lib/) and can be installed with ``pip install se-lib``.  Alternatively, download the library file from [PyPI](https://pypi.org/project/se-lib/) and copy it to your local development folder or elsewhere on your Python path. If you use the recommended [Anaconda](https://www.anaconda.com/products/individual) Python distribution it will come with all of the required packages below except for Graphviz and Pdflatex. These are required:
 
 * Python version 3.8 and higher.
 * [Graphviz](https://graphviz.org/) is required to generate diagrams. After installing Anaconda, use its Powershell Command Prompt and type ``conda install -c conda-forge python-graphviz``. With other Python environments it can be installed with ``pip install graphviz``. Also see graphviz download or graphviz on PyPI for additional instructions for different platforms.
