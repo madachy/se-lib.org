@@ -73,10 +73,10 @@ Simulations
 System Dynamics
 ------------------------
 
-init_model
+init_sd_model
 ^^^^^^^^^^^^ 
 
-.. autofunction:: selib.init_model
+.. autofunction:: selib.init_sd_model
 
 add_stock
 ^^^^^^^^^^^^ 
@@ -114,3 +114,7 @@ set_logical_run_time
 get_logical_end_time
 ^^^^^^^^^^^^ 
 .. autofunction:: selib.get_logical_end_time
+
+draw_model_diagram
+^^^^^^^^^^^^ 
+.. autofunction:: selib.draw_model_diagram

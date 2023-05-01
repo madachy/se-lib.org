@@ -16,7 +16,7 @@ Welcome to the Systems Engineering Library (se-lib) for systems modeling, analys
 
 **New Online Capability and Simulation**
 
-The upcoming se-lib v.3 can run online in a browser. Try it at the `SysML Diagram Scratchpad <http://pyml.fun/online/scratchpad.html>`_. We have also added :ref:`causal loop modeling<Causal Diagram>` (causal diagrams) and :ref:`system dynamics modeling and simulation<System Dynamics Model>` capabilities.
+The upcoming se-lib v.3 can run online in a browser. Try it at the `SysML Diagram Scratchpad <http://pyml.fun/online/scratchpad.html>`_ or the `Discrete Event Modeling Demonstrations <http://se-lib.org/online/discrete_event_modeling_demo.html>`_. We have also added :ref:`causal loop modeling<Causal Diagram>` (causal diagrams) and :ref:`system dynamics modeling and simulation<System Dynamics Model>` capabilities.
 
 Inputs and Outputs
 ==============

@@ -1,5 +1,5 @@
 """
-se-lib Version .24
+se-lib Version .26
 
 Copyright (c) 2022-2023 Ray Madachy
 
@@ -1372,11 +1372,12 @@ def mocus(fault_tree):
 
 # system dynamics simulation functions
 
-def init_model(start, stop, dt):
+def init_sd_model(start, stop, dt):
   """
   Instantiates a system dynamics model for simulation
   """
-  global xmile_header, model, model_specs
+  global xmile_header, model, model_specs, model_dict, model_type
+  model_type = "continuous"
   xmile_header = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0">
         <header>
@@ -1396,6 +1397,7 @@ def init_model(start, stop, dt):
         </sim_specs>"""
   model = ""
   build_model()
+  model_dict={'stocks': {}, 'flows': {}, 'auxiliaries': {}}
 
 def build_model():
   global xmile_string
@@ -1410,15 +1412,15 @@ def build_model():
   xmile_string = xmile_header + model_specs + model_string + xmile_closing
   with open('test.xmile', 'w') as f:
     f.write(xmile_string)
-
+    
 def add_stock(name, initial, inflows=[], outflows=[]):
   """
   Adds a stock to the model
-
+    
   Parameters
   ----------
   name: str
-    The name of the stock
+    The name of the stock 
   initial: float
     Initial value of stock at start of simulation
   inflows: list of float
@@ -1440,19 +1442,22 @@ def add_stock(name, initial, inflows=[], outflows=[]):
                     <eqn>{initial}</eqn>
                 </stock>"""
   build_model()
-
-def add_auxiliary(name, equation):
+  model_dict['stocks'][name]={'inflows': inflows, 'outflows': outflows}
+  
+def add_auxiliary(name, equation, inputs=[]):
   """
   Adds auxiliary equation or constant to the model
 
   Parameters
   ----------
   name: str
-    The name of the auxiliary
+    The name of the auxiliary 
   equation: str
     Equation for the auxiliary using other named model variables
+  inputs: list
+    Optional list of variable input names used to draw model diagram 
   """
-  if "random()" in str(equation): equation = convert_random_to_xmile(equation)
+  if "random()" in str(equation): equation = convert_random_to_xmile(equation) 
   if "random.uniform(" in str(equation): equation = convert_random_to_xmile(equation)
   if "RANDOM" in str(equation): equation = equation.replace("RANDOM", '(GET_TIME_VALUE(0,0,0) + .00001) / (GET_TIME_VALUE(0,0,0) + .00001) * RANDOM')
   global model
@@ -1462,28 +1467,33 @@ def add_auxiliary(name, equation):
                     <eqn>{equation}</eqn>
                 </aux>"""
   build_model()
+  model_dict['auxiliaries'][name]={'equation': equation, 'inputs': inputs}
+    
+def add_flow(name, equation, inputs=[]):
+	"""
+	Adds a flow to the model
 
-def add_flow(name, equation):
-    """
-    Adds a flow to the model
-
-    Parameters
-    ----------
-    name: str
-      The name of the flow
-    equation: str
-      Equation for the flow using other named model variables
-    """
-    if "random()" in str(equation): equation = convert_random_to_xmile(equation)
-    if "random.uniform(" in str(equation): equation = convert_random_to_xmile(equation)
-    if "RANDOM" in str(equation): equation = equation.replace("RANDOM", '(GET_TIME_VALUE(0,0,0) + .00001) / (GET_TIME_VALUE(0,0,0) + .00001) * RANDOM')
-    global model
-    model += f"""
-                <flow name="{name}">
-                    <doc>{name}</doc>
-                    <eqn>{equation}</eqn>
-                </flow>"""
-    build_model()
+	Parameters
+	----------
+	name: str
+	  The name of the flow 
+	equation: str
+	  Equation for the flow using other named model variables
+	inputs: list
+	  Optional list of variable input names used to draw model diagram 
+	"""
+	if "random()" in str(equation): equation = convert_random_to_xmile(equation) 
+	if "random.uniform(" in str(equation): equation = convert_random_to_xmile(equation)
+	if "RANDOM" in str(equation): equation = equation.replace("RANDOM", '(GET_TIME_VALUE(0,0,0) + .00001) / (GET_TIME_VALUE(0,0,0) + .00001) * RANDOM')
+	global model
+	model += f"""
+				<flow name="{name}">
+					<doc>{name}</doc>
+					<eqn>{equation}</eqn>
+				</flow>"""
+	build_model()
+	model_dict['flows'][name]={'equation': equation, 'inputs': inputs}
+	
 
 def convert_random_to_xmile(equation):
   equation = equation.replace("random(", "RANDOM_0_1(")
@@ -1511,7 +1521,7 @@ def plot_graph(*outputs):
         axis.plot(output.index, output[var].values, label=var)
         if len(outputs) > 1: axis.legend(loc="best", )
         plt.show()
-
+  
 def save_graph(*outputs, filename="graph.png"):
   """
   save graph to file
@@ -1529,11 +1539,11 @@ def save_graph(*outputs, filename="graph.png"):
     axis.legend(loc="best", )
     #plot.show()
     plt.savefig(filename)
-
+            
 def run_model():
     """
     Executes the model
-
+    
     Returns
     ----------
     Pandas dataframe containing run outputs for each variable each timestep
@@ -1543,27 +1553,95 @@ def run_model():
     global model
     model = pysd.read_xmile('./test.xmile')
     output = model.run(progress=False)
-    return (output)
-
+    return (output, model_dict)
+    
 def set_logical_run_time(condition):
     """
-    Enables a run time to be measured based on a logical condition for when the simulation should be run (like a while statement).  The logical end time will be available from the 'get_logical_end_time()' function in lieu of the fixed end time for a simulation.
+    Enables a run time to be measured based on a logical condition for when the simulation should be run (like a while statement).  The logical end time will be available from the 'get_logical_end_time()' function in lieu of the fixed end time for a simulation. 
     """
     add_flow("time_flow", 'if_then_else('+str(condition)+', 1, 0)')
     #add_flow("time_flow", 'if_then_else(not '+str(condition)+', 1, 0)')
     #add_flow("time_flow", 'if_then_else('+condition+', 0, 1)')
     add_stock("logical_end_time", 0, inflows=["time_flow"])
-
+    
 def get_logical_end_time():
     """
-    Returns the logical end time as specified in a previous 'set_logical_run_time()' function call, in lieu of the fixed end time for a simulation.
-
+    Returns the logical end time as specified in a previous 'set_logical_run_time()' function call, in lieu of the fixed end time for a simulation. 
+    
     Returns
     ----------
     logical_end_time: float
         end time when the 'set_logical_run_time()'' condition expires
     """
-    return (get_final_value("logical_end_time"))
-
+    return (get_final_value("logical_end_time"))  
+    
 def get_final_value(variable):
-    return (output[variable][model['FINAL TIME']])
+    return (output[variable][model['FINAL TIME']]) 
+	
+	
+	
+def draw_sd_model(filename=None, format='svg'):
+    system_dynamics_dict = model_dict
+    graph = graphviz.Digraph(engine='dot', filename=filename, format=format)
+    graph.attr(rankdir='LR', size='10,8', splines='spline',)
+    graph.attr('node', fontname="arial", fontcolor='blue', color='invis', fontsize='10')
+    #graph.attr('edge',  minlen='1')
+    
+    
+    with graph.subgraph(name='cluster_flowchain') as c:
+        # Add stocks as boxes
+        for stock_name in system_dynamics_dict['stocks']:
+            graph.node(stock_name, shape='box', color='blue', )
+        
+        # Add flows as circles
+        for flow_name in system_dynamics_dict['flows']:
+            graph.node(flow_name, shape='circle', color='blue', width='.2', fixedsize="true" , label=f"\n\n{flow_name}")
+        
+    # Add auxiliaries as circles
+    for aux_name in system_dynamics_dict['auxiliaries']:
+        graph.node(aux_name, shape='circle', color='blue', width='.2', fixedsize="true", label=f"\n\n{aux_name}")
+    
+    # Add edges from inflows to stocks
+    for stock_name, stock_dict in system_dynamics_dict['stocks'].items():
+        for inflow_name in stock_dict['inflows']:
+            graph.edge(inflow_name, stock_name, color="blue:blue", arrowhead="onormal")
+            if inflow_name not in stock_dict['outflows']:
+                graph.node(f'{inflow_name}_source', width=".01", fontsize='14', fixedsize="true", label="✽")
+                graph.edge(f'{inflow_name}_source', inflow_name, tailclip="true", color="blue:blue", arrowhead="none")
+    
+    # Add edges from stocks to outflows
+    for stock_name, stock_dict in system_dynamics_dict['stocks'].items():
+        for outflow_name in stock_dict['outflows']:
+            graph.edge(stock_name, outflow_name, color="blue:blue", arrowhead="none")
+            if outflow_name not in stock_dict['inflows']:
+                graph.node(f'{outflow_name}_sink', width=".01", fontsize='14', fixedsize="true", label="✽")
+                graph.edge(outflow_name, f'{outflow_name}_sink', headclip="true", color="blue:blue", arrowhead="onormal")
+
+    # Add edges from variable inputs to flows
+    for flow_name, flow_dict in system_dynamics_dict['flows'].items():
+        for input_name in flow_dict['inputs']:
+            graph.edge(input_name, flow_name, color="red", arrowhead="normal", constraint='false')
+ 
+           
+    # Add edges from variable inputs to auxiliaries
+    for aux_name, aux_dict in system_dynamics_dict['auxiliaries'].items():
+        for input_name in aux_dict['inputs']:
+            graph.edge(input_name, aux_name, color="red", arrowhead="normal", constraint='false')
+    
+    if filename is not None:
+        graph.render()  # render and save file, clean up temporary dot source file (no extension) after successful rendering with (cleanup=True) doesn't work on windows "permission denied"
+    return graph
+	
+	
+def draw_model_diagram(filename=None, format="svg"):
+    """
+    Draw a model diagram. 
+    
+    Returns
+    -------
+    g : diagram object view
+        Save the diagram to a file, and open the rendered result in its default viewing application. se-lib calls the Graphviz API for this.
+    """
+    filename = filename
+    format = format
+    if model_type == "continuous": return(draw_sd_model(filename, format))
