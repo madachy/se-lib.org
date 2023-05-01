@@ -31,3 +31,7 @@
 ![image](images/aav_fault_tree.png)
 
 ![image](images/aav_fault_tree_excel.png)
+
+![image](images/Ray_Madachy.png)
+
+![image](images/LongshoreRyan_Pic900px.jpg)
