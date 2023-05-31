@@ -1,5 +1,5 @@
 """
-se-lib Version .26
+se-lib Version .26.6
 
 Copyright (c) 2022-2023 Ray Madachy
 
@@ -17,7 +17,17 @@ import sys
 from os.path import exists
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.rcParams['axes.spines.top'] = False
+mpl.rcParams['axes.spines.right'] = False
+
 from copy import deepcopy
+
+import simpy
+import random
+import numpy as np
+
+online = False
 
 # text for SVG included files
 
@@ -119,14 +129,25 @@ def context_diagram(system, external_systems, filename=None, format='svg', engin
     c = graphviz.Graph('G', node_attr=node_attr,
                        filename=filename, format=format, engine=engine)
 
-    human_actor_keywords = ["User", "user", "Customer", "customer", "Operator", "Patient", "Doctor", "operator"]
+    human_actor_keywords = ["user", "student", "instructor", "customer", "patient", "doctor", "operator", 'citizen', 'criminal', 'enforcer', 'legislator']
 
     for external_system in external_systems:
-        if (external_system in human_actor_keywords): c.node(wrap(external_system), labelloc="b", image='actor.svg', shape='none')
-        c.edge(wrap(system), wrap(external_system), len="1.2") # len="1.2"
+        if (type(external_system) is not tuple and external_system.casefold() in human_actor_keywords):
+            c.node(wrap(external_system), label=f'''<<font point-size="30">🧍</font>{'<br/>' if online == False else '&lt;br/&gt;'}<font point-size="11">{external_system}</font>>''', labelloc="b", shape='plain')
+            c.edge(wrap(system), wrap(external_system), len="1.2") # len="1.2"
+        elif (type(external_system) is tuple):
+            c.node(wrap(external_system[0]), label=f'''<<font point-size="30">{external_system[1]}</font>{'<br/>' if online == False else '&lt;br/&gt;'}<font point-size="11">{external_system[0]}   </font>>''', labelloc="b", shape='plain')
+            c.edge(wrap(system), wrap(external_system[0]), len="1.2") # len="1.2"
+        else:
+            c.edge(wrap(system), wrap(external_system), len="1.2") # len="1.2"
+            
     if filename is not None:
         c.render()  # render and save file, clean up temporary dot source file (no extension) after successful rendering with (cleanup=True) doesn't work on windows "permission denied"
-    return c
+    if online:
+        svg = return_svg_from_dot(str(c), engine)
+        print(svg)
+    else:
+        return c
 
 
 def activity_diagram(element_dependencies, filename=None, format='svg'):
@@ -192,8 +213,8 @@ def use_case_diagram(system_name, actors, use_cases, interactions, use_case_rela
     for number, actor in enumerate(actors):
         division = system_height / (len(actors) + 1)
         #print (division)
-        u.node(wrap(actor), pos=f'{column}, {system_height - division*(number+1) + .25}!',
-               width='.1', shape='none', image='actor.svg', labelloc='b')
+        u.node(wrap(actor), label=f'''<<font point-size="30">🧍</font><br/><font point-size="11">{actor}</font>>''', pos=f'{column}, {system_height - division*(number+1) + .25}!',
+               width='.1', shape='none', labelloc='b')
 
     column = 0
     for number, use_case in enumerate(use_cases):
@@ -206,6 +227,7 @@ def use_case_diagram(system_name, actors, use_cases, interactions, use_case_rela
     if filename != None:
         u.render()  # render and save file, clean up temporary dot source file (no extension) after successful rendering with (cleanup=True) doesn't work on windows "permission denied"
         #os.remove(filename) also doesn't work on windows "permission denied"
+    # print(str(u)) # for dot text
     return u
 
 
@@ -1532,15 +1554,35 @@ def save_graph(*outputs, filename="graph.png"):
   filename: file name with format extension
   """
   for var in outputs:
-    #print(var)
-    fig, axis = plt.subplots()
-    axis.set(xlabel='Time', ylabel=var)
-    axis.plot(output.index, output[var].values, label=var)
-    axis.legend(loc="best", )
-    #plot.show()
+    label_string=str(var)
+    if type(var) == list:
+        label_string=str(var[0])
+        for count, element in enumerate(var):
+            if count > 0: label_string += ", "+element
+    fig, axis = plt.subplots(figsize=(6, 4))
+    label_string = textwrap.fill(label_string, width=40)
+    axis.set(xlabel='Time', ylabel=label_string)
+    if type(var) == list:
+        axis.plot(output.index, output[var].values, label=var)
+        axis.legend(loc="best", )
+    else: 
+        axis.plot(output.index, output[var].values)
     plt.savefig(filename)
             
-def run_model():
+def run_model(verbose=True):
+	"""
+	Executes the current model
+    
+	Returns
+	----------
+	If continuous, returns 1) Pandas dataframe containing run outputs for each variable each timestep and 2) model dictionary.
+	If discrete, returns 1) network dictionary with run statistics and 2) entity run data
+	"""
+	verbose = verbose
+	if (model_type == "continuous"): return(run_sd_model())
+	if (model_type == "discrete"): return(run_de_model(verbose))
+
+def run_sd_model():
     """
     Executes the model
     
@@ -1635,13 +1677,282 @@ def draw_sd_model(filename=None, format='svg'):
 	
 def draw_model_diagram(filename=None, format="svg"):
     """
-    Draw a model diagram. 
-    
+    Draw a diagram of the current model. 
+
+    Parameters
+    ----------
+    filename : string, optional
+        A filename for the output not including a filename extension. The extension will specified by the format parameter.
+    format : string, optional
+        The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.
+
     Returns
     -------
-    g : diagram object view
-        Save the diagram to a file, and open the rendered result in its default viewing application. se-lib calls the Graphviz API for this.
+    g : graph object view
+        Save the graph source code to file, and open the rendered result in its default viewing application. se-lib calls the Graphviz API for this.
+
     """
     filename = filename
     format = format
     if model_type == "continuous": return(draw_sd_model(filename, format))
+    if model_type == "discrete": return(draw_discrete_model_diagram(filename, format, engine='dot'))	
+	
+# Discrete Event Modeling 
+
+# define network dictionary of dictionaries
+network = {}
+
+run_specs = {}
+entity_num = 0
+entity_data = {}
+
+def init_de_model():
+    """
+    Instantiates a discrete event model for simulation
+    """
+    global env, entity_num, entity_data, run_specs, model_type
+    network.clear()
+    run_specs.clear()
+    entity_num = 0
+    entity_data.clear()
+    
+    # create simulation environment
+    env = simpy.Environment()
+    model_type = "discrete"
+
+def add_server(name, connections, service_time, capacity=1):
+    """
+    Add a server to a discrete event model. 
+
+    Parameters
+    ----------
+    name: string
+    	A name for the server.
+    connections: dictionary
+    	A dictionary of the node connections after the server.  The node names are the keys and the values are the relative probabilities of traversing the connection.
+    capacity: integer
+    	The number of resource usage slots in the server
+    """
+    network[name] = {
+        'type': 'server',
+        'resource': simpy.Resource(env, capacity=capacity),
+        'connections': connections,
+        'service_time': service_time,
+        'waiting_times': [],
+        'service_times': [],
+        'capacity': capacity,
+        'resource_busy_time': 0,
+        'resource_utilization': 0
+    }
+
+
+def add_delay(name, connections, delay_time):
+    """
+    Add a delay to a discrete event model. 
+
+    Parameters
+    ----------
+    name: string
+    	A name for the delay.
+    connections: dictionary
+    	A dictionary of the node connections after the delay.  The node names are the keys and the values are the relative probabilities of traversing the connections.
+    delay_time: float
+    	The time delay for entities to traverse.  May be a constant or random function.
+    """
+    network[name] = {
+        'type': 'delay',
+        'connections': connections,
+        'delay_time': delay_time,
+    }
+
+
+def add_source(name, entity_name, num_entities, connections, interarrival_time):
+    """
+    Add a source node to a discrete event model to generate entities. 
+
+    Parameters
+    ----------
+    name: string
+    	A name for the source.
+    entity_name: string
+    	A name for the type of entity being generated.
+    num_entities: integer
+    	Number of entities to generated.
+    connections: dictionary
+    	A dictionary of the node connections after the source.  The node names are the keys and the values are the relative probabilities of traversing the connections.
+    interarrival_time: string
+    	The time between entity arrrivals into the system.  The string may enclose a constant, random function or logical expression to be evaluated.
+    """
+
+    network[name] = {
+        'type': 'source',
+        'entity_name': entity_name,
+        'num_entities': num_entities,
+        'connections': connections,
+        'interarrival_time': interarrival_time,
+        'arrivals': []
+    }
+    run_specs['interarrival_time'] = interarrival_time
+    run_specs['num_entities'] = num_entities
+    run_specs['entity_name'] = entity_name
+    run_specs['source'] = name
+
+
+def add_terminate(name):
+    """
+    Add a terminate node to a discrete event model for entities leaving the system. 
+
+    Parameters
+    ----------
+    name: string
+    	A name for the terminate.
+    """
+    network[name] = {
+        'type': 'terminate', 
+        'connections': {}}
+
+
+# define processes for each entity
+def process_initial_arrival(env, arrival_time, node_name, entity_num, entity_name):
+    yield env.timeout(arrival_time)
+    if run_specs['verbose']: print(f"{env.now}: {entity_name} {entity_num} entered from {run_specs['source']}")
+    env.process(process_node(env, node_name, entity_num, entity_name))
+
+    # define processes for each node
+def process_node(env, node_name, entity_num, entity_name):
+    # process resource usage
+
+    if network[node_name]['type'] == 'delay':
+        delay_time = eval(network[node_name]['delay_time'])
+        yield env.timeout(delay_time)
+        if run_specs['verbose']: print(f"{env.now}: {entity_name} {entity_num} delayed {delay_time} at {node_name}")
+        entity_data[entity_num]['nodes'].append((node_name, env.now))
+
+
+    if network[node_name]['type'] == 'server':
+        with network[node_name]['resource'].request() as req:
+            if run_specs['verbose']: print(f"{env.now}: {entity_name} {entity_num} requesting {node_name} resource ")
+            this_arrival_time = env.now
+            #entity_data[entity_num]['nodes'].append((node_name, env.now))
+            yield req
+
+            waiting_time = env.now - this_arrival_time
+            # collect waiting times
+            network[node_name]['waiting_times'].append(waiting_time)
+            if run_specs['verbose']: print(f"{env.now}: {entity_name} {entity_num} granted {node_name} resource waiting time {waiting_time}")
+            service_time = eval(network[node_name]['service_time'])
+            yield env.timeout(service_time)
+
+            # collect service times
+            network[node_name]['service_times'].append(service_time)
+            entity_data[entity_num]['nodes'].append((node_name, env.now))
+            network[node_name]['resource_busy_time'] += service_time
+            network[node_name]['resource_utilization'] = network[node_name]['resource_busy_time']/env.now/network[node_name]['capacity'] 
+            if run_specs['verbose']: print(f"{env.now}: {entity_name} {entity_num} completed using {node_name} resource with service time {service_time}")
+
+    if network[node_name]['type'] == 'terminate':
+        if run_specs['verbose']: print(f"{env.now}: {entity_name} {entity_num} leaving system at {node_name} ")
+        entity_data[entity_num]['nodes'].append((node_name, env.now))
+
+
+            # process arrivals and connections
+    if len(network[node_name]['connections']) > 0:
+        weights = tuple(network[node_name]['connections'].values())
+        #print(weights)
+        connection, probability = random.choice(list(network[node_name]['connections'].items()))
+        connection = random.choices(list(network[node_name]['connections'].keys()), weights, k=1)[0]
+        if run_specs['verbose']: print(f"{env.now}: {entity_name} {entity_num} {node_name} -> {connection}")
+        env.process(process_node(env, connection, entity_num, entity_name))
+
+
+def run_de_model(verbose=True):
+    """
+    Executes the current model
+    
+    Returns:
+    ----------
+    Simulation output
+    """
+    #global verbose
+    verbose = verbose
+    run_specs['verbose'] = verbose
+    for key, value in network.items():
+        if value.get('type') == 'source':
+            source_name = key
+    arrival_time = 0
+    for entity_num in range(run_specs['num_entities']):
+        #yield env.timeout(1)
+        arrival_time += eval(run_specs['interarrival_time'])
+        network[source_name]['arrivals'].append(arrival_time)
+        entity_num += 1
+
+        entity_data[entity_num] = {'arrival': arrival_time, 'nodes': []}
+        env.process(
+            process_initial_arrival(env, arrival_time, source_name,
+                                    entity_num, run_specs['entity_name']))  #+str(entity)
+
+    # start simulation at first node
+    #env.process(process_node(env, 'node1'))
+    env.run()
+    return network, entity_data
+
+
+def draw_discrete_model_diagram(filename=None, format='svg', engine='dot'):
+    global graph
+    node_attr = {
+        'color': 'black',
+        'fontsize': '11',
+        'fontname': 'arial',
+        'shape': 'none'
+    }  # 'fontname': 'arial',
+    graph = graphviz.Digraph('G',
+                             node_attr=node_attr,
+                             filename=filename,
+                             format=format,
+                             engine=engine)
+    graph.attr(rankdir='LR', ranksep='.7')
+    for node_name in network:
+        if network[node_name]['type'] == "source":
+            graph.node(node_name, label=f'❚❚❱\n\{node_name}', shape='none')
+        if network[node_name]['type'] == "terminate":
+            graph.node(node_name, label=f'❱❚❚\n\{node_name}', shape='none')
+        if network[node_name]['type'] == "server":
+            graph.node(node_name, label=f'❚❚▣\n{node_name}', shape='none')
+        if network[node_name]['type'] == "delay":
+            graph.node(node_name, label=f'◷\n{node_name}', shape='none')
+        for connection in network[node_name]['connections']:
+            graph.edge(
+                node_name,
+                connection,
+            )
+    if filename is not None:
+        graph.render(
+        )  # render and save file, clean up temporary dot source file (no extension) after successful rendering with (cleanup=True) doesn't work on windows "permission denied"
+    return graph
+    
+def plot_histogram(data, filename=None, xlabel= "Data"):
+    """
+    Plot a histogram for a dataset and optionally save to a file.
+
+    Parameters
+    ----------
+    data: list
+    	A list of the data values
+    filename: string, optional
+    	A name for the file 	
+    xlabel: string , optional
+    	A label for the x-axis
+
+    Returns
+    -------
+    A Matplotlib histogram
+    """
+    kwargs = {'color': 'blue', 'rwidth': 0.9}
+    fig, ax = plt.subplots(figsize=(5, 3))
+    ax.hist(data, **kwargs)
+    ax.set(xlabel=xlabel, ylabel='Frequency')
+    ax.xaxis.labelmargin = -50
+    ax.yaxis.labelmargin = 30
+    plt.subplots_adjust(bottom=0.15,)
+    if filename is not None: plt.savefig(filename)
+    return fig

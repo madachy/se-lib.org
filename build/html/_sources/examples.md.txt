@@ -7,9 +7,122 @@ myst:
 
 ## Examples
 
+### Simulations
+
+Simulation models in se-lib are defined as logical nodes in a system and their connections. Function calls enable system dynamics models to be expressed as stocks, flows and auxiliary variables connected in feedback loops. Discrete event models are defined as connected path nodes for entity generation, delays, queues/servers, and termination nodes.  
+
+Utilities are provided for output visualization and statistical analysis.  Hybrid models and can be developed with relationships between continuous and discrete event parameters.
+
+#### System Dynamics Model
+
+```
+# Battle Simulator using Lanchester's Law for Aimed Fire with Reinforcements
+
+init_sd_model(start=0, stop=2, dt=.05)
+
+step_size = 600
+
+add_stock("blue_troops", 1000, inflows=["blue_reinforcements"], outflows=["blue_attrition"])
+add_flow("blue_attrition", "red_troops*red_lethality")
+add_flow("blue_reinforcements", "step(200, .7)-step(200, 1.2)")
+add_auxiliary("blue_lethality", "random.uniform(.7, .9)")
+    
+add_stock("red_troops", 800, inflows=["red_reinforcements"], outflows=["red_attrition"])
+add_flow("red_attrition", "blue_troops*blue_lethality")
+add_flow("red_reinforcements", f"step({step_size}, .3)-step({step_size}, .7)")
+add_auxiliary("red_lethality", "random.uniform(.8, 1.0)")
+
+run_model()
+
+save_graph(['blue_troops', 'red_troops'], filename="battle_simulator_troop_levels")
+save_graph(["red_attrition", "red_reinforcements", 'blue_attrition', 'blue_reinforcements'], filename="battle_simulator_flow_rates")
+```
+
+<div style="text-align: center">
+<object data="_images/system_dynamics_battle_simulator_output.png">
+</object>
+</div>
+
+```{eval-rst}
+.. raw:: latex
+
+   \includesvg[]{system_dynamics_battle_simulator_output.png}
+
+```  
+
+### Analyses
+
+#### Quantitative Fault Tree
+
+```
+# UUV computed fault tree given probabilities for basic events
+uuv_fault_tree = [
+    ("UUV Mission Data Loss", "or", '', ["Communication Loss", "Power Down", "All Sensors Fail"]),
+    ('All Sensors Fail', 'and', '', ['Low Resolution Sensor 1 Fails', 'Low Resolution Sensor 2 Fails', 'High Resolution Sensor 3 Fails']),
+    ('Power Down', 'and', '', ["Main Power Down", "Backup Power Down"]),
+    ('Communication Loss', 'basic', .003),
+    ('Main Power Down', 'basic', .02),    
+    ('Backup Power Down', 'basic', .08), 
+    ('Low Resolution Sensor 1 Fails', 'basic', .001),
+    ('Low Resolution Sensor 2 Fails', 'basic', .001),
+    ('High Resolution Sensor 3 Fails', 'basic', .003),
+    ]
+
+se.draw_fault_tree_diagram_quantitative(uuv_fault_tree, filename="uuv_quantitative_fault_tree", format="svg")
+```
+
+<div style="text-align: center">
+<object data="_images/uuv_quantitative_fault_tree.svg" width=800px>
+</object>
+</div>
+
+```{eval-rst}
+.. raw:: latex
+
+   \includesvg[]{lamp_circuit_fault_tree.svg}
+
+```  
+
+#### Critical Path Analysis
+
+A critical path can be computed from a set of tasks with associated time durations and dependencies as below.
+
+```
+# tasks, durations and dependencies
+tasks = [('A', {'Duration': 3}),
+         ('B', {'Duration': 5}),
+         ('C', {'Duration': 2}),
+         ('D', {'Duration': 3}),
+         ('E', {'Duration': 5})]
+
+task_dependencies = [('A', 'C'),
+                ('B', 'C'),
+                ('A', 'D'),
+                ('C', 'E'),
+                ('D', 'E')]
+
+# create diagram
+se.critical_path_diagram(tasks, task_dependencies, filename="critical_path")
+```
+
+<div style="text-align: center">
+<object data="_images/critical_path.png">
+</object>
+</div>
+
+```{eval-rst}
+.. raw:: latex
+
+   \includesvg[]{critical_path.svg}
+
+```  
+
+### Diagrams
+
 These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing se-lib, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.
+
  
-### Use Case Model
+#### Use Case Model
 
 Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.
    
@@ -39,7 +152,7 @@ se.use_case_diagram(system_name, actors, use_cases, interactions, use_case_relat
 ```
 
 
-### Sequence Model
+#### Sequence Model
  
 A sequence diagram can be constructed per the following.
 
@@ -80,7 +193,7 @@ se.sequence_diagram(system_name, actors, objects, actions, filename=system_name+
    \includesvg[]{Battle_Simulator_sequence_diagram.svg}
 ```
 
-### Context Model
+#### Context Model
 
 ```
 # system model
@@ -101,7 +214,41 @@ se.context_diagram(system_name, external_actors, filename="pyml_context_diagram_
    \includesvg[]{pyml_context_diagram_offline.svg}
 ```
 
-### Work Breakdown Structure
+
+#### Requirements Model
+
+```
+# Intelligence, Surveillance, & Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements
+requirements = [("ISR UUV", "Performance"),
+                ("Performance", 
+                ("The UUV shall be capable of completing a mission of 6 hours duration.", 
+                "The UUV shall be capable of a top speed of 14 knots.", 
+                "The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.", 
+                "The UUV shall avoid detection.")),
+                ("ISR UUV", "Communication"),
+                ("Communication", 
+                ("Mission parameters shall be uploadable to the UUV",
+                "The UUV shall receive remote commands",
+                "The UUV shall commence its mission when commanded",
+                "The UUV shall be capable of transmitting data in a host ship compatible format",
+                "The UUV shall indicate that it is ready for recovery")),]
+
+# draw requirements diagram as horizontal tree left -> right
+se.requirements_diagram(requirements, rankdir='LR', filename="uuv_requirements_tree")
+```
+
+<div style="text-align: center">
+<object data="_images/uuv_requirements_tree.svg">
+</object>
+</div>
+
+```{eval-rst}
+.. raw:: latex
+
+   \includesvg[]{uuv_requirements_tree.svg}
+ 
+```
+#### Work Breakdown Structure
 
 ```
 # project work breakdown structure
@@ -125,42 +272,9 @@ se.wbs_diagram(wbs_decompositions, filename="skateboard_wbs")
 
    \includesvg[]{skateboard_wbs.svg}
 ```
+ 
 
-### Critical Path Analysis
-
-A critical path can be computed from a set of tasks with associated time durations and dependencies as below.
-
-```
-# tasks, durations and dependencies
-tasks = [('A', {'Duration': 3}),
-         ('B', {'Duration': 5}),
-         ('C', {'Duration': 2}),
-         ('D', {'Duration': 3}),
-         ('E', {'Duration': 5})]
-
-task_dependencies = [('A', 'C'),
-                ('B', 'C'),
-                ('A', 'D'),
-                ('C', 'E'),
-                ('D', 'E')]
-
-# create diagram
-se.critical_path_diagram(tasks, task_dependencies, filename="critical_path")
-```
-
-<div style="text-align: center">
-<object data="_images/critical_path.svg">
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{critical_path.svg}
-
-```   
-
-### Design Structure Matrix
+#### Design Structure Matrix
 
 ```
 tasks = ['Make Board', 'Acquire Wheels', 'Assemble', 'Test']
@@ -230,69 +344,10 @@ se.design_structure_matrix(tasks, task_dependencies, filename="skateboard_task_d
 </svg>
 </div>
 
-
-### Requirements Diagram
-
-```
-# Intelligence, Surveillance, & Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements
-requirements = [("ISR UUV", "Performance"),
-                ("Performance", 
-                ("The UUV shall be capable of completing a mission of 6 hours duration.", 
-                "The UUV shall be capable of a top speed of 14 knots.", 
-                "The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.", 
-                "The UUV shall avoid detection.")),
-                ("ISR UUV", "Communication"),
-                ("Communication", 
-                ("Mission parameters shall be uploadable to the UUV",
-                "The UUV shall receive remote commands",
-                "The UUV shall commence its mission when commanded",
-                "The UUV shall be capable of transmitting data in a host ship compatible format",
-                "The UUV shall indicate that it is ready for recovery")),]
-
-# draw requirements diagram as horizontal tree left -> right
-se.requirements_diagram(requirements, rankdir='LR', filename="uuv_requirements_tree")
-```
-
-<div style="text-align: center">
-<object data="_images/uuv_requirements_tree.svg">
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{uuv_requirements_tree.svg}
  
-```
- 
-### Fault Tree
 
-```
-lamp_circuit_fault_tree = [("Missing Indication", "and", ["Resistor Fails", "Capacitor Fails", "Both Lamps Out"]),
-           ('Both Lamps Out', 'or', ['Lamp 1 Fails', 'Lamp 2 Fails', 'Lamp 3 Fails']),
-           ('Resistor Fails', 'basic', []),
-           ('Capacitor Fails', 'basic', []),
-           ('Lamp 1 Fails', 'BASIC', []),
-           ('Lamp 2 Fails', 'basic', []),
-           ('Lamp 3 Fails', 'basic', []),
-                          ]
 
-se.fault_tree_diagram(lamp_circuit_fault_tree, filename="lamp_circuit_fault_tree")
-```
-
-<div style="text-align: center">
-<object data="_images/lamp_circuit_fault_tree.png" width=500px>
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{lamp_circuit_fault_tree.svg}
-
-```  
-
-### Read Fault Tree from Excel
+#### Read Fault Tree from Excel
 
 Portion of example Excel file *aav_fault_tree.xlsx*:
 
@@ -309,7 +364,7 @@ se.fault_tree_diagram(fault_tree_list)
 
 ![aav_fault_tree.png](_images/aav_fault_tree.png)
 
-### Causal Diagram
+#### Causal Diagram
 
 ```
 # causal relationships
@@ -335,31 +390,4 @@ se.causal_diagram(relationships)
 
 ```  
 
-### System Dynamics Model
 
-```
-# Rayleigh curve staffing model
-
-init_model(start=0, stop=6, dt=.2)
-
-add_stock("cumulative_effort", 0, inflows=["effort rate"])
-add_flow("effort rate", "learning_function * (estimated_total_effort - cumulative_effort)")
-add_auxiliary("learning_function", "manpower_buildup_parameter * time")
-add_auxiliary("manpower_buildup_parameter", .5)
-add_auxiliary("estimated_total_effort", 15)
-
-run_model()
-plot_output('cumulative_effort', 'effort rate', "learning_function")
-```
-
-<div style="text-align: center">
-<object data="_images/rayleigh_curve_model_output.png" width=450px>
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{rayleigh_curve_model_output.png}
-
-```  

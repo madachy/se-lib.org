@@ -1,17 +1,17 @@
 .. meta::
-   :title: Python Modeling Library (PyML) Function Reference
-   :description: Python Modeling Library (PyML) Function Reference
-   :keywords: python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation
+   :title: Systems Engineering Library (se-lib) Function Reference
+   :description: Systems Engineering Library (se-lib) Function Reference
+   :keywords: Systems Engineering Library, se-lib, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation
 
 ========================
 Function Reference
 ========================
 
-To use PyML, first import it before using any functions:
+To use se-lib, first import it before using any functions:
 
 .. code-block:: python
 
-   import pyml
+   import selib
 
 These function definitions follow the convention whereby required input parameters are shown first, then optional parameters are shown with an equal sign indicating the default values. A graph here is a generic set of nodes representing system elements connected by edges shown as non-directed or directed lines.
 
@@ -118,3 +118,39 @@ get_logical_end_time
 draw_model_diagram
 ^^^^^^^^^^^^ 
 .. autofunction:: selib.draw_model_diagram
+
+Discrete Event
+------------------------
+
+init_de_model
+^^^^^^^^^^^^ 
+.. autofunction:: selib.init_de_model
+
+add_source
+^^^^^^^^^^^^ 
+.. autofunction:: selib.add_source
+
+add_server
+^^^^^^^^^^^^ 
+.. autofunction:: selib.add_server
+
+add_delay
+^^^^^^^^^^^^ 
+.. autofunction:: selib.add_delay
+
+add_terminate
+^^^^^^^^^^^^ 
+.. autofunction:: selib.add_terminate
+
+run_model
+^^^^^^^^^^^^ 
+.. autofunction:: selib.run_model
+
+draw_model_diagram
+^^^^^^^^^^^^ 
+.. autofunction:: selib.draw_model_diagram
+
+plot_histogram
+^^^^^^^^^^^^ 
+.. autofunction:: selib.plot_histogram
+

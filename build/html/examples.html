@@ -25,8 +25,8 @@
  <a href="index.html">Home</a>&nbsp;&nbsp;
  <a href="installation.html">Installation</a>&nbsp;&nbsp;
  <a href="function_reference.html">Function Reference</a>&nbsp;&nbsp;
- <a class="active" href="examples.html">Examples</a>&nbsp;&nbsp;
- <a href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a>
+ <a href="examples.html">Examples</a>&nbsp;&nbsp;
+ <a href="http://se-lib.org/online/sysml.html">SysML Scratchpad</a>
 </div>
   
 
@@ -37,9 +37,96 @@
             
   <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
+<section id="simulations">
+<h2>Simulations<a class="headerlink" href="#simulations" title="Permalink to this heading">¶</a></h2>
+<p>Simulation models in se-lib are defined as logical nodes in a system and their connections. Function calls enable system dynamics models to be expressed as stocks, flows and auxiliary variables connected in feedback loops. Discrete event models are defined as connected path nodes for entity generation, delays, queues/servers, and termination nodes.</p>
+<p>Utilities are provided for output visualization and statistical analysis.  Hybrid models and can be developed with relationships between continuous and discrete event parameters.</p>
+<section id="system-dynamics-model">
+<h3>System Dynamics Model<a class="headerlink" href="#system-dynamics-model" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Battle Simulator using Lanchester&#39;s Law for Aimed Fire with Reinforcements</span>
+
+<span class="n">init_sd_model</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">.05</span><span class="p">)</span>
+
+<span class="n">step_size</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">add_stock</span><span class="p">(</span><span class="s2">&quot;blue_troops&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">inflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue_reinforcements&quot;</span><span class="p">],</span> <span class="n">outflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;blue_attrition&quot;</span><span class="p">])</span>
+<span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;blue_attrition&quot;</span><span class="p">,</span> <span class="s2">&quot;red_troops*red_lethality&quot;</span><span class="p">)</span>
+<span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;blue_reinforcements&quot;</span><span class="p">,</span> <span class="s2">&quot;step(200, .7)-step(200, 1.2)&quot;</span><span class="p">)</span>
+<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;blue_lethality&quot;</span><span class="p">,</span> <span class="s2">&quot;random.uniform(.7, .9)&quot;</span><span class="p">)</span>
+    
+<span class="n">add_stock</span><span class="p">(</span><span class="s2">&quot;red_troops&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="n">inflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red_reinforcements&quot;</span><span class="p">],</span> <span class="n">outflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red_attrition&quot;</span><span class="p">])</span>
+<span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;red_attrition&quot;</span><span class="p">,</span> <span class="s2">&quot;blue_troops*blue_lethality&quot;</span><span class="p">)</span>
+<span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;red_reinforcements&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;step(</span><span class="si">{</span><span class="n">step_size</span><span class="si">}</span><span class="s2">, .3)-step(</span><span class="si">{</span><span class="n">step_size</span><span class="si">}</span><span class="s2">, .7)&quot;</span><span class="p">)</span>
+<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;red_lethality&quot;</span><span class="p">,</span> <span class="s2">&quot;random.uniform(.8, 1.0)&quot;</span><span class="p">)</span>
+
+<span class="n">run_model</span><span class="p">()</span>
+
+<span class="n">save_graph</span><span class="p">([</span><span class="s1">&#39;blue_troops&#39;</span><span class="p">,</span> <span class="s1">&#39;red_troops&#39;</span><span class="p">],</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;battle_simulator_troop_levels&quot;</span><span class="p">)</span>
+<span class="n">save_graph</span><span class="p">([</span><span class="s2">&quot;red_attrition&quot;</span><span class="p">,</span> <span class="s2">&quot;red_reinforcements&quot;</span><span class="p">,</span> <span class="s1">&#39;blue_attrition&#39;</span><span class="p">,</span> <span class="s1">&#39;blue_reinforcements&#39;</span><span class="p">],</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;battle_simulator_flow_rates&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/system_dynamics_battle_simulator_output.png">
+</object>
+</div>
+</section>
+</section>
+<section id="analyses">
+<h2>Analyses<a class="headerlink" href="#analyses" title="Permalink to this heading">¶</a></h2>
+<section id="quantitative-fault-tree">
+<h3>Quantitative Fault Tree<a class="headerlink" href="#quantitative-fault-tree" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># UUV computed fault tree given probabilities for basic events</span>
+<span class="n">uuv_fault_tree</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;UUV Mission Data Loss&quot;</span><span class="p">,</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Communication Loss&quot;</span><span class="p">,</span> <span class="s2">&quot;Power Down&quot;</span><span class="p">,</span> <span class="s2">&quot;All Sensors Fail&quot;</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s1">&#39;All Sensors Fail&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Low Resolution Sensor 1 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;Low Resolution Sensor 2 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;High Resolution Sensor 3 Fails&#39;</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s1">&#39;Power Down&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Main Power Down&quot;</span><span class="p">,</span> <span class="s2">&quot;Backup Power Down&quot;</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s1">&#39;Communication Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.003</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Main Power Down&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.02</span><span class="p">),</span>    
+    <span class="p">(</span><span class="s1">&#39;Backup Power Down&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.08</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;Low Resolution Sensor 1 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.001</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Low Resolution Sensor 2 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.001</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;High Resolution Sensor 3 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.003</span><span class="p">),</span>
+    <span class="p">]</span>
+
+<span class="n">se</span><span class="o">.</span><span class="n">draw_fault_tree_diagram_quantitative</span><span class="p">(</span><span class="n">uuv_fault_tree</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;uuv_quantitative_fault_tree&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/uuv_quantitative_fault_tree.svg" width=800px>
+</object>
+</div>
+</section>
+<section id="critical-path-analysis">
+<h3>Critical Path Analysis<a class="headerlink" href="#critical-path-analysis" title="Permalink to this heading">¶</a></h3>
+<p>A critical path can be computed from a set of tasks with associated time durations and dependencies as below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># tasks, durations and dependencies</span>
+<span class="n">tasks</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}),</span>
+         <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}),</span>
+         <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
+         <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}),</span>
+         <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">})]</span>
+
+<span class="n">task_dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)]</span>
+
+<span class="c1"># create diagram</span>
+<span class="n">se</span><span class="o">.</span><span class="n">critical_path_diagram</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;critical_path&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/critical_path.png">
+</object>
+</div>
+</section>
+</section>
+<section id="diagrams">
+<h2>Diagrams<a class="headerlink" href="#diagrams" title="Permalink to this heading">¶</a></h2>
 <p>These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing se-lib, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.</p>
 <section id="use-case-model">
-<h2>Use Case Model<a class="headerlink" href="#use-case-model" title="Permalink to this heading">¶</a></h2>
+<h3>Use Case Model<a class="headerlink" href="#use-case-model" title="Permalink to this heading">¶</a></h3>
 <p>Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">selib</span> <span class="k">as</span> <span class="nn">se</span>
 
@@ -60,7 +147,7 @@
 </div>
 </section>
 <section id="sequence-model">
-<h2>Sequence Model<a class="headerlink" href="#sequence-model" title="Permalink to this heading">¶</a></h2>
+<h3>Sequence Model<a class="headerlink" href="#sequence-model" title="Permalink to this heading">¶</a></h3>
 <p>A sequence diagram can be constructed per the following.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># system model</span>
 <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Battle Simulator&quot;</span>
@@ -93,7 +180,7 @@
 </div>
 </section>
 <section id="context-model">
-<h2>Context Model<a class="headerlink" href="#context-model" title="Permalink to this heading">¶</a></h2>
+<h3>Context Model<a class="headerlink" href="#context-model" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># system model</span>
 <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Python Interpreter with PyML&quot;</span>
 <span class="n">external_actors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="s2">&quot;OS&quot;</span><span class="p">,</span> <span class="s2">&quot;Graphviz&quot;</span><span class="p">]</span>
@@ -106,8 +193,34 @@
 </object>
 </div>
 </section>
+<section id="requirements-model">
+<h3>Requirements Model<a class="headerlink" href="#requirements-model" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Intelligence, Surveillance, &amp; Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements</span>
+<span class="n">requirements</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Performance&quot;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;Performance&quot;</span><span class="p">,</span> 
+                <span class="p">(</span><span class="s2">&quot;The UUV shall be capable of completing a mission of 6 hours duration.&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;The UUV shall be capable of a top speed of 14 knots.&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;The UUV shall avoid detection.&quot;</span><span class="p">)),</span>
+                <span class="p">(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Communication&quot;</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;Communication&quot;</span><span class="p">,</span> 
+                <span class="p">(</span><span class="s2">&quot;Mission parameters shall be uploadable to the UUV&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall receive remote commands&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall commence its mission when commanded&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall be capable of transmitting data in a host ship compatible format&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall indicate that it is ready for recovery&quot;</span><span class="p">)),]</span>
+
+<span class="c1"># draw requirements diagram as horizontal tree left -&gt; right</span>
+<span class="n">se</span><span class="o">.</span><span class="n">requirements_diagram</span><span class="p">(</span><span class="n">requirements</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s1">&#39;LR&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;uuv_requirements_tree&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center">
+<object data="_images/uuv_requirements_tree.svg">
+</object>
+</div>
+</section>
 <section id="work-breakdown-structure">
-<h2>Work Breakdown Structure<a class="headerlink" href="#work-breakdown-structure" title="Permalink to this heading">¶</a></h2>
+<h3>Work Breakdown Structure<a class="headerlink" href="#work-breakdown-structure" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># project work breakdown structure</span>
 <span class="n">wbs_decompositions</span> <span class="o">=</span> <span class="p">[</span>
 <span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Hardware&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Software&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Skateboard&#39;</span><span class="p">,</span> <span class="s1">&#39;Integration and Test&#39;</span><span class="p">),</span>
@@ -124,33 +237,8 @@
 </object>
 </div>
 </section>
-<section id="critical-path-analysis">
-<h2>Critical Path Analysis<a class="headerlink" href="#critical-path-analysis" title="Permalink to this heading">¶</a></h2>
-<p>A critical path can be computed from a set of tasks with associated time durations and dependencies as below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># tasks, durations and dependencies</span>
-<span class="n">tasks</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}),</span>
-         <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}),</span>
-         <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
-         <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}),</span>
-         <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Duration&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">})]</span>
-
-<span class="n">task_dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span>
-                <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span>
-                <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">),</span>
-                <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">),</span>
-                <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)]</span>
-
-<span class="c1"># create diagram</span>
-<span class="n">se</span><span class="o">.</span><span class="n">critical_path_diagram</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;critical_path&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div style="text-align: center">
-<object data="_images/critical_path.svg">
-</object>
-</div>
-</section>
 <section id="design-structure-matrix">
-<h2>Design Structure Matrix<a class="headerlink" href="#design-structure-matrix" title="Permalink to this heading">¶</a></h2>
+<h3>Design Structure Matrix<a class="headerlink" href="#design-structure-matrix" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Make Board&#39;</span><span class="p">,</span> <span class="s1">&#39;Acquire Wheels&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">]</span>
 <span class="n">task_dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Make Board&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Acquire Wheels&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Assemble&#39;</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Assemble&#39;</span><span class="p">)]</span>
 <span class="n">se</span><span class="o">.</span><span class="n">design_structure_matrix</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">task_dependencies</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;skateboard_task_dsm_with_feedback&quot;</span><span class="p">)</span>
@@ -217,53 +305,8 @@
 </svg>
 </div>
 </section>
-<section id="requirements-diagram">
-<h2>Requirements Diagram<a class="headerlink" href="#requirements-diagram" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Intelligence, Surveillance, &amp; Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements</span>
-<span class="n">requirements</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Performance&quot;</span><span class="p">),</span>
-                <span class="p">(</span><span class="s2">&quot;Performance&quot;</span><span class="p">,</span> 
-                <span class="p">(</span><span class="s2">&quot;The UUV shall be capable of completing a mission of 6 hours duration.&quot;</span><span class="p">,</span> 
-                <span class="s2">&quot;The UUV shall be capable of a top speed of 14 knots.&quot;</span><span class="p">,</span> 
-                <span class="s2">&quot;The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.&quot;</span><span class="p">,</span> 
-                <span class="s2">&quot;The UUV shall avoid detection.&quot;</span><span class="p">)),</span>
-                <span class="p">(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Communication&quot;</span><span class="p">),</span>
-                <span class="p">(</span><span class="s2">&quot;Communication&quot;</span><span class="p">,</span> 
-                <span class="p">(</span><span class="s2">&quot;Mission parameters shall be uploadable to the UUV&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;The UUV shall receive remote commands&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;The UUV shall commence its mission when commanded&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;The UUV shall be capable of transmitting data in a host ship compatible format&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;The UUV shall indicate that it is ready for recovery&quot;</span><span class="p">)),]</span>
-
-<span class="c1"># draw requirements diagram as horizontal tree left -&gt; right</span>
-<span class="n">se</span><span class="o">.</span><span class="n">requirements_diagram</span><span class="p">(</span><span class="n">requirements</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s1">&#39;LR&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;uuv_requirements_tree&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div style="text-align: center">
-<object data="_images/uuv_requirements_tree.svg">
-</object>
-</div>
-</section>
-<section id="fault-tree">
-<h2>Fault Tree<a class="headerlink" href="#fault-tree" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lamp_circuit_fault_tree</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Missing Indication&quot;</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Resistor Fails&quot;</span><span class="p">,</span> <span class="s2">&quot;Capacitor Fails&quot;</span><span class="p">,</span> <span class="s2">&quot;Both Lamps Out&quot;</span><span class="p">]),</span>
-           <span class="p">(</span><span class="s1">&#39;Both Lamps Out&#39;</span><span class="p">,</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Lamp 1 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;Lamp 2 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;Lamp 3 Fails&#39;</span><span class="p">]),</span>
-           <span class="p">(</span><span class="s1">&#39;Resistor Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
-           <span class="p">(</span><span class="s1">&#39;Capacitor Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
-           <span class="p">(</span><span class="s1">&#39;Lamp 1 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;BASIC&#39;</span><span class="p">,</span> <span class="p">[]),</span>
-           <span class="p">(</span><span class="s1">&#39;Lamp 2 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
-           <span class="p">(</span><span class="s1">&#39;Lamp 3 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="p">[]),</span>
-                          <span class="p">]</span>
-
-<span class="n">se</span><span class="o">.</span><span class="n">fault_tree_diagram</span><span class="p">(</span><span class="n">lamp_circuit_fault_tree</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;lamp_circuit_fault_tree&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div style="text-align: center">
-<object data="_images/lamp_circuit_fault_tree.png" width=500px>
-</object>
-</div>
-</section>
 <section id="read-fault-tree-from-excel">
-<h2>Read Fault Tree from Excel<a class="headerlink" href="#read-fault-tree-from-excel" title="Permalink to this heading">¶</a></h2>
+<h3>Read Fault Tree from Excel<a class="headerlink" href="#read-fault-tree-from-excel" title="Permalink to this heading">¶</a></h3>
 <p>Portion of example Excel file <em>aav_fault_tree.xlsx</em>:</p>
 <p><img alt="aav_fault_tree_excel.png" src="_images/aav_fault_tree_excel.png" /></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># read fault tree from Excel file into list of nodes</span>
@@ -277,7 +320,7 @@
 <p><img alt="aav_fault_tree.png" src="_images/aav_fault_tree.png" /></p>
 </section>
 <section id="causal-diagram">
-<h2>Causal Diagram<a class="headerlink" href="#causal-diagram" title="Permalink to this heading">¶</a></h2>
+<h3>Causal Diagram<a class="headerlink" href="#causal-diagram" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># causal relationships</span>
 <span class="n">relationships</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Available personnel&#39;</span><span class="p">,</span><span class="s2">&quot;Workforce gap&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;Required personnel&#39;</span><span class="p">,</span><span class="s2">&quot;Workforce gap&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">),</span>
@@ -294,26 +337,6 @@
 </object>
 </div>
 </section>
-<section id="system-dynamics-model">
-<h2>System Dynamics Model<a class="headerlink" href="#system-dynamics-model" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rayleigh curve staffing model</span>
-
-<span class="n">init_model</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
-
-<span class="n">add_stock</span><span class="p">(</span><span class="s2">&quot;cumulative_effort&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;effort rate&quot;</span><span class="p">])</span>
-<span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;effort rate&quot;</span><span class="p">,</span> <span class="s2">&quot;learning_function * (estimated_total_effort - cumulative_effort)&quot;</span><span class="p">)</span>
-<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;learning_function&quot;</span><span class="p">,</span> <span class="s2">&quot;manpower_buildup_parameter * time&quot;</span><span class="p">)</span>
-<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;manpower_buildup_parameter&quot;</span><span class="p">,</span> <span class="mf">.5</span><span class="p">)</span>
-<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;estimated_total_effort&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-
-<span class="n">run_model</span><span class="p">()</span>
-<span class="n">plot_output</span><span class="p">(</span><span class="s1">&#39;cumulative_effort&#39;</span><span class="p">,</span> <span class="s1">&#39;effort rate&#39;</span><span class="p">,</span> <span class="s2">&quot;learning_function&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div style="text-align: center">
-<object data="_images/rayleigh_curve_model_output.png" width=450px>
-</object>
-</div>
 </section>
 </section>
 
@@ -324,6 +347,7 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="master_doc.html">se-lib</a></h1>
 
 
 
@@ -332,27 +356,35 @@
 
 
 
-
-<h3>Contents</h3>
+<h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function_reference.html">Function Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#use-case-model">Use Case Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sequence-model">Sequence Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#context-model">Context Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#work-breakdown-structure">Work Breakdown Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#critical-path-analysis">Critical Path Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#design-structure-matrix">Design Structure Matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requirements-diagram">Requirements Diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fault-tree">Fault Tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#read-fault-tree-from-excel">Read Fault Tree from Excel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#causal-diagram">Causal Diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#system-dynamics-model">System Dynamics Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simulations">Simulations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-dynamics-model">System Dynamics Model</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analyses">Analyses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quantitative-fault-tree">Quantitative Fault Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#critical-path-analysis">Critical Path Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#diagrams">Diagrams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-case-model">Use Case Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sequence-model">Sequence Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#context-model">Context Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requirements-model">Requirements Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#work-breakdown-structure">Work Breakdown Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#design-structure-matrix">Design Structure Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-fault-tree-from-excel">Read Fault Tree from Excel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#causal-diagram">Causal Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="http://se-lib.org/online/sysml.html">SysML Scratchpad</a></li>
 </ul>
 
 <div class="relations">
@@ -364,7 +396,7 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
@@ -387,7 +419,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2023, se-lib Development Team.
-      Last updated on May 01, 2023.
+      Last updated on May 11, 2023.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>

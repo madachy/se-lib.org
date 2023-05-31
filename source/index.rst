@@ -12,11 +12,13 @@ Introduction
    :keywords: se-lib, system engineering, system modeling, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation, continuous systems
 
 
-Welcome to the Systems Engineering Library (se-lib) for systems modeling, analysis, and documentation (previously called PyML). It covers the SysML and UML modeling languages with additional capabilities enabling advanced analysis with Python libraries and language features. PyML is built with Graphviz, Matplotlib, NetworkX, NumPy and SciPy using Python as glue code with all systems modeling. It's fun to be powerful with Python.
+Welcome to the Systems Engineering Library (se-lib) (previously called PyML). It provides capabilities for integrated systems modeling, simulation, analysis and diagrams covering SysML, discrete event and continuous system dynamics simulation, reliability analysis, causal analysis, project management, and more using simple Python code as the glue.
+
+The open source Python scientific computing ecosystem enables advanced analysis with powerful libraries and language features. se-lib is built with Graphviz, Matplotlib, NetworkX, NumPy and SciPy integrated with Python for all systems modeling.
 
 **New Online Capability and Simulation**
 
-The upcoming se-lib v.3 can run online in a browser. Try it at the `SysML Diagram Scratchpad <http://pyml.fun/online/scratchpad.html>`_ or the `Discrete Event Modeling Demonstrations <http://se-lib.org/online/discrete_event_modeling_demo.html>`_. We have also added :ref:`causal loop modeling<Causal Diagram>` (causal diagrams) and :ref:`system dynamics modeling and simulation<System Dynamics Model>` capabilities.
+The upcoming se-lib v.3 can run online in a browser. Try it at the `SysML Diagram Scratchpad <http://se-lib.org/online/scratchpad.html>`_ or the `Discrete Event Modeling Demonstrations <http://se-lib.org/online/discrete_event_modeling_demo.html>`_. We have also added :ref:`causal loop modeling<Causal Diagram>` (causal diagrams) and :ref:`system dynamics modeling and simulation<System Dynamics Model>` capabilities.
 
 Inputs and Outputs
 ==============

@@ -24,10 +24,10 @@
 <div class="navbar">
  <a href="index.html"><img alt="se-lib_logo" src="_images/pyml_activity_diagram.svg" width=100/><img alt="se-lib banner" src="_images/se-lib_banner.svg" width=140/><img alt="se-lib requirements tree" src="_images/pyml_requirements_tree.svg" width=70/></a>
  <a href="index.html">Home</a>&nbsp;&nbsp;
- <a class="active" href="installation.html">Installation</a>&nbsp;&nbsp;
+ <a href="installation.html">Installation</a>&nbsp;&nbsp;
  <a href="function_reference.html">Function Reference</a>&nbsp;&nbsp;
  <a href="examples.html">Examples</a>&nbsp;&nbsp;
- <a href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a>
+ <a href="http://se-lib.org/online/sysml.html">SysML Scratchpad</a>
 </div>
   
 
@@ -38,15 +38,82 @@
             
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
-<p>se-lib is available on <a class="reference external" href="https://pypi.org/project/se-lib/">PyPI</a> and can be installed with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">se-lib</span></code>.  Alternatively, download the library file from <a class="reference external" href="https://pypi.org/project/se-lib/">PyPI</a> and copy it to your local development folder or elsewhere on your Python path. If you use the recommended <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> Python distribution it will come with all of the required packages below except for Graphviz and Pdflatex. These are required:</p>
+<p>se-lib is available on <a class="reference external" href="https://pypi.org/project/se-lib/">PyPI</a> and can be installed with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">se-lib</span></code> from a terminal, other command shell or Anaconda command shell. The current version is 0.26.6.  For more help see <a class="reference internal" href="#detailed-anaconda-installation"><span class="std std-ref">Detailed Anaconda Installation</span></a> instructions.</p>
+<p>Alternatively, download the library file from <a class="reference external" href="https://pypi.org/project/se-lib/">PyPI</a> and copy it to your local development folder or elsewhere on your Python path. If you use the recommended <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> Python distribution it will come with all of the required packages below except for Graphviz and Pdflatex. These are required:</p>
 <ul class="simple">
 <li><p>Python version 3.8 and higher.</p></li>
 <li><p><a class="reference external" href="https://graphviz.org/">Graphviz</a> is required to generate diagrams. After installing Anaconda, use its Powershell Command Prompt and type <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">python-graphviz</span></code>. With other Python environments it can be installed with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">graphviz</span></code>. Also see graphviz download or graphviz on PyPI for additional instructions for different platforms.</p></li>
 <li><p>The <em>numpy</em> package is used for model analysis and plotting features.</p></li>
-<li><p>The <em>matplotlib</em> package is required to use the graphical functionality of PyML.</p></li>
+<li><p>The <em>matplotlib</em> package is required to use the graphical functionality of se-lib.</p></li>
 <li><p><em>Pdflatex</em> is required to compile latex files and generate pdfs. It can be installed for Python or comes with standard latex distributions.</p></li>
 </ul>
 <p>Note that diagrams can still be produced without <em>graphviz</em> installed locally by providing the generated dot markup text to online tools. Without <em>pdflatex</em>, the latex markup can be copied to other publishing tools such as <em>Overleaf</em> for refinement and/or pdf generation.</p>
+<section id="updating">
+<h2>Updating<a class="headerlink" href="#updating" title="Permalink to this heading">¶</a></h2>
+<p>To update from a previous version use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">update</span> <span class="pre">se-lib</span></code>, but to ensure the latest is actually installed use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">se-lib==0.26.6</span></code> which may be necessary.</p>
+<p>The current version can be found via the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">selib</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+
+<span class="n">se</span><span class="o">-</span><span class="n">lib</span> <span class="n">Version</span> <span class="mf">.26.6</span>
+</pre></div>
+</div>
+</section>
+<section id="on-replit-com">
+<h2>On Replit.com<a class="headerlink" href="#on-replit-com" title="Permalink to this heading">¶</a></h2>
+<p>Repls are available that are pre-installed with the latest se-lib baseline, other dependent packages and executables. These can be forked into a user account to develop new scripts.  Any of these will work for this purpose:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://replit.com/&#64;se3250/Discrete-Event-Modeling-Demonstrations-with-se-lib">Discrete Event Simulation</a></p></li>
+<li><p><a class="reference external" href="https://replit.com/&#64;se3250/system-dynamics-simulation-examples-with-se-lib">System Dynamics Simulation</a></p></li>
+</ul>
+<p>Another method is to custom install the packages and create the environment.  In a new repl, under Tools select Packages and search for “se-lib”.  Install the latest version shown as below.</p>
+<p><img alt="replit_package_install.png" src="_images/replit_package_install.png" /></p>
+<p>Depending on which functions you want to use, you may also need to install graphviz, pysd, pandas, netCDF4 and simpy similarly.</p>
+<section id="diagrams">
+<h3>Diagrams<a class="headerlink" href="#diagrams" title="Permalink to this heading">¶</a></h3>
+<p>In a custom installation, creation of diagrams will also require adding the 2 lines <code class="docutils literal notranslate"><span class="pre">pkgs.graphviz</span></code> and <code class="docutils literal notranslate"><span class="pre">pkgs.xdg-utils</span></code> to the hidden file “replit.nix” per below.  It can be accessed by selecting “Show Hidden Files” in the Files menu.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="n">pkgs</span> <span class="p">}:</span> <span class="p">{</span>
+  <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">pkgs</span><span class="o">.</span><span class="n">python310Full</span>
+    <span class="n">pkgs</span><span class="o">.</span><span class="n">replitPackages</span><span class="o">.</span><span class="n">prybar</span><span class="o">-</span><span class="n">python310</span>
+    <span class="n">pkgs</span><span class="o">.</span><span class="n">replitPackages</span><span class="o">.</span><span class="n">stderred</span>
+<span class="hll">    <span class="n">pkgs</span><span class="o">.</span><span class="n">graphviz</span>
+</span><span class="hll">    <span class="n">pkgs</span><span class="o">.</span><span class="n">xdg</span><span class="o">-</span><span class="n">utils</span>
+</span>  <span class="p">];</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Updating<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>Updating on replit.com also uses the package installer to remove the current and re-install to the latest. To determine the current version use the same method <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> method as above, or look in the Packager file <em>pyproject.toml</em> for the highlighted line for se-lib.  This will be the correct version vs. what the package remover may show on the next step.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">poetry</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;python-template&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Your Name &lt;you@example.com&gt;&quot;</span><span class="p">]</span>
+
+<span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">poetry</span><span class="o">.</span><span class="n">dependencies</span><span class="p">]</span>
+<span class="n">python</span> <span class="o">=</span> <span class="s2">&quot;&gt;=3.10.0,&lt;3.11&quot;</span>
+<span class="n">numpy</span> <span class="o">=</span> <span class="s2">&quot;^1.22.2&quot;</span>
+<span class="n">replit</span> <span class="o">=</span> <span class="s2">&quot;^3.2.4&quot;</span>
+<span class="n">Flask</span> <span class="o">=</span> <span class="s2">&quot;^2.2.0&quot;</span>
+<span class="n">urllib3</span> <span class="o">=</span> <span class="s2">&quot;^1.26.12&quot;</span>
+<span class="n">graphviz</span> <span class="o">=</span> <span class="s2">&quot;^0.20.1&quot;</span>
+<span class="n">simpy</span> <span class="o">=</span> <span class="s2">&quot;^4.0.1&quot;</span>
+<span class="hll"><span class="n">se</span><span class="o">-</span><span class="n">lib</span> <span class="o">=</span> <span class="s2">&quot;0.26.4&quot;</span>
+</span><span class="n">matplotlib</span> <span class="o">=</span> <span class="s2">&quot;^3.7.1&quot;</span>
+</pre></div>
+</div>
+<p>To update the library for an existing repl first remove it as below after searching for “se-lib” in the package installer.  It will appear as below and may inaccurately show the current version.  The pyproject.toml is correct.  Choose to remove and it will take a few minutes.</p>
+<p><img alt="replit_package_remove.png" src="_images/replit_package_remove.png" /></p>
+<p>Then install the latest version using the same method for initial installation above.</p>
+</section>
+</section>
+<section id="detailed-anaconda-installation">
+<h2>Detailed Anaconda Installation<a class="headerlink" href="#detailed-anaconda-installation" title="Permalink to this heading">¶</a></h2>
+<p>Install Powershell/Prompt shown below on the Anaconda screen.</p>
+<p><img alt="anaconda_screen" src="_images/anaconda_screen.png" /></p>
+</section>
 </section>
 
 
@@ -56,6 +123,7 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="master_doc.html">se-lib</a></h1>
 
 
 
@@ -64,14 +132,22 @@
 
 
 
-
-<h3>Contents</h3>
+<h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#updating">Updating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-replit-com">On Replit.com</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#diagrams">Diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Updating</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-anaconda-installation">Detailed Anaconda Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="function_reference.html">Function Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference external" href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://se-lib.org/online/sysml.html">SysML Scratchpad</a></li>
 </ul>
 
 <div class="relations">
@@ -84,7 +160,7 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
@@ -107,7 +183,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2023, se-lib Development Team.
-      Last updated on Apr 27, 2023.
+      Last updated on May 11, 2023.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>

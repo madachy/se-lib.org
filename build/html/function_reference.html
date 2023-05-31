@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<meta content="Python Modeling Library (PyML) Function Reference" name="title" />
-<meta content="Python Modeling Library (PyML) Function Reference" name="description" />
-<meta content="python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation" name="keywords" />
+<meta content="Systems Engineering Library (se-lib) Function Reference" name="title" />
+<meta content="Systems Engineering Library (se-lib) Function Reference" name="description" />
+<meta content="Systems Engineering Library, se-lib, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation" name="keywords" />
 
     <title>Function Reference &#8212; se-lib</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -28,7 +28,7 @@
  <a href="installation.html">Installation</a>&nbsp;&nbsp;
  <a class="active" href="function_reference.html">Function Reference</a>&nbsp;&nbsp;
  <a href="examples.html">Examples</a>&nbsp;&nbsp;
- <a href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a>
+ <a href="http://se-lib.org/online/sysml.html">SysML Scratchpad</a>
 </div>
   
 
@@ -39,8 +39,8 @@
             
   <section id="function-reference">
 <h1>Function Reference<a class="headerlink" href="#function-reference" title="Permalink to this heading">¶</a></h1>
-<p>To use PyML, first import it before using any functions:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyml</span>
+<p>To use se-lib, first import it before using any functions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">selib</span>
 </pre></div>
 </div>
 <p>These function definitions follow the convention whereby required input parameters are shown first, then optional parameters are shown with an equal sign indicating the default values. A graph here is a generic set of nodes representing system elements connected by edges shown as non-directed or directed lines.</p>
@@ -379,11 +379,15 @@ to identify the adjoining faults. All basic events will have a blank list
 <h4>run_model<a class="headerlink" href="#run-model" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.run_model">
-<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">run_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#selib.run_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Executes the model</p>
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">run_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.run_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the current model</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Pandas dataframe containing run outputs for each variable each timestep</p>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>If continuous, returns 1) Pandas dataframe containing run outputs for each variable each timestep and 2) model dictionary.</em></p></li>
+<li><p><em>If discrete, returns 1) network dictionary with run statistics and 2) entity run data</em></p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -420,13 +424,163 @@ to identify the adjoining faults. All basic events will have a blank list
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.draw_model_diagram">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">draw_model_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.draw_model_diagram" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw a model diagram.</p>
+<dd><p>Draw a diagram of the current model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – Save the graph source code to file, and open the rendered result in its default viewing application. se-lib calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="discrete-event">
+<h3>Discrete Event<a class="headerlink" href="#discrete-event" title="Permalink to this heading">¶</a></h3>
+<section id="init-de-model">
+<h4>init_de_model<a class="headerlink" href="#init-de-model" title="Permalink to this heading">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="selib.init_de_model">
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">init_de_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#selib.init_de_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates a discrete event model for simulation</p>
+</dd></dl>
+
+</section>
+<section id="add-source">
+<h4>add_source<a class="headerlink" href="#add-source" title="Permalink to this heading">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="selib.add_source">
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interarrival_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a source node to a discrete event model to generate entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – A name for the source.</p></li>
+<li><p><strong>entity_name</strong> (<em>string</em>) – A name for the type of entity being generated.</p></li>
+<li><p><strong>num_entities</strong> (<em>integer</em>) – Number of entities to generated.</p></li>
+<li><p><strong>connections</strong> (<em>dictionary</em>) – A dictionary of the node connections after the source.  The node names are the keys and the values are the relative probabilities of traversing the connections.</p></li>
+<li><p><strong>interarrival_time</strong> (<em>string</em>) – The time between entity arrrivals into the system.  The string may enclose a constant, random function or logical expression to be evaluated.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="add-server">
+<h4>add_server<a class="headerlink" href="#add-server" title="Permalink to this heading">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="selib.add_server">
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a server to a discrete event model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – A name for the server.</p></li>
+<li><p><strong>connections</strong> (<em>dictionary</em>) – A dictionary of the node connections after the server.  The node names are the keys and the values are the relative probabilities of traversing the connection.</p></li>
+<li><p><strong>capacity</strong> (<em>integer</em>) – The number of resource usage slots in the server</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="add-delay">
+<h4>add_delay<a class="headerlink" href="#add-delay" title="Permalink to this heading">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="selib.add_delay">
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a delay to a discrete event model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – A name for the delay.</p></li>
+<li><p><strong>connections</strong> (<em>dictionary</em>) – A dictionary of the node connections after the delay.  The node names are the keys and the values are the relative probabilities of traversing the connections.</p></li>
+<li><p><strong>delay_time</strong> (<em>float</em>) – The time delay for entities to traverse.  May be a constant or random function.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="add-terminate">
+<h4>add_terminate<a class="headerlink" href="#add-terminate" title="Permalink to this heading">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="selib.add_terminate">
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_terminate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a terminate node to a discrete event model for entities leaving the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>string</em>) – A name for the terminate.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h4>run_model<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">run_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the current model</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>g</strong> – Save the diagram to a file, and open the rendered result in its default viewing application. se-lib calls the Graphviz API for this.</p>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>If continuous, returns 1) Pandas dataframe containing run outputs for each variable each timestep and 2) model dictionary.</em></p></li>
+<li><p><em>If discrete, returns 1) network dictionary with run statistics and 2) entity run data</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h4>draw_model_diagram<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">draw_model_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a diagram of the current model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A filename for the output not including a filename extension. The extension will specified by the format parameter.</p></li>
+<li><p><strong>format</strong> (<em>string</em><em>, </em><em>optional</em>) – The file format of the graphic output. Note that bitmap formats (png, bmp, or jpeg) will not be as sharp as the default svg vector format and most particularly when magnified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>g</strong> – Save the graph source code to file, and open the rendered result in its default viewing application. se-lib calls the Graphviz API for this.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>graph object view</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="plot-histogram">
+<h4>plot_histogram<a class="headerlink" href="#plot-histogram" title="Permalink to this heading">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="selib.plot_histogram">
+<span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">plot_histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Data'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.plot_histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a histogram for a dataset and optionally save to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>list</em>) – A list of the data values</p></li>
+<li><p><strong>filename</strong> (<em>string</em><em>, </em><em>optional</em>) – A name for the file</p></li>
+<li><p><strong>xlabel</strong> (<em>string</em><em> , </em><em>optional</em>) – A label for the x-axis</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>diagram object view</p>
+<dd class="field-even"><p>A Matplotlib histogram</p>
 </dd>
 </dl>
 </dd></dl>
@@ -485,12 +639,23 @@ to identify the adjoining faults. All basic events will have a blank list
 <li class="toctree-l4"><a class="reference internal" href="#draw-model-diagram">draw_model_diagram</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#discrete-event">Discrete Event</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#init-de-model">init_de_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-source">add_source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-server">add_server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-delay">add_delay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-terminate">add_terminate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">run_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">draw_model_diagram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plot-histogram">plot_histogram</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference external" href="http://pyml.fun/online/sysml.html">SysML Scratchpad</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://se-lib.org/online/sysml.html">SysML Scratchpad</a></li>
 </ul>
 
 <div class="relations">
@@ -526,7 +691,7 @@ to identify the adjoining faults. All basic events will have a blank list
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2023, se-lib Development Team.
-      Last updated on May 01, 2023.
+      Last updated on May 08, 2023.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>

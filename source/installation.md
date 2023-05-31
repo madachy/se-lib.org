@@ -7,12 +7,98 @@ myst:
 
 # Installation
 
-se-lib is available on [PyPI](https://pypi.org/project/se-lib/) and can be installed with ``pip install se-lib``.  Alternatively, download the library file from [PyPI](https://pypi.org/project/se-lib/) and copy it to your local development folder or elsewhere on your Python path. If you use the recommended [Anaconda](https://www.anaconda.com/products/individual) Python distribution it will come with all of the required packages below except for Graphviz and Pdflatex. These are required:
+se-lib is available on [PyPI](https://pypi.org/project/se-lib/) and can be installed with ``pip install se-lib`` from a terminal, other command shell or Anaconda command shell. The current version is 0.26.6.  For more help see [Detailed Anaconda Installation](<Detailed Anaconda Installation>) instructions.
+
+
+Alternatively, download the library file from [PyPI](https://pypi.org/project/se-lib/) and copy it to your local development folder or elsewhere on your Python path. If you use the recommended [Anaconda](https://www.anaconda.com/products/individual) Python distribution it will come with all of the required packages below except for Graphviz and Pdflatex. These are required:
 
 * Python version 3.8 and higher.
 * [Graphviz](https://graphviz.org/) is required to generate diagrams. After installing Anaconda, use its Powershell Command Prompt and type ``conda install -c conda-forge python-graphviz``. With other Python environments it can be installed with ``pip install graphviz``. Also see graphviz download or graphviz on PyPI for additional instructions for different platforms.
 * The *numpy* package is used for model analysis and plotting features.
-* The *matplotlib* package is required to use the graphical functionality of PyML.
+* The *matplotlib* package is required to use the graphical functionality of se-lib.
 * *Pdflatex* is required to compile latex files and generate pdfs. It can be installed for Python or comes with standard latex distributions.
 
 Note that diagrams can still be produced without *graphviz* installed locally by providing the generated dot markup text to online tools. Without *pdflatex*, the latex markup can be copied to other publishing tools such as *Overleaf* for refinement and/or pdf generation.
+
+## Updating
+To update from a previous version use ``pip update se-lib``, but to ensure the latest is actually installed use ``pip install se-lib==0.26.6`` which may be necessary.
+
+The current version can be found via the ``__doc__`` method:
+
+```{code-block}
+from selib import *
+print(selib.__doc__)
+
+se-lib Version .26.6
+
+```
+
+
+## On Replit.com 
+
+Repls are available that are pre-installed with the latest se-lib baseline, other dependent packages and executables. These can be forked into a user account to develop new scripts.  Any of these will work for this purpose:
+
+* [Discrete Event Simulation](https://replit.com/@se3250/Discrete-Event-Modeling-Demonstrations-with-se-lib)
+* [System Dynamics Simulation](https://replit.com/@se3250/system-dynamics-simulation-examples-with-se-lib)
+
+Another method is to custom install the packages and create the environment.  In a new repl, under Tools select Packages and search for "se-lib".  Install the latest version shown as below.  
+
+
+![replit_package_install.png](_images/replit_package_install.png)
+
+
+Depending on which functions you want to use, you may also need to install graphviz, pysd, pandas, netCDF4 and simpy similarly.  
+
+### Diagrams
+
+In a custom installation, creation of diagrams will also require adding the 2 lines `pkgs.graphviz` and `pkgs.xdg-utils` to the hidden file "replit.nix" per below.  It can be accessed by selecting "Show Hidden Files" in the Files menu.
+
+```{code-block}
+:emphasize-lines: 6, 7
+{ pkgs }: {
+  deps = [
+    pkgs.python310Full
+    pkgs.replitPackages.prybar-python310
+    pkgs.replitPackages.stderred
+    pkgs.graphviz
+    pkgs.xdg-utils
+  ];
+```
+
+### Updating
+
+Updating on replit.com also uses the package installer to remove the current and re-install to the latest. To determine the current version use the same method ``__doc__`` method as above, or look in the Packager file *pyproject.toml* for the highlighted line for se-lib.  This will be the correct version vs. what the package remover may show on the next step.
+
+```{code-block}
+:emphasize-lines: 15
+[tool.poetry]
+name = "python-template"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.11"
+numpy = "^1.22.2"
+replit = "^3.2.4"
+Flask = "^2.2.0"
+urllib3 = "^1.26.12"
+graphviz = "^0.20.1"
+simpy = "^4.0.1"
+se-lib = "0.26.4"
+matplotlib = "^3.7.1"
+```
+
+To update the library for an existing repl first remove it as below after searching for "se-lib" in the package installer.  It will appear as below and may inaccurately show the current version.  The pyproject.toml is correct.  Choose to remove and it will take a few minutes.
+
+![replit_package_remove.png](_images/replit_package_remove.png)
+
+Then install the latest version using the same method for initial installation above.
+
+## Detailed Anaconda Installation
+
+Install Powershell/Prompt shown below on the Anaconda screen.
+
+![anaconda_screen](_images/anaconda_screen.png)
+
+

@@ -12,7 +12,7 @@
    installation
    function_reference
    examples
-   SysML Scratchpad <http://pyml.fun/online/sysml.html>
+   SysML Scratchpad <http://se-lib.org/online/sysml.html>
 
 .. only:: latex
 

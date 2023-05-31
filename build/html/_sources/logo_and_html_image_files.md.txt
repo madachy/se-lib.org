@@ -28,10 +28,30 @@
 
 ![image](images/uuv_requirements_tree.svg)
 
+![image](images/critical_path.svg)
+
+![image](images/critical_path.png)
+
 ![image](images/aav_fault_tree.png)
 
+![image](images/uuv_quantitative_fault_tree.svg)
+
+![image](images/AND_node.svg)
+
+![image](images/OR_node.svg)
+
+![image](images/OR_node_bottom.svg)
+
 ![image](images/aav_fault_tree_excel.png)
+
+![image](images/system_dynamics_battle_simulator_output.png)
 
 ![image](images/Ray_Madachy.png)
 
 ![image](images/LongshoreRyan_Pic900px.jpg)
+
+![image](images/replit_package_remove.png)
+
+![replit_package_install.png](images/replit_package_install.png)
+
+![anaconda_screen](images/anaconda_screen.png)
