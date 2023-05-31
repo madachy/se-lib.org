@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Python Modeling Library (PyML) Installation"
-    "keywords": "python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation"
+    "description": "Systems Engineering Library (se-lib) Installation"
+    "keywords": "Systems Engineering Library (se-lib), python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation"
 ---
 
 # Installation
