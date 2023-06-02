@@ -97,8 +97,76 @@ Then install the latest version using the same method for initial installation a
 
 ## Detailed Anaconda Installation
 
-Install Powershell/Prompt shown below on the Anaconda screen.
+[Anaconda](https://www.anaconda.com) is a widely used development environment for the Python and R programming languages. [Anaconda](https://www.anaconda.com) is available for Windows, Mac, and Linux. To get started:
 
-![anaconda_screen](_images/anaconda_screen.png)
+* Download [Anaconda](https://www.anaconda.com)  for your operating system
+* Install Anaconda according to your specific OS directions
+* Open Anaconda
+
+### _(Optional) Create a Custom Environment_
+> The next few steps are optional. The use of a custom environment is not required. However, you may find it useful to not be working in your base (root) environment. If you are going to be regularly downloading new packages and creating back-ups you can revert to, a custom environment is highly recommended.
+
+* Select environments
+* Click create
+
+![anaconda](_images/anacondaenv.png)
+
+* Environment Settings
+  - Name your environment
+  - Select Python
+  - Click create
+
+![settings](_images/envcreate.png)
+
+> Depending on your computer, this may take anywhere from 10 seconds to a couple minutes.
+
+### _(End Optional Section)_
+
+### Install selib 
+
+On the homescreen for your environment, install the Jupyter Notebook and Powershell Prompt apps. Other apps may be installed, but are not required for this tutorial.
+
+![navigator](_images/navigator.png)
+
+To install se-lib:
+* Launch Powershell Prompt
+* Run the following command: `pip install se-lib`
+
+To verify successfull installation:
+* Open a Jupyter Notebook
+* import selib and create a context diagram
+
+```{code-block]
+import selib as se
+
+# system model
+system_name = "Python Integrator with selib"
+external_actors = ["User", "OS", "Graphviz"]
+# create context diagramse.context_diagram(ssytem_name, external_actors, filename="selib_contest_diagram_offline")
+```
+
+If everything worked correctly, you should see something like the figure below:
+
+![context_diagram](_images/context_diagram.png)
+
+> You can ignore the warnings. You may or may not get them when running the program.
+
+Another good test to run is a systems dynamics model. Note that we use `from selib import *` in this example. if we did not do this, we would have to put `se.` in front of each function below.
+```{code-block}
+from selib import *
+
+init_sd_model(start=0, stop=10, dt=.1)
+add_stock("level", 50, inflows=["rate"])
+add_auxiliary("time_constant", .5)
+add_auxiliary("goal", 100)
+add_flow("rate", "(goal - level) / time_constant")
+run_model()
+
+plot_graph('level')
+```
+
+If everything worked correctly, you should see something similar to the figure below.
+
+![system dynamics example](_images/sdexample.png)
 
 
