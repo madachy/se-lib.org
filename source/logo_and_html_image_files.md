@@ -52,6 +52,16 @@
 
 ![image](images/replit_package_remove.png)
 
+![image](images/anacondaenv.png)
+
+![image](images/envcreate.png)
+
+![image](images/navigator.png)
+
+![image](images/context_diagram.png)
+
+![image](images/sdexample.png)
+
 ![replit_package_install.png](images/replit_package_install.png)
 
 ![anaconda_screen](images/anaconda_screen.png)
