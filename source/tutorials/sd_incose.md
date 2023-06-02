@@ -63,13 +63,12 @@ for integrated system modeling.
 	* Students will be given options for exercises based on their interests and the
 opportunity to focus on their own system models.
 
-**Lunch**
-
 1. Advanced usage with Python scientific computing ecosystem and open source
 communities
 	* Introduce libraries that are building blocks of se-lib, how they interface with and
 depend on each other, how to navigate and leverage their capabilities for system
 modeling applications.
+		* Matplotlib
  
 1. Digital engineering and rapid change: automated model configuration management, re-execution, impact analysis and version control for round-trip digital engineering.
 	* Demonstrate how all model artifacts in text files are managed with standard automated tools (e.g. GitHub for small to large teams).
