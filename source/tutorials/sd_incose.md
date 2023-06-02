@@ -72,6 +72,7 @@ modeling applications.
  
 1. Digital engineering and rapid change: automated model configuration management, re-execution, impact analysis and version control for round-trip digital engineering.
 	* Demonstrate how all model artifacts in text files are managed with standard automated tools (e.g. GitHub for small to large teams).
+		* Collaborative Modeling of Target Shooter System
  
 1. Future capabilities and evolution plans
 	* Audience will provide input on desired features and changes
