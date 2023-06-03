@@ -45,7 +45,7 @@ model types, systems engineering analysis and simulation.
 1. Hands-on introduction (30 minutes)
 	* se-lib online
 	* library installation
-	* Google Colaboratory
+	* [Google Colaboratory](<https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing> "se-lib examples")
 	* Anaconda
  
 1. Model library demonstrations and exercises
