@@ -63,6 +63,8 @@ for integrated system modeling.
 	* Students will be given options for exercises based on their interests and the
 opportunity to focus on their own system models.
 
+1\. Lunch
+
 1. Advanced usage with Python scientific computing ecosystem and open source
 communities
 	* Introduce libraries that are building blocks of se-lib, how they interface with and
