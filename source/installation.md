@@ -103,7 +103,7 @@ Then install the latest version using the same method for initial installation a
 * Install Anaconda according to your specific OS directions
 * Open Anaconda
 
-### _(Optional) Create a Custom Environment_
+**Create a Custom Environment**
 > The next few steps are optional. The use of a custom environment is not required. However, you may find it useful to not be working in your base (root) environment. If you are going to be regularly downloading new packages and creating back-ups you can revert to, a custom environment is highly recommended.
 
 * Select environments
@@ -119,8 +119,6 @@ Then install the latest version using the same method for initial installation a
 ![settings](_images/envcreate.png)
 
 > Depending on your computer, this may take anywhere from 10 seconds to a couple minutes.
-
-### _(End Optional Section)_
 
 ### Install selib 
 
