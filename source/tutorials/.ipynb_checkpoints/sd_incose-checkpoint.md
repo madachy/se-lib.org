@@ -62,8 +62,7 @@ model types, systems engineering analysis and simulation.
 for integrated system modeling.
 	* Students will be given options for exercises based on their interests and the
 opportunity to focus on their own system models.
-	* If students do not have a particular problem, they would like to focus on, a sample [course portal problem](<http://se-lib.org/tutorials/course_portal.html> "Course Portal Problem") is available.
-    
+
     **Lunch**
 
 1. Advanced usage with Python scientific computing ecosystem and open source
