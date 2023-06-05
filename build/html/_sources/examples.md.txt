@@ -7,6 +7,8 @@ myst:
 
 ## Examples
 
+[![open_in_colab.svg](_images/open_in_colab.svg)](https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing) Open these examples in a Google Colaboratory Notebook.
+
 ### Simulations
 
 Simulation models in se-lib are defined as logical nodes in a system and their connections. Function calls enable system dynamics models to be expressed as stocks, flows and auxiliary variables connected in feedback loops. Discrete event models are defined as connected path nodes for entity generation, delays, queues/servers, and termination nodes.  

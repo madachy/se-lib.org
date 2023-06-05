@@ -5,8 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<meta content="Python Modeling Library (PyML) Installation" name="description" />
-<meta content="python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation" name="keywords" />
+<meta content="Systems Engineering Library (se-lib) Installation" name="description" />
+<meta content="Systems Engineering Library (se-lib), python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation" name="keywords" />
 
     <title>Installation &#8212; se-lib</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -24,7 +24,7 @@
 <div class="navbar">
  <a href="index.html"><img alt="se-lib_logo" src="_images/pyml_activity_diagram.svg" width=100/><img alt="se-lib banner" src="_images/se-lib_banner.svg" width=140/><img alt="se-lib requirements tree" src="_images/pyml_requirements_tree.svg" width=70/></a>
  <a href="index.html">Home</a>&nbsp;&nbsp;
- <a href="installation.html">Installation</a>&nbsp;&nbsp;
+ <a class="active" href="installation.html">Installation</a>&nbsp;&nbsp;
  <a href="function_reference.html">Function Reference</a>&nbsp;&nbsp;
  <a href="examples.html">Examples</a>&nbsp;&nbsp;
  <a href="http://se-lib.org/online/sysml.html">SysML Scratchpad</a>
@@ -111,8 +111,82 @@
 </section>
 <section id="detailed-anaconda-installation">
 <h2>Detailed Anaconda Installation<a class="headerlink" href="#detailed-anaconda-installation" title="Permalink to this heading">¶</a></h2>
-<p>Install Powershell/Prompt shown below on the Anaconda screen.</p>
-<p><img alt="anaconda_screen" src="_images/anaconda_screen.png" /></p>
+<p><a class="reference external" href="https://www.anaconda.com">Anaconda</a> is a widely used development environment for the Python and R programming languages. <a class="reference external" href="https://www.anaconda.com">Anaconda</a> is available for Windows, Mac, and Linux. To get started:</p>
+<ul class="simple">
+<li><p>Download <a class="reference external" href="https://www.anaconda.com">Anaconda</a>  for your operating system</p></li>
+<li><p>Install Anaconda according to your specific OS directions</p></li>
+<li><p>Open Anaconda</p></li>
+</ul>
+<section id="optional-create-a-custom-environment">
+<h3><em>(Optional) Create a Custom Environment</em><a class="headerlink" href="#optional-create-a-custom-environment" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p>The next few steps are optional. The use of a custom environment is not required. However, you may find it useful to not be working in your base (root) environment. If you are going to be regularly downloading new packages and creating back-ups you can revert to, a custom environment is highly recommended.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Select environments</p></li>
+<li><p>Click create</p></li>
+</ul>
+<p><img alt="anaconda" src="_images/anacondaenv.png" /></p>
+<ul class="simple">
+<li><p>Environment Settings</p>
+<ul>
+<li><p>Name your environment</p></li>
+<li><p>Select Python</p></li>
+<li><p>Click create</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="settings" src="_images/envcreate.png" /></p>
+<blockquote>
+<div><p>Depending on your computer, this may take anywhere from 10 seconds to a couple minutes.</p>
+</div></blockquote>
+</section>
+<section id="end-optional-section">
+<h3><em>(End Optional Section)</em><a class="headerlink" href="#end-optional-section" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="install-selib">
+<h3>Install selib<a class="headerlink" href="#install-selib" title="Permalink to this heading">¶</a></h3>
+<p>On the homescreen for your environment, install the Jupyter Notebook and Powershell Prompt apps. Other apps may be installed, but are not required for this tutorial.</p>
+<p><img alt="navigator" src="_images/navigator.png" /></p>
+<p>To install se-lib:</p>
+<ul class="simple">
+<li><p>Launch Powershell Prompt</p></li>
+<li><p>Run the following command: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">se-lib</span></code></p></li>
+</ul>
+<p>To verify successfull installation:</p>
+<ul class="simple">
+<li><p>Open a Jupyter Notebook</p></li>
+<li><p>import selib and create a context diagram</p></li>
+</ul>
+<div class="highlight-{code-block] notranslate"><div class="highlight"><pre><span></span>import selib as se
+
+# system model
+system_name = &quot;Python Integrator with selib&quot;
+external_actors = [&quot;User&quot;, &quot;OS&quot;, &quot;Graphviz&quot;]
+# create context diagramse.context_diagram(ssytem_name, external_actors, filename=&quot;selib_contest_diagram_offline&quot;)
+</pre></div>
+</div>
+<p>If everything worked correctly, you should see something like the figure below:</p>
+<p><img alt="context_diagram" src="_images/context_diagram.png" /></p>
+<blockquote>
+<div><p>You can ignore the warnings. You may or may not get them when running the program.</p>
+</div></blockquote>
+<p>Another good test to run is a systems dynamics model. Note that we use <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">selib</span> <span class="pre">import</span> <span class="pre">*</span></code> in this example. if we did not do this, we would have to put <code class="docutils literal notranslate"><span class="pre">se.</span></code> in front of each function below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">init_sd_model</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
+<span class="n">add_stock</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">inflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;rate&quot;</span><span class="p">])</span>
+<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;time_constant&quot;</span><span class="p">,</span> <span class="mf">.5</span><span class="p">)</span>
+<span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;goal&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;rate&quot;</span><span class="p">,</span> <span class="s2">&quot;(goal - level) / time_constant&quot;</span><span class="p">)</span>
+<span class="n">run_model</span><span class="p">()</span>
+
+<span class="n">plot_graph</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If everything worked correctly, you should see something similar to the figure below.</p>
+<p><img alt="system dynamics example" src="_images/sdexample.png" /></p>
+</section>
 </section>
 </section>
 
@@ -123,7 +197,6 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="master_doc.html">se-lib</a></h1>
 
 
 
@@ -132,7 +205,8 @@
 
 
 
-<h3>Navigation</h3>
+
+<h3>Contents</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
@@ -142,7 +216,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#id1">Updating</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#detailed-anaconda-installation">Detailed Anaconda Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-anaconda-installation">Detailed Anaconda Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#optional-create-a-custom-environment"><em>(Optional) Create a Custom Environment</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#end-optional-section"><em>(End Optional Section)</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-selib">Install selib</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="function_reference.html">Function Reference</a></li>
@@ -160,7 +239,7 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3 id="searchlabel">Search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
@@ -183,7 +262,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2023, se-lib Development Team.
-      Last updated on May 11, 2023.
+      Last updated on Jun 05, 2023.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>

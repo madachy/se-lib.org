@@ -64,4 +64,5 @@
 
 ![replit_package_install.png](images/replit_package_install.png)
 
-![anaconda_screen](images/anaconda_screen.png)
+![open_on_colab](images/open_in_colab.svg)
+
