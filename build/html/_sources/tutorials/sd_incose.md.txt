@@ -52,7 +52,9 @@ model types, systems engineering analysis and simulation.
 	* Replit
 	* Anaconda
 
+
     **1000 - 1010: Break**
+
 
 1. 1010 - 1120: Model library demonstrations and exercises
 	* (Longshore) [SysML modeling and diagrams](<http://se-lib.org/online/sysml.html> "SysML modeling and diagrams")
@@ -64,13 +66,16 @@ model types, systems engineering analysis and simulation.
 	* (Madachy) Automatic document re-generation with reconciled changes across model sets
 	* (Madachy/Longshore) Model data import/export and sharing with other tools.
 
+
 1. 1120 - 1200 (Madachy/Longshore): Further examples, guided exercises, and extended case studies on above areas
 for integrated system modeling.
 	* Students will be given options for exercises based on their interests and the
 opportunity to focus on their own system models.
 	* If students do not have a particular problem, they would like to focus on, a sample [course portal problem](<http://se-lib.org/tutorials/course_portal.html> "Course Portal Problem") is available.
 
+
     **1200 - 1300: Lunch**
+
 
 1. 1300 - 1330: Advanced usage with Python scientific computing ecosystem and open source
 communities
@@ -80,6 +85,7 @@ modeling applications.
 		* (Madachy) Matplotlib
 		* (Longshore) Pandas
 		* (Longshore) SciPy
+
 
 1. 1330 - 1400 (Madachy / Longshore): Digital engineering and rapid change: automated model configuration management, re-execution, impact analysis and version control for round-trip digital engineering.
 	* Demonstrate how all model artifacts in text files are managed with standard automated tools (e.g. GitHub for small to large teams).
