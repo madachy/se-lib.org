@@ -66,3 +66,4 @@
 
 ![open_on_colab](images/open_in_colab.svg)
 
+![Boehm Center for Systems and Software Engineering](CSSE-logo-300x210.png)

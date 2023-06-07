@@ -55,8 +55,13 @@ The following was presented at the2022 INCOSE San Diego Mini-Conference.
 Acknowledgments
 ==================
 
+.. |csse_logo| image:: ./images/CSSE-logo-300x210.png
+  :width: 30
+  :target: https://boehmcsse.org
+
 se-lib research and development is supported by these sponsors:
 
+* |csse_logo| `Boehm Center for Systems and Software Engineering <https://boehmcsse.org/>`_
 * Naval Postgraduate School Foundation
 * Marine Corps Air Station (MCAS) Miramar
 
@@ -64,4 +69,4 @@ se-lib research and development is supported by these sponsors:
 Feedback
 ==================
 
-We value your feedback.  Tell us how we can make se-lib, its documentation and this website more useful. Please send comments, suggestions and interest in supporting the development to `info@pyml.fun <mailto:info@pyml.fun>`_.
+We value your feedback.  Tell us how we can make se-lib, its documentation and this website more useful. Please send comments, suggestions and interest in supporting the development to `info@se-lib.org <mailto:info@se-lib.org>`_.

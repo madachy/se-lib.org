@@ -13,6 +13,7 @@
    function_reference
    examples
    SysML Scratchpad <http://se-lib.org/online/sysml.html>
+   Tutorials <tutorials/sd_incose>
 
 .. only:: latex
 
