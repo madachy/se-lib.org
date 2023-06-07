@@ -127,3 +127,43 @@ Engineer Should Know about Python.
 Ryan Longshore is an 18 year veteran of both the defense and electric utility industries. In his current role at Naval Information Warfare Center Atlantic (NIWC LANT), Ryan leads a diverse team of engineers and scientists developing and integrating new technologies into command and operations centers. Ryan is heavily involved in the Navy's digital engineering transformation and leads multiple efforts in the model based systems engineering and model based engineering realms.
 
 Ryan earned a BS in Electrical Engineering from Clemson University, a MS in Systems Engineering from Southern Methodist University, and is currently pursuing his PhD in Systems Engineering from the Naval Postrgraduate School. He is a South Carolina registered Professional Engineer (PE), an INCOSE Certified Systems Engineering Professional (CSEP), and has achieved the OMG SysML Model Builder Fundamental Certification.
+
+## Participants
+
+Greg Bulla
+
+Vanessa Cannon
+
+Frank Camp
+
+Alexandro Castaneda
+
+Brian Flick
+
+Cheryl Gray
+
+Juan Hernandez Guizar
+
+Arianna Lasche
+
+Ariel Lu
+
+Marilyn Luteman
+
+Curran Meek
+
+Gregg Morissette
+
+Ted Mulder
+
+Kenneth Sakaguchi
+
+James Sanford-Luevano
+
+Dr. Julia Taylor
+
+John Thomas
+
+Ted Valencia
+
+Earl Zedd
