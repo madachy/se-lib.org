@@ -1,5 +1,5 @@
 build_dir = './build/html/'
-for file_name in ['index.html', 'function_reference.html', 'examples.html', 'installation.html', 'search.html']:
+for file_name in ['index.html', 'function_reference.html', 'examples.html', 'installation.html', 'search.html', 'tutorials/sd_incose.html']:
     # Read in the file
     with open(build_dir+file_name, 'r', encoding='utf-8') as file:
       filedata = file.read()
