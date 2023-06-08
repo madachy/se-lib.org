@@ -2,7 +2,6 @@
 
 a.current {
   color: rgb(0, 0, 200);
-  text-decoration: underline;
 }
 
 span.caption-text{
@@ -76,6 +75,11 @@ div.footer {
 
 div.sphinxsidebar {
     font-size: 13px;
+}
+
+div.sphinxsidebar a.current {
+  color: rgb(0, 0, 200);
+  text-decoration: underline;
 }
 
 div.document {
@@ -164,7 +168,8 @@ div.sphinxsidebar a {
 }
 
 div.sphinxsidebar a:hover {
-    border-bottom: 1px solid #999;
+  color: blue;
+  text-decoration-color: blue;
 }
 
 div.sphinxsidebarwrapper {
@@ -271,12 +276,10 @@ div.sphinxsidebar h3.donation {
 
 a {
     color: rgb(0, 0, 200)
-    text-decoration: underline;
 }
 
 a:hover {
     color: blue;
-    text-decoration: underline;
     text-decoration-color: blue;
 }
 
@@ -565,7 +568,7 @@ a.image-reference, a.image-reference:hover {
 }
 
 a.reference:hover {
-    border-bottom: 1px solid #6D4100;
+    border-bottom: 0px solid #6D4100;
 }
 
 a.footnote-reference {

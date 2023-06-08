@@ -12,7 +12,7 @@ for file_name in ['index.html', 'function_reference.html', 'examples.html', 'ins
 
     # set navbar active class
     filedata = filedata.replace(
-        f"""<a href="{file_name}">""", f"""<a class="active" href="{file_name}">""")
+        f"""<a href="http://se-lib.org/{file_name}">""", f"""<a class="active" href="http://se-lib.org/{file_name}">""")
 
     if file_name == "index.html":
         filedata = filedata.replace("""<h1>Home""",

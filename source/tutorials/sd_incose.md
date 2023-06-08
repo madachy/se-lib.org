@@ -46,7 +46,7 @@ model types, systems engineering analysis and simulation.
 	* Brief introduction to Python syntax by inspection of model examples.
 
 1. 0935 - 1000 (Longshore): Hands-on introduction
-	* se-lib online
+	* [se-lib playground](<http://se-lib.org/online/sysml.html> "SysML modeling and diagrams")
 	* library installation
 	* [Google Colaboratory](<https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing> "se-lib examples"). Open in Colab to run or save your own copy in Drive"
 	* Replit
