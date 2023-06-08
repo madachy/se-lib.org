@@ -8,6 +8,8 @@ myst:
 
 <span style="font-size: 32px;">San Diego INCOSE Tutorial: Open Source Systems Modeling</span>
 
+[Zoom Link](<https://nps-edu.zoomgov.com/j/1614484384> "Zoom Link") Passcode: CvaFqM0s$M
+
 The tutorial will cover new open-source system modeling capabilities, and
 immediately enable participants to implement them requiring only an
 Internet connection. The Systems Engineering Library (*se-lib*) using Python is described at [http://se-lib.org](<http://se-lib.org> "http://se-lib.org") and can be used online or installed for offline usage.

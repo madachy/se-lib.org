@@ -20,3 +20,5 @@ Using se-lib, start building a model with the following diagrams:
 1. Use Case diagram
 1. Requirements diagram
 1. Work Breakdown Structure
+
+A [Google Colaboratory](<https://colab.research.google.com/drive/14-xyTPLlD03_dT66plVzSUNTo3oF5Tlr> "Course Portal Notebook") notebook is also available for this problem set.
