@@ -168,4 +168,3 @@ If everything worked correctly, you should see something similar to the figure b
 
 ![system dynamics example](_images/sdexample.png)
 
-
