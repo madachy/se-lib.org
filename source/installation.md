@@ -140,7 +140,8 @@ import selib as se
 # system model
 system_name = "Python Integrator with selib"
 external_actors = ["User", "OS", "Graphviz"]
-# create context diagramse.context_diagram(ssytem_name, external_actors, filename="selib_contest_diagram_offline")
+# create context diagram
+se.context_diagram(system_name, external_actors, filename="selib_contest_diagram_offline")
 ```
 
 If everything worked correctly, you should see something like the figure below:
