@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; se-lib</title>
+    <title>Discrete Event &#8212; se-lib</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster_pyml.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -33,13 +33,60 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>Include the detection subsystem by extending the model structure and re-run simulation experiments.  Create a new delay node for the detection with a random detection time. Its delay will be included in the overall response time. Vary its random characteristics and observe the resulting response time behavior.</p>
+  <section id="discrete-event">
+<h1>Discrete Event<a class="headerlink" href="#discrete-event" title="Permalink to this heading">¶</a></h1>
+<section id="target-shooter-system">
+<h2>Target Shooter System<a class="headerlink" href="#target-shooter-system" title="Permalink to this heading">¶</a></h2>
+<p>Include the detection subsystem by extending the model structure and re-run simulation experiments.  Create a new delay node for the detection with a random detection time. Its delay will be included in the overall response time. Vary its random characteristics and observe the resulting response time behavior.</p>
 <p>NumPy Distributions</p>
-<p>exponential</p>
-<p>uniform</p>
-<p>random</p>
-<p>triangle</p>
-<p>Use the electric car charging model and modify the incoming traffic arrival pattern.</p>
+<p>You can use the following functions after <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.random()</span></code> The function does not take any arguments and returns a random value between 0 and 1.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.uniform(min,</span> <span class="pre">max)</span></code> The function takes two arguments, which are the minimum and maximum values of the distribution.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.triangle(min,</span> <span class="pre">mode,</span> <span class="pre">max)</span></code> The function takes three arguments, which are the minimum, mode, and maximum values of the distribution.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.exponential(rate)</span></code> The function takes one argument, which is the rate parameter of the distribution.</p>
+</section>
+<section id="security-gate-operations">
+<h2>Security Gate Operations<a class="headerlink" href="#security-gate-operations" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Modify the target shooter system, electric car charging system, or create a new model for security gate operations.</p></li>
+<li><p>Vary the number of attendant guards as “capacity” and observe changes in the waiting times.</p></li>
+<li><p>First simulate cars coming at a constant interarrival rates and gate service times.</p></li>
+<li><p>Next simulate cars coming at a uniformly distributed interarrival rate.</p></li>
+<li><p>Calibrate the incoming rate to actual traffic levels.</p></li>
+<li><p>Include an additional entry gate and vary the incoming traffic patterns across both.</p></li>
+</ul>
+</section>
+<section id="electric-car-charging-model">
+<h2>Electric Car Charging Model<a class="headerlink" href="#electric-car-charging-model" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Modify the incoming traffic arrival pattern.</p></li>
+<li><p>Add another source of incoming cars.</p></li>
+<li><p>First simulate cars coming at a constant interarrival rates and gate service times.</p></li>
+<li><p>Next simulate cars coming at a uniformly distributed interarrival rate.</p></li>
+<li><p>Calibrate the incoming rate to actual traffic levels.</p></li>
+</ul>
+</section>
+</section>
+<section id="system-dynamics">
+<h1>System Dynamics<a class="headerlink" href="#system-dynamics" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>Modify some examples in the notebook <a class="reference external" href="https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing">se-lib system dynamics examples</a></p>
+<ul>
+<li><p>Change parameters</p></li>
+<li><p>Change model structure</p></li>
+<li><p>Add more variable plots</p></li>
+</ul>
+</li>
+</ul>
+<section id="workforce-model">
+<h2>Workforce Model<a class="headerlink" href="#workforce-model" title="Permalink to this heading">¶</a></h2>
+<p>Develop a workforce model with an incoming hiring rate, a stock for the current level of workforce level, and an attrition outflow.  Use a first order delay with an average delay time for the hiring rate.</p>
+</section>
+<section id="law-system-modeling">
+<h2>Law System Modeling<a class="headerlink" href="#law-system-modeling" title="Permalink to this heading">¶</a></h2>
+<p>Create a simple predator-prey model of criminal behavior to help evaluate enforcement and sanction policies.</p>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -98,7 +145,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2023, se-lib Development Team.
-      Last updated on Jun 08, 2023.
+      Last updated on Jun 09, 2023.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>

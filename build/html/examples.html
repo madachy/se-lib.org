@@ -44,6 +44,15 @@
 <h2>Simulations<a class="headerlink" href="#simulations" title="Permalink to this heading">¶</a></h2>
 <p>Simulation models in se-lib are defined as logical nodes in a system and their connections. Function calls enable system dynamics models to be expressed as stocks, flows and auxiliary variables connected in feedback loops. Discrete event models are defined as connected path nodes for entity generation, delays, queues/servers, and termination nodes.</p>
 <p>Utilities are provided for output visualization and statistical analysis.  Hybrid models and can be developed with relationships between continuous and discrete event parameters.</p>
+<p>The following are available online:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing">se-lib system dynamics examples</a> on Google Colab</p></li>
+<li><p><a class="reference external" href="http://se-lib.org/online/discrete_event_modeling_demo.html">Discrete event modeling and simulation</a> on se-lib playground</p></li>
+</ul>
+<p>See the following manuals for further details.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://se-lib.org/manuals/System_Dynamics_Modeling_with_se_lib_User_s_Guide%20_1_.pdf">System Dynamics Modeling with se-lib User’s Guide v. 1.0</a></p></li>
+</ul>
 <section id="system-dynamics-model">
 <h3>System Dynamics Model<a class="headerlink" href="#system-dynamics-model" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Battle Simulator using Lanchester&#39;s Law for Aimed Fire with Reinforcements</span>
@@ -56,7 +65,7 @@
 <span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;blue_attrition&quot;</span><span class="p">,</span> <span class="s2">&quot;red_troops*red_lethality&quot;</span><span class="p">)</span>
 <span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;blue_reinforcements&quot;</span><span class="p">,</span> <span class="s2">&quot;step(200, .7)-step(200, 1.2)&quot;</span><span class="p">)</span>
 <span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;blue_lethality&quot;</span><span class="p">,</span> <span class="s2">&quot;random.uniform(.7, .9)&quot;</span><span class="p">)</span>
-    
+
 <span class="n">add_stock</span><span class="p">(</span><span class="s2">&quot;red_troops&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="n">inflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red_reinforcements&quot;</span><span class="p">],</span> <span class="n">outflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red_attrition&quot;</span><span class="p">])</span>
 <span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;red_attrition&quot;</span><span class="p">,</span> <span class="s2">&quot;blue_troops*blue_lethality&quot;</span><span class="p">)</span>
 <span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;red_reinforcements&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;step(</span><span class="si">{</span><span class="n">step_size</span><span class="si">}</span><span class="s2">, .3)-step(</span><span class="si">{</span><span class="n">step_size</span><span class="si">}</span><span class="s2">, .7)&quot;</span><span class="p">)</span>
@@ -85,7 +94,7 @@
     <span class="p">(</span><span class="s1">&#39;Power Down&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Main Power Down&quot;</span><span class="p">,</span> <span class="s2">&quot;Backup Power Down&quot;</span><span class="p">]),</span>
     <span class="p">(</span><span class="s1">&#39;Communication Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.003</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;Main Power Down&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.02</span><span class="p">),</span>    
-    <span class="p">(</span><span class="s1">&#39;Backup Power Down&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.08</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;Backup Power Down&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.08</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;Low Resolution Sensor 1 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.001</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;Low Resolution Sensor 2 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.001</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;High Resolution Sensor 3 Fails&#39;</span><span class="p">,</span> <span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="mf">.003</span><span class="p">),</span>
@@ -200,13 +209,13 @@
 <h3>Requirements Model<a class="headerlink" href="#requirements-model" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Intelligence, Surveillance, &amp; Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements</span>
 <span class="n">requirements</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Performance&quot;</span><span class="p">),</span>
-                <span class="p">(</span><span class="s2">&quot;Performance&quot;</span><span class="p">,</span> 
-                <span class="p">(</span><span class="s2">&quot;The UUV shall be capable of completing a mission of 6 hours duration.&quot;</span><span class="p">,</span> 
-                <span class="s2">&quot;The UUV shall be capable of a top speed of 14 knots.&quot;</span><span class="p">,</span> 
-                <span class="s2">&quot;The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.&quot;</span><span class="p">,</span> 
+                <span class="p">(</span><span class="s2">&quot;Performance&quot;</span><span class="p">,</span>
+                <span class="p">(</span><span class="s2">&quot;The UUV shall be capable of completing a mission of 6 hours duration.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall be capable of a top speed of 14 knots.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;The UUV shall avoid detection.&quot;</span><span class="p">)),</span>
                 <span class="p">(</span><span class="s2">&quot;ISR UUV&quot;</span><span class="p">,</span> <span class="s2">&quot;Communication&quot;</span><span class="p">),</span>
-                <span class="p">(</span><span class="s2">&quot;Communication&quot;</span><span class="p">,</span> 
+                <span class="p">(</span><span class="s2">&quot;Communication&quot;</span><span class="p">,</span>
                 <span class="p">(</span><span class="s2">&quot;Mission parameters shall be uploadable to the UUV&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;The UUV shall receive remote commands&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;The UUV shall commence its mission when commanded&quot;</span><span class="p">,</span>
@@ -424,7 +433,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2023, se-lib Development Team.
-      Last updated on Jun 08, 2023.
+      Last updated on Jun 09, 2023.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>

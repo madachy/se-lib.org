@@ -63,8 +63,9 @@ model types, systems engineering analysis and simulation.
 1. 1010 - 1130: Model library demonstrations and exercises
 	* (Longshore) [SysML modeling and diagrams](<http://se-lib.org/online/sysml.html> "SysML modeling and diagrams")
 	* (Madachy) Simulation
-  		* [System dynamics simulation](<https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing>) on Google Colab
-  		* [Discrete event modeling and simulation](<http://se-lib.org/online/discrete_event_modeling_demo.html> "Discrete event modeling and simulation demonstrations") on se-lib playground
+      * [System Dynamics Modeling with se-lib User's Guide v. 1.0](<http://se-lib.org/manuals/System_Dynamics_Modeling_with_se_lib_User_s_Guide _1_.pdf>)
+      * [System dynamics simulation](<https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing>) on Google Colab
+      * [Discrete event modeling and simulation](<http://se-lib.org/online/discrete_event_modeling_demo.html> "Discrete event modeling and simulation demonstrations") on se-lib playground
 	* (Longshore) Fault tree analysis, diagrams, and system reliability modeling
 	* (Longshore) Project management modeling
 	* (Madachy) Automatic document re-generation with reconciled changes across model sets
@@ -77,7 +78,9 @@ model types, systems engineering analysis and simulation.
 for integrated system modeling.
 	* Students will be given options for exercises based on their interests and the
 opportunity to focus on their own system models.
-	* If students do not have a particular problem they would like to focus on, a sample [course portal problem](<http://se-lib.org/tutorials/course_portal.html> "Course Portal Problem") is available.
+	* If students do not have a particular problem to focus on, here are some samples:
+      * [course portal problem](<http://se-lib.org/tutorials/course_portal.html> "Course Portal Problem")
+      * [simulation exercises](<http://se-lib.org/tutorials/simulation_exercises.html> "Course Portal Problem")
 
 
     **1200 - 1300: Lunch**
