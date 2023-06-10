@@ -1,3 +1,5 @@
+# Simulation exercises
+
 ## Discrete Event
 
 ### Target Shooter System
@@ -34,7 +36,7 @@ You can use the following functions after `import numpy as np`:
 
 ## System Dynamics
 
-* Modify some examples in the notebook [se-lib system dynamics examples](<https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing>)
+* Modify some examples in the notebook [se-lib system dynamics examples](<https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing>).
   * Change parameters
   * Change model structure
   * Add more variable plots

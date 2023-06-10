@@ -66,4 +66,10 @@
 
 ![open_on_colab](images/open_in_colab.svg)
 
-![Boehm Center for Systems and Software Engineering](CSSE-logo-300x210.png)
+![Boehm Center for Systems and Software Engineering](images/CSSE-logo-300x210.png)
+
+![electric_car_model_output](images/electric_car_model_output.png)
+
+![electric_car_model_diagram](images/electric_car_model_diagram.png)
+
+![battle_simulator_model](images/battle_simulator_model.png)

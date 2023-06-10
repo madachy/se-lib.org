@@ -52,7 +52,7 @@ model types, systems engineering analysis and simulation.
 1. 0935 - 1000 (Longshore): Hands-on introduction
 	* [se-lib playground](<http://se-lib.org/online/sysml.html> "SysML modeling and diagrams")
 	* library installation
-	* [Google Colaboratory](<https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing> "se-lib examples"). Open in Colab to run or save your own copy in Drive"
+	* [Google Colaboratory](<https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing> "se-lib examples"). Open in Colab to run or save your own copy in Google Drive
 	* Replit
 	* Anaconda
 
@@ -68,10 +68,9 @@ model types, systems engineering analysis and simulation.
       * [Discrete event modeling and simulation](<http://se-lib.org/online/discrete_event_modeling_demo.html> "Discrete event modeling and simulation demonstrations") on se-lib playground
 	* (Longshore) Fault tree analysis, diagrams, and system reliability modeling
 	* (Longshore) Project management modeling
-	* (Madachy) Automatic document re-generation with reconciled changes across model sets
 	* (Madachy/Longshore) Model data import/export and sharing with other tools.
 		* [Excel](<http://se-lib.org/examples.html#read-fault-tree-from-excel>)
-		* xmile, vensim
+		* xmile format, Vensim, iThink
 
 
 1. 1130 - 1200 (Madachy/Longshore): Further examples, guided exercises, and extended case studies on above areas
@@ -98,7 +97,8 @@ modeling applications.
 
 1. 1330 - 1345 (Madachy / Longshore): Digital engineering and rapid change: automated model configuration management, re-execution, impact analysis and version control for round-trip digital engineering.
 	* Demonstrate how all model artifacts in text files are managed with standard automated tools (e.g. GitHub for small to large teams).
-		* Collaborative Modeling of Target Shooter System
+		* Collaborative modeling of Target Shooter System
+		* GitHub document and source code management team processes
 
 1. 1345 - 1430: Future capabilities and evolution plans (Workshop Format)
 	* Audience will provide input on desired features and changes

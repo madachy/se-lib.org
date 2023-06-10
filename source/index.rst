@@ -31,18 +31,7 @@ The diagram below shows the primary inputs and outputs of se-lib, and was genera
 Current Features
 ==================
 
-This early release of se-lib contains library functions for the following:
-
-* Activity diagrams
-* :ref:`Context diagram<context_diagram>`
-* :ref:`Critical path network diagram<critical_path_diagram>`
-* :ref:`Design Structure Matrix (DSM)<design_structure_matrix>`
-* :ref:`Fault Tree Diagram<fault_tree_diagram>`
-* :ref:`Fault Tree Cutset Analysis<fault_tree_cutsets>`
-* Latex and PDF document generation utilities
-* :ref:`Use case diagram<use_case_diagram>`
-* :ref:`Sequence diagram<sequence_diagram>`
-* :ref:`Work Breakdown Structure (WBS) diagram<wbs_diagram>`
+This current features of se-lib can be found under `Function Reference <function_reference.html>`_.
 
 
 Presentations

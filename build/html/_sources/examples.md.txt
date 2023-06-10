@@ -24,6 +24,12 @@ See the following manuals for further details.
 
 #### System Dynamics Model
 
+<div style="text-align: center">
+<object data="_images/battle_simulator_model.png">
+</object>
+</div>
+
+
 ```
 # Battle Simulator using Lanchester's Law for Aimed Fire with Reinforcements
 
@@ -58,6 +64,46 @@ save_graph(["red_attrition", "red_reinforcements", 'blue_attrition', 'blue_reinf
    \includesvg[]{system_dynamics_battle_simulator_output.png}
 
 ```  
+
+#### Discrete Event Model
+
+```
+# electric car charging simulation
+init_de_model()
+
+add_source('incoming_cars',
+           entity_name="Car",
+           num_entities = 50,
+           connections={'charger': .7, 'impatient_cars': .3},
+           interarrival_time='np.random.exponential(5)')
+
+add_server(name='charger',
+           connections={'payment': 1},
+           service_time='np.random.uniform(0, 16)',
+           capacity = 1)
+
+add_delay(name='payment',
+           delay_time = 'np.random.uniform(1, 3)',
+           connections={'served_cars': 1},)
+
+add_terminate('served_cars')
+add_terminate('impatient_cars')
+
+draw_model_diagram()
+
+model_data, entity_data = run_model()
+plot_histogram(model_data['charger']['waiting_times'], xlabel="Charger Waiting Time")
+```  
+
+<div style="text-align: center">
+<object data="_images/electric_car_model_diagram.png">
+</object>
+</div>
+
+<div style="text-align: center">
+<object data="_images/electric_car_model_output.png">
+</object>
+</div>
 
 ### Analyses
 
