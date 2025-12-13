@@ -72,17 +72,12 @@ extra:
 
 nav:
   - Home: index.md
+  - Introduction: introduction.md
   - Installation: installation.md
   - Function Reference: function_reference.md
   - Examples: examples.md
-  - Playground:
-      - SysML Scratchpad: online/scratchpad.md
-      - Discrete Event Demo: online/discrete_event_modeling_demo.md
-      - Playground: online/sysml.md
-  - Tutorials:
-      - System Dynamics: tutorials/sd_incose.md
-  - About:
-      - Acknowledgments: about/acknowledgments.md
-      - Feedback: about/feedback.md
+  - Online: online/
+  - Tutorials: tutorials/
+  - Master Doc: master_doc.md
 
 copyright: Copyright &copy; 2025 se-lib Development Team
