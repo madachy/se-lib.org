@@ -1,0 +1,1813 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open source Python library for integrated systems modeling">
+      
+      
+        <meta name="author" content="se-lib Development Team">
+      
+      
+        <link rel="canonical" href="http://se-lib.org/examples/">
+      
+      
+        <link rel="prev" href="../function_reference/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Examples - Systems Engineering Library (se-lib)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Systems Engineering Library (se-lib)" class="md-header__button md-logo" aria-label="Systems Engineering Library (se-lib)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Systems Engineering Library (se-lib)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Examples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/se-lib/se-lib" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    se-lib/se-lib
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../function_reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Function Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../online/" class="md-tabs__link">
+          
+  
+  
+  Online
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../tutorials/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../manuals/" class="md-tabs__link">
+          
+  
+  
+  Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Systems Engineering Library (se-lib)" class="md-nav__button md-logo" aria-label="Systems Engineering Library (se-lib)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Systems Engineering Library (se-lib)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/se-lib/se-lib" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    se-lib/se-lib
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Function Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-dynamics-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Dynamics Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-event-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete Event Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantitative-fault-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantitative Fault Tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-path-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Path Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrams
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        system model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequence-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-breakdown-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work Breakdown Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-structure-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Structure Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-fault-tree-from-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read Fault Tree from Excel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#causal-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Causal Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Online
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Online
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../online/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-dynamics-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Dynamics Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-event-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete Event Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantitative-fault-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantitative Fault Tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-path-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Path Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrams
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        system model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequence-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-breakdown-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work Breakdown Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-structure-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Structure Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-fault-tree-from-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read Fault Tree from Excel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#causal-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Causal Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p><a href="https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing"><img alt="open_in_colab.svg" src="../assets/open_in_colab.svg" /></a> Open these examples in a Google Colaboratory Notebook.</p>
+<h3 id="simulations">Simulations<a class="headerlink" href="#simulations" title="Permanent link">&para;</a></h3>
+<p>Simulation models in se-lib are defined as logical nodes in a system and their connections. Function calls enable system dynamics models to be expressed as stocks, flows and auxiliary variables connected in feedback loops. Discrete event models are defined as connected path nodes for entity generation, delays, queues/servers, and termination nodes.  </p>
+<p>Utilities are provided for output visualization and statistical analysis.  Hybrid models and can be developed with relationships between continuous and discrete event parameters.  </p>
+<p>The following are available online:
+* <a href="https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing">se-lib system dynamics examples</a> on Google Colab
+* <a href="http://se-lib.org/online/discrete_event_modeling_demo.html" title="Discrete event modeling and simulation demonstrations">Discrete event modeling and simulation</a> on se-lib playground</p>
+<p>See the following manuals for further details.
+* <a href="http://se-lib.org/manuals/System_Dynamics_Modeling_with_se_lib_User_s_Guide _1_.pdf">System Dynamics Modeling with se-lib User's Guide v. 1.0</a></p>
+<h4 id="system-dynamics-model">System Dynamics Model<a class="headerlink" href="#system-dynamics-model" title="Permanent link">&para;</a></h4>
+<div style="text-align: center">
+<object data="_images/battle_simulator_model.png">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Battle Simulator using Lanchester&#39;s Law for Aimed Fire with Reinforcements
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>init_sd_model(start=0, stop=2, dt=.05)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>step_size = 600
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>add_stock(&quot;blue_troops&quot;, 1000, inflows=[&quot;blue_reinforcements&quot;], outflows=[&quot;blue_attrition&quot;])
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>add_flow(&quot;blue_attrition&quot;, &quot;red_troops*red_lethality&quot;)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>add_flow(&quot;blue_reinforcements&quot;, &quot;step(200, .7)-step(200, 1.2)&quot;)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>add_auxiliary(&quot;blue_lethality&quot;, &quot;random.uniform(.7, .9)&quot;)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>add_stock(&quot;red_troops&quot;, 800, inflows=[&quot;red_reinforcements&quot;], outflows=[&quot;red_attrition&quot;])
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>add_flow(&quot;red_attrition&quot;, &quot;blue_troops*blue_lethality&quot;)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>add_flow(&quot;red_reinforcements&quot;, f&quot;step({step_size}, .3)-step({step_size}, .7)&quot;)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>add_auxiliary(&quot;red_lethality&quot;, &quot;random.uniform(.8, 1.0)&quot;)
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>run_model()
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>save_graph([&#39;blue_troops&#39;, &#39;red_troops&#39;], filename=&quot;battle_simulator_troop_levels&quot;)
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>save_graph([&quot;red_attrition&quot;, &quot;red_reinforcements&quot;, &#39;blue_attrition&#39;, &#39;blue_reinforcements&#39;], filename=&quot;battle_simulator_flow_rates&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<object data="_images/system_dynamics_battle_simulator_output.png">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.. raw:: latex
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   \includesvg[]{system_dynamics_battle_simulator_output.png}
+</code></pre></div>
+<h4 id="discrete-event-model">Discrete Event Model<a class="headerlink" href="#discrete-event-model" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># electric car charging simulation
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>init_de_model()
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>add_source(&#39;incoming_cars&#39;,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>           entity_name=&quot;Car&quot;,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>           num_entities = 50,
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>           connections={&#39;charger&#39;: .7, &#39;impatient_cars&#39;: .3},
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>           interarrival_time=&#39;np.random.exponential(5)&#39;)
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>add_server(name=&#39;charger&#39;,
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>           connections={&#39;payment&#39;: 1},
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>           service_time=&#39;np.random.uniform(0, 16)&#39;,
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>           capacity = 1)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>add_delay(name=&#39;payment&#39;,
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>           delay_time = &#39;np.random.uniform(1, 3)&#39;,
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>           connections={&#39;served_cars&#39;: 1},)
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>add_terminate(&#39;served_cars&#39;)
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>add_terminate(&#39;impatient_cars&#39;)
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>draw_model_diagram()
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>model_data, entity_data = run_model()
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>plot_histogram(model_data[&#39;charger&#39;][&#39;waiting_times&#39;], xlabel=&quot;Charger Waiting Time&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<object data="_images/electric_car_model_diagram.png">
+</object>
+</div>
+
+<div style="text-align: center">
+<object data="_images/electric_car_model_output.png">
+</object>
+</div>
+
+<h3 id="analyses">Analyses<a class="headerlink" href="#analyses" title="Permanent link">&para;</a></h3>
+<h4 id="quantitative-fault-tree">Quantitative Fault Tree<a class="headerlink" href="#quantitative-fault-tree" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># UUV computed fault tree given probabilities for basic events
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>uuv_fault_tree = [
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    (&quot;UUV Mission Data Loss&quot;, &quot;or&quot;, &#39;&#39;, [&quot;Communication Loss&quot;, &quot;Power Down&quot;, &quot;All Sensors Fail&quot;]),
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    (&#39;All Sensors Fail&#39;, &#39;and&#39;, &#39;&#39;, [&#39;Low Resolution Sensor 1 Fails&#39;, &#39;Low Resolution Sensor 2 Fails&#39;, &#39;High Resolution Sensor 3 Fails&#39;]),
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    (&#39;Power Down&#39;, &#39;and&#39;, &#39;&#39;, [&quot;Main Power Down&quot;, &quot;Backup Power Down&quot;]),
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    (&#39;Communication Loss&#39;, &#39;basic&#39;, .003),
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    (&#39;Main Power Down&#39;, &#39;basic&#39;, .02),    
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    (&#39;Backup Power Down&#39;, &#39;basic&#39;, .08),
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    (&#39;Low Resolution Sensor 1 Fails&#39;, &#39;basic&#39;, .001),
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    (&#39;Low Resolution Sensor 2 Fails&#39;, &#39;basic&#39;, .001),
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    (&#39;High Resolution Sensor 3 Fails&#39;, &#39;basic&#39;, .003),
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    ]
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>se.draw_fault_tree_diagram_quantitative(uuv_fault_tree, filename=&quot;uuv_quantitative_fault_tree&quot;, format=&quot;svg&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<object data="_images/uuv_quantitative_fault_tree.svg" width=800px>
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.. raw:: latex
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>   \includesvg[]{lamp_circuit_fault_tree.svg}
+</code></pre></div>
+<h4 id="critical-path-analysis">Critical Path Analysis<a class="headerlink" href="#critical-path-analysis" title="Permanent link">&para;</a></h4>
+<p>A critical path can be computed from a set of tasks with associated time durations and dependencies as below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a># tasks, durations and dependencies
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>tasks = [(&#39;A&#39;, {&#39;Duration&#39;: 3}),
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>         (&#39;B&#39;, {&#39;Duration&#39;: 5}),
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>         (&#39;C&#39;, {&#39;Duration&#39;: 2}),
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>         (&#39;D&#39;, {&#39;Duration&#39;: 3}),
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>         (&#39;E&#39;, {&#39;Duration&#39;: 5})]
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>task_dependencies = [(&#39;A&#39;, &#39;C&#39;),
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                (&#39;B&#39;, &#39;C&#39;),
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>                (&#39;A&#39;, &#39;D&#39;),
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>                (&#39;C&#39;, &#39;E&#39;),
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>                (&#39;D&#39;, &#39;E&#39;)]
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a># create diagram
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>se.critical_path_diagram(tasks, task_dependencies, filename=&quot;critical_path&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<object data="_images/critical_path.png">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>.. raw:: latex
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>   \includesvg[]{critical_path.svg}
+</code></pre></div>
+<h3 id="diagrams">Diagrams<a class="headerlink" href="#diagrams" title="Permanent link">&para;</a></h3>
+<p>These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing se-lib, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.</p>
+<h4 id="use-case-model">Use Case Model<a class="headerlink" href="#use-case-model" title="Permanent link">&para;</a></h4>
+<p>Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.</p>
+<p>```{code-block} python
+import selib as se</p>
+<h1 id="system-model">system model<a class="headerlink" href="#system-model" title="Permanent link">&para;</a></h1>
+<p>system_name = "Course Portal"
+actors = ['Student', 'Instructor']
+use_cases = ['Post Discussion', 'Take Quiz', 'Create Quiz']
+interactions = [('Student', 'Post Discussion'), ('Instructor', 'Post Discussion'), ('Student', 'Take Quiz'), ('Instructor', 'Create Quiz')]
+use_case_relationships = []</p>
+<h1 id="create-diagram">create diagram<a class="headerlink" href="#create-diagram" title="Permanent link">&para;</a></h1>
+<p>se.use_case_diagram(system_name, actors, use_cases, interactions, use_case_relationships, filename=system_name+'use case diagram.pdf')
+ ```</p>
+<div style="text-align: center">
+<object data="_images/Course_Portal_use_case_diagram.svg">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>.. raw:: latex
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   \includesvg[]{Course_Portal_use_case_diagram.svg}
+</code></pre></div>
+<h4 id="sequence-model">Sequence Model<a class="headerlink" href="#sequence-model" title="Permanent link">&para;</a></h4>
+<p>A sequence diagram can be constructed per the following.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># system model
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>system_name = &quot;Battle Simulator&quot;
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>actors = [&#39;Battle Planner&#39;]
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>objects = [&#39;main&#39;]
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>actions = [
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>(&#39;Battle Planner&#39;, &#39;main&#39;, &#39;run()&#39;),
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>(&#39;main&#39;, &#39;Battle Planner&#39;, &#39;request for side 1 name&#39;),
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>(&#39;Battle Planner&#39;, &#39;main&#39;, &#39;side 1 name&#39;),
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>(&#39;main&#39;, &#39;Battle Planner&#39;, &#39;request for side 2 name&#39;),
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>(&#39;Battle Planner&#39;, &#39;main&#39;, &#39;side 2 name&#39;),
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>(&#39;main&#39;, &#39;Battle Planner&#39;, &#39;request for side 1 starting level&#39;),
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>(&#39;Battle Planner&#39;, &#39;main&#39;, &#39;side 1 starting level&#39;),
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>(&#39;main&#39;, &#39;Battle Planner&#39;, &#39;request for side 1 lethality coefficient&#39;),
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>(&#39;Battle Planner&#39;, &#39;main&#39;, &#39;side 1 lethality coefficient&#39;),
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>(&#39;main&#39;, &#39;Battle Planner&#39;, &#39;request for side 2 starting level&#39;),
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>(&#39;Battle Planner&#39;, &#39;main&#39;, &#39;side 2 starting level&#39;),
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>(&#39;main&#39;, &#39;Battle Planner&#39;, &#39;request for side 2 lethality coefficient&#39;),
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>(&#39;Battle Planner&#39;, &#39;main&#39;, &#39;side 2 lethality coefficient&#39;),
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>(&#39;main&#39;, &#39;Battle Planner&#39;, &#39;time history of troops and victor&#39;),
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>]
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a># create diagram
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>se.sequence_diagram(system_name, actors, objects, actions, filename=system_name+&quot;_sequence_diagram&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<object data="_images/Battle_Simulator_sequence_diagram.svg">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>.. raw:: latex
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>   \includesvg[]{Battle_Simulator_sequence_diagram.svg}
+</code></pre></div>
+<h4 id="context-model">Context Model<a class="headerlink" href="#context-model" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a># system model
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>system_name = &quot;Python Interpreter with PyML&quot;
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>external_actors = [&quot;User&quot;, &quot;OS&quot;, &quot;Graphviz&quot;]
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a># create context diagram
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>se.context_diagram(system_name, external_actors, filename=&quot;pyml_context_diagram_offline&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<object data="_images/pyml_context_diagram_offline.svg">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>.. raw:: latex
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>   \includesvg[]{pyml_context_diagram_offline.svg}
+</code></pre></div>
+<h4 id="requirements-model">Requirements Model<a class="headerlink" href="#requirements-model" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a># Intelligence, Surveillance, &amp; Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>requirements = [(&quot;ISR UUV&quot;, &quot;Performance&quot;),
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>                (&quot;Performance&quot;,
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>                (&quot;The UUV shall be capable of completing a mission of 6 hours duration.&quot;,
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>                &quot;The UUV shall be capable of a top speed of 14 knots.&quot;,
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>                &quot;The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.&quot;,
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>                &quot;The UUV shall avoid detection.&quot;)),
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>                (&quot;ISR UUV&quot;, &quot;Communication&quot;),
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>                (&quot;Communication&quot;,
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>                (&quot;Mission parameters shall be uploadable to the UUV&quot;,
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>                &quot;The UUV shall receive remote commands&quot;,
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>                &quot;The UUV shall commence its mission when commanded&quot;,
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>                &quot;The UUV shall be capable of transmitting data in a host ship compatible format&quot;,
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>                &quot;The UUV shall indicate that it is ready for recovery&quot;)),]
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a># draw requirements diagram as horizontal tree left -&gt; right
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>se.requirements_diagram(requirements, rankdir=&#39;LR&#39;, filename=&quot;uuv_requirements_tree&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<object data="_images/uuv_requirements_tree.svg">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>.. raw:: latex
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>   \includesvg[]{uuv_requirements_tree.svg}
+</code></pre></div>
+<h4 id="work-breakdown-structure">Work Breakdown Structure<a class="headerlink" href="#work-breakdown-structure" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a># project work breakdown structure
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>wbs_decompositions = [
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>(&#39;Skateboard&#39;, &#39;Hardware&#39;), (&#39;Skateboard&#39;, &#39;Software&#39;), (&#39;Skateboard&#39;, &#39;Integration and Test&#39;),
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>                (&#39;Hardware&#39;, &#39;Board&#39;), (&#39;Hardware&#39;, &#39;Wheels&#39;), (&#39;Hardware&#39;, &#39;Mounting&#39;),
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>                (&#39;Software&#39;, &#39;OS&#39;), (&#39;Software&#39;, &#39;GPS Driver&#39;), (&#39;Software&#39;, &#39;Route Tracking&#39;),
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>                (&#39;Integration and Test&#39;, &#39;Fixed Platform&#39;), (&#39;Integration and Test&#39;, &#39;Street Testing&#39;)]
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a># create diagram
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>se.wbs_diagram(wbs_decompositions, filename=&quot;skateboard_wbs&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<object width="700px" data="_images/skateboard_wbs.svg">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>.. raw:: latex
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>   \includesvg[]{skateboard_wbs.svg}
+</code></pre></div>
+<h4 id="design-structure-matrix">Design Structure Matrix<a class="headerlink" href="#design-structure-matrix" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>tasks = [&#39;Make Board&#39;, &#39;Acquire Wheels&#39;, &#39;Assemble&#39;, &#39;Test&#39;]
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>task_dependencies = [(&#39;Make Board&#39;, &#39;Assemble&#39;), (&#39;Acquire Wheels&#39;, &#39;Assemble&#39;), (&#39;Assemble&#39;, &#39;Test&#39;), (&#39;Test&#39;, &#39;Assemble&#39;)]
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>se.design_structure_matrix(tasks, task_dependencies, filename=&quot;skateboard_task_dsm_with_feedback&quot;)
+</code></pre></div>
+<div style="text-align: center">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: dsm Pages: 1 -->
+<svg width="387pt" height="121pt"
+ viewBox="0.00 0.00 387.00 121.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 117)">
+<title>dsm</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-117 383,-117 383,4 -4,4"/>
+<!-- dsm -->
+<g id="node1" class="node">
+<title>dsm</title>
+<polygon fill="none" stroke="#000000" points="8.5,-87.5 8.5,-108.5 105.5,-108.5 105.5,-87.5 8.5,-87.5"/>
+<polygon fill="none" stroke="#000000" points="105.5,-87.5 105.5,-108.5 181.5,-108.5 181.5,-87.5 105.5,-87.5"/>
+<text text-anchor="start" x="108.5" y="-94.3" font-family="Times,serif" font-size="14.00" fill="#000000">Make Board</text>
+<polygon fill="none" stroke="#000000" points="181.5,-87.5 181.5,-108.5 278.5,-108.5 278.5,-87.5 181.5,-87.5"/>
+<text text-anchor="start" x="184.5" y="-94.3" font-family="Times,serif" font-size="14.00" fill="#000000">Acquire Wheels</text>
+<polygon fill="none" stroke="#000000" points="278.5,-87.5 278.5,-108.5 340.5,-108.5 340.5,-87.5 278.5,-87.5"/>
+<text text-anchor="start" x="281.5" y="-94.3" font-family="Times,serif" font-size="14.00" fill="#000000">Assemble</text>
+<polygon fill="none" stroke="#000000" points="340.5,-87.5 340.5,-108.5 371.5,-108.5 371.5,-87.5 340.5,-87.5"/>
+<text text-anchor="start" x="343.5" y="-94.3" font-family="Times,serif" font-size="14.00" fill="#000000">Test</text>
+<polygon fill="none" stroke="#000000" points="8.5,-66.5 8.5,-87.5 105.5,-87.5 105.5,-66.5 8.5,-66.5"/>
+<text text-anchor="start" x="22" y="-73.3" font-family="Times,serif" font-size="14.00" fill="#000000">Make Board</text>
+<polygon fill="#000000" stroke="transparent" points="105.5,-66.5 105.5,-87.5 181.5,-87.5 181.5,-66.5 105.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="105.5,-66.5 105.5,-87.5 181.5,-87.5 181.5,-66.5 105.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="181.5,-66.5 181.5,-87.5 278.5,-87.5 278.5,-66.5 181.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="278.5,-66.5 278.5,-87.5 340.5,-87.5 340.5,-66.5 278.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="340.5,-66.5 340.5,-87.5 371.5,-87.5 371.5,-66.5 340.5,-66.5"/>
+<polygon fill="none" stroke="#000000" points="8.5,-45.5 8.5,-66.5 105.5,-66.5 105.5,-45.5 8.5,-45.5"/>
+<text text-anchor="start" x="11.5" y="-52.3" font-family="Times,serif" font-size="14.00" fill="#000000">Acquire Wheels</text>
+<polygon fill="none" stroke="#000000" points="105.5,-45.5 105.5,-66.5 181.5,-66.5 181.5,-45.5 105.5,-45.5"/>
+<polygon fill="#000000" stroke="transparent" points="181.5,-45.5 181.5,-66.5 278.5,-66.5 278.5,-45.5 181.5,-45.5"/>
+<polygon fill="none" stroke="#000000" points="181.5,-45.5 181.5,-66.5 278.5,-66.5 278.5,-45.5 181.5,-45.5"/>
+<polygon fill="none" stroke="#000000" points="278.5,-45.5 278.5,-66.5 340.5,-66.5 340.5,-45.5 278.5,-45.5"/>
+<polygon fill="none" stroke="#000000" points="340.5,-45.5 340.5,-66.5 371.5,-66.5 371.5,-45.5 340.5,-45.5"/>
+<polygon fill="none" stroke="#000000" points="8.5,-24.5 8.5,-45.5 105.5,-45.5 105.5,-24.5 8.5,-24.5"/>
+<text text-anchor="start" x="29" y="-31.3" font-family="Times,serif" font-size="14.00" fill="#000000">Assemble</text>
+<polygon fill="none" stroke="#000000" points="105.5,-24.5 105.5,-45.5 181.5,-45.5 181.5,-24.5 105.5,-24.5"/>
+<text text-anchor="start" x="138" y="-31.3" font-family="Times,serif" font-size="14.00" fill="#000000">X</text>
+<polygon fill="none" stroke="#000000" points="181.5,-24.5 181.5,-45.5 278.5,-45.5 278.5,-24.5 181.5,-24.5"/>
+<text text-anchor="start" x="224.5" y="-31.3" font-family="Times,serif" font-size="14.00" fill="#000000">X</text>
+<polygon fill="#000000" stroke="transparent" points="278.5,-24.5 278.5,-45.5 340.5,-45.5 340.5,-24.5 278.5,-24.5"/>
+<polygon fill="none" stroke="#000000" points="278.5,-24.5 278.5,-45.5 340.5,-45.5 340.5,-24.5 278.5,-24.5"/>
+<polygon fill="none" stroke="#000000" points="340.5,-24.5 340.5,-45.5 371.5,-45.5 371.5,-24.5 340.5,-24.5"/>
+<text text-anchor="start" x="350.5" y="-31.3" font-family="Times,serif" font-size="14.00" fill="#000000">X</text>
+<polygon fill="none" stroke="#000000" points="8.5,-3.5 8.5,-24.5 105.5,-24.5 105.5,-3.5 8.5,-3.5"/>
+<text text-anchor="start" x="44.5" y="-10.3" font-family="Times,serif" font-size="14.00" fill="#000000">Test</text>
+<polygon fill="none" stroke="#000000" points="105.5,-3.5 105.5,-24.5 181.5,-24.5 181.5,-3.5 105.5,-3.5"/>
+<polygon fill="none" stroke="#000000" points="181.5,-3.5 181.5,-24.5 278.5,-24.5 278.5,-3.5 181.5,-3.5"/>
+<polygon fill="none" stroke="#000000" points="278.5,-3.5 278.5,-24.5 340.5,-24.5 340.5,-3.5 278.5,-3.5"/>
+<text text-anchor="start" x="304" y="-10.3" font-family="Times,serif" font-size="14.00" fill="#000000">X</text>
+<polygon fill="#000000" stroke="transparent" points="340.5,-3.5 340.5,-24.5 371.5,-24.5 371.5,-3.5 340.5,-3.5"/>
+<polygon fill="none" stroke="#000000" points="340.5,-3.5 340.5,-24.5 371.5,-24.5 371.5,-3.5 340.5,-3.5"/>
+</g>
+</g>
+</svg>
+</div>
+
+<h4 id="read-fault-tree-from-excel">Read Fault Tree from Excel<a class="headerlink" href="#read-fault-tree-from-excel" title="Permanent link">&para;</a></h4>
+<p>Portion of example Excel file <em>aav_fault_tree.xlsx</em>:</p>
+<p><img alt="aav_fault_tree_excel.png" src="../assets/aav_fault_tree_excel.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a># read fault tree from Excel file into list of nodes
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>fault_tree_list = se.read_fault_tree_excel(&#39;aav_fault_tree.xlsx&#39;)
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a># create fault tree diagram
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>se.fault_tree_diagram(fault_tree_list)
+</code></pre></div>
+<p><img alt="aav_fault_tree.png" src="../assets/aav_fault_tree.png" /></p>
+<h4 id="causal-diagram">Causal Diagram<a class="headerlink" href="#causal-diagram" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a># causal relationships
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>relationships = [(&#39;Available personnel&#39;,&quot;Workforce gap&quot;, &quot;-&quot;),
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    (&#39;Required personnel&#39;,&quot;Workforce gap&quot;, &quot;+&quot;),
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    (&quot;Workforce gap&quot;, &quot;Hiring rate&quot;, &quot;+&quot;),
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    (&quot;Hiring rate&quot;, &quot;Available personnel&quot;, &quot;+&quot;),
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>                ]
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a># draw diagram
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>se.causal_diagram(relationships)
+</code></pre></div>
+<div style="text-align: center">
+<object data="_images/workforce_gap_cld.svg">
+</object>
+</div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>.. raw:: latex
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>   \includesvg[]{workforce_gap_cld.svg}
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../function_reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Function Reference">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Function Reference
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 se-lib Development Team
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

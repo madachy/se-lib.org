@@ -1,6 +1,6 @@
 site_name: Systems Engineering Library (se-lib)
 site_url: http://se-lib.org
-site_description: Open source Python library for integrated systems modeling, simulation, analysis and diagrams
+site_description: Open source Python library for integrated systems modeling
 site_author: se-lib Development Team
 
 repo_url: https://github.com/se-lib/se-lib
@@ -9,7 +9,6 @@ repo_name: se-lib/se-lib
 theme:
   name: material
   palette:
-    # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
@@ -17,7 +16,6 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: indigo
@@ -34,24 +32,14 @@ theme:
     - search.highlight
     - content.code.copy
     - content.tabs.link
-  logo: assets/se-lib_logo.svg
-  favicon: assets/favicon.ico
 
 plugins:
   - search
-  - git-revision-date-localized:
-      enable_creation_date: true
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
+  - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -60,15 +48,7 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/se-lib/se-lib
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/se-lib/
-  version:
-    provider: mike
+  - tables
 
 nav:
   - Home: index.md
@@ -76,8 +56,11 @@ nav:
   - Installation: installation.md
   - Function Reference: function_reference.md
   - Examples: examples.md
-  - Online: online/
-  - Tutorials: tutorials/
-  - Master Doc: master_doc.md
+  - Online:
+      - Playground: online/
+  - Tutorials:
+      - Tutorials: tutorials/
+  - Manuals:
+      - Manuals: manuals/
 
 copyright: Copyright &copy; 2025 se-lib Development Team
