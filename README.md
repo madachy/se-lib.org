@@ -13,6 +13,11 @@ git commit -m "Complete Sphinx to MkDocs conversion"
 git push
 ```
 
+render it live at https://madachy.github.io/se-lib.org/
+```
+python -m mkdocs gh-deploy
+```
+
 at main branch to pull in merge the updated branch
 Click "Pull requests"
 Click "New pull request"
