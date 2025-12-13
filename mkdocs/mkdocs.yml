@@ -1,0 +1,65 @@
+site_name: Systems Engineering Library (se-lib)
+site_url: http://se-lib.org
+site_description: Open source Python library for integrated systems modeling
+site_author: se-lib Development Team
+
+repo_url: https://github.com/se-lib/se-lib
+repo_name: se-lib/se-lib
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - tables
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Function Reference: function_reference.md
+  - Examples: examples.md
+  - Playground:
+      - SysML Scratchpad: online/scratchpad.md
+      - Discrete Event Demo: online/discrete_event_modeling_demo.md
+      - Playground: online/sysml.md
+  - Tutorials:
+      - System Dynamics: tutorials/sd_incose.md
+
+copyright: Copyright &copy; 2025 se-lib Development Team
