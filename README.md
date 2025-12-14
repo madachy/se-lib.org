@@ -18,6 +18,7 @@ render it live at https://madachy.github.io/se-lib.org/
 python -m mkdocs gh-deploy
 ```
 
+```
 at main branch to pull in merge the updated branch
 Click "Pull requests"
 Click "New pull request"
@@ -38,3 +39,4 @@ Click "Create pull request" again
 Click "Merge pull request"
 Click "Confirm merge"
 Done! Optionally delete dec_25 branch
+```
