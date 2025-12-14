@@ -2,9 +2,6 @@
 
 ## Introduction
 
-::: {.meta title="Systems Engineering Library (se-lib)" description="Systems Engineering Library (se-lib)" keywords="se-lib, system engineering, system modeling, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation, continuous systems"}
-:::
-
 Welcome to the Systems Engineering Library (se-lib) (previously called PyML). It provides capabilities for integrated systems modeling, simulation, analysis and diagrams covering SysML, discrete event and continuous system dynamics simulation, reliability analysis, causal analysis, project management, and more using simple Python code as the glue.
 
 The open source Python scientific computing ecosystem enables advanced analysis with powerful libraries and language features. se-lib is built with Graphviz, Matplotlib, NetworkX, NumPy and SciPy integrated with Python for all systems modeling.
