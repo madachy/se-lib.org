@@ -1,3 +1,10 @@
+---
+title: Systems Engineering Library (se-lib)
+description: Systems Engineering Library (se-lib)
+keywords: se-lib, system engineering, system modeling, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation, continuous systems
+author: Ray Madachy
+---
+
 # Home
 
 ## Introduction
