@@ -7,7 +7,7 @@ repo_url: https://github.com/se-lib/se-lib
 repo_name: se-lib/se-lib
 
 theme:
-  name: github
+  name: readthedocs
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -52,7 +52,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Introduction: introduction.md
   - Installation: installation.md
   - Function Reference: function_reference.md
   - Examples: examples.md
