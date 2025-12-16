@@ -97,7 +97,7 @@ The following was presented at the 2022 INCOSE San Diego Mini-Conference:
 
 se-lib research and development is supported by these sponsors:
 
-* [Boehm Center for Systems and Software Engineering](https://boehmcsse.org/)
+* [![csse_logo](/assets/CSSE-logo-300x210.png){width="30px"}][Boehm Center for Systems and Software Engineering](https://boehmcsse.org/)
 * Naval Postgraduate School Foundation
 * Marine Corps Air Station (MCAS) Miramar
 
