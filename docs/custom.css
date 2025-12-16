@@ -1,0 +1,88 @@
+/* Override ReadTheDocs navigation colors for light theme */
+
+/* Main navigation sidebar background */
+.wy-nav-side {
+    background: #ffffff !important;
+    border-right: 1px solid #e1e4e5;
+}
+
+/* Navigation menu background */
+.wy-side-nav-search {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e1e4e5;
+}
+
+/* Search input in navigation */
+.wy-side-nav-search input[type="text"] {
+    border-color: #e1e4e5;
+    color: #333333;
+}
+
+/* Navigation menu items - default state */
+.wy-menu-vertical a {
+    color: #333333 !important;
+}
+
+/* Navigation menu items - hover state */
+.wy-menu-vertical a:hover {
+    background-color: #f0f0f0 !important;
+    color: #000000 !important;
+}
+
+/* Current/selected page */
+.wy-menu-vertical li.current > a {
+    background: #e8e8e8 !important;
+    color: #000000 !important;
+    border-right: 3px solid #2980b9;
+}
+
+/* Expanded section background */
+.wy-menu-vertical li.current {
+    background: #f5f5f5 !important;
+}
+
+/* Nested items in current section */
+.wy-menu-vertical li.current a {
+    color: #404040 !important;
+}
+
+/* Active/selected nested item */
+.wy-menu-vertical li.current li.current > a {
+    background: #e8e8e8 !important;
+    color: #000000 !important;
+}
+
+/* TOC (Table of Contents) section headers */
+.wy-menu-vertical p.caption {
+    color: #555555 !important;
+}
+
+/* Expand/collapse icons */
+.wy-menu-vertical li.toctree-l1 > a .toctree-expand,
+.wy-menu-vertical li.toctree-l2 > a .toctree-expand {
+    color: #666666 !important;
+}
+
+/* Project name/logo area */
+.wy-side-nav-search > a,
+.wy-side-nav-search .wy-dropdown > a {
+    color: #333333 !important;
+}
+
+/* Version selector */
+.wy-side-nav-search > div.version {
+    color: #666666 !important;
+}
+
+/* Scrollbar for navigation (WebKit browsers) */
+.wy-side-scroll::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.wy-side-scroll::-webkit-scrollbar-thumb {
+    background: #cccccc;
+}
+
+.wy-side-scroll::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+}
