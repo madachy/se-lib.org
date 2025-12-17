@@ -243,12 +243,11 @@ to identify the adjoining faults. All basic events will have a blank list
 
 ## Simulations
 
+### System Dynamics
+
 <section id="simulations">
 <section id="system-dynamics">
 
-### System Dynamics
-  
-<h3>System Dynamics<a class="headerlink" href="#system-dynamics" title="Permalink to this heading">¶</a></h3>
 <section id="init-sd-model">
 <h4>init_sd_model<a class="headerlink" href="#init-sd-model" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
