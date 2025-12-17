@@ -1,6 +1,3 @@
-::: {.meta title="Systems Engineering Library (se-lib) Function Reference" description="Systems Engineering Library (se-lib) Function Reference" keywords="Systems Engineering Library, se-lib, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation"}
-:::
-
 # Function Reference
 
 To use se-lib, first import it before using any functions:
@@ -205,8 +202,11 @@ to identify the adjoining faults. All basic events will have a blank list
 
 </section>
 </section>
+
+## Analyses
+
 <section id="analyses">
-<h2>Analyses<a class="headerlink" href="#analyses" title="Permalink to this heading">¶</a></h2>
+<h2><a class="headerlink" href="#analyses" title="Permalink to this heading">¶</a></h2>
 <section id="fault-tree-cutsets">
 <h3>fault_tree_cutsets<a class="headerlink" href="#fault-tree-cutsets" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
@@ -242,6 +242,9 @@ to identify the adjoining faults. All basic events will have a blank list
 
 </section>
 </section>
+
+## Simulations
+
 <section id="simulations">
 <h2>Simulations<a class="headerlink" href="#simulations" title="Permalink to this heading">¶</a></h2>
 <section id="system-dynamics">
