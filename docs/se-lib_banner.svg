@@ -7,9 +7,9 @@
 <g id="node1" class="node">
 <title>selib</title>
 <polygon fill="#ffffff" stroke="transparent" points="8,-4 8,-130 524,-130 524,-4 8,-4"/>
-<text text-anchor="start" x="186.026" y="-62.2" font-family="Times,serif" font-weight="bold" font-size="72.00" fill="#0000ff">se-lib</text>
-<text text-anchor="start" x="265.25" y="-49.6" font-family="Times,serif" font-size="6.00" fill="#0000ff"> </text>
-<text text-anchor="start" x="11.614" y="-13" font-family="Times,serif" font-weight="bold" font-size="40.00" fill="#0000ff">  Systems Engineering Library  </text>
+<text text-anchor="start" x="186.026" y="-62.2" font-family="Times,serif" font-weight="bold" font-size="72.00" fill="white">se-lib</text>
+<text text-anchor="start" x="265.25" y="-49.6" font-family="Times,serif" font-size="6.00" fill="white"> </text>
+<text text-anchor="start" x="11.614" y="-13" font-family="Times,serif" font-weight="bold" font-size="40.00" fill="white">  Systems Engineering Library  </text>
 </g>
 </g>
 </svg>
