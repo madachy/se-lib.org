@@ -34,7 +34,7 @@ theme:
     - content.tabs.link
 
 extra_css:
-  - css/custom.css
+  - custom.css
   
 plugins:
   - search
