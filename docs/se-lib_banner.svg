@@ -119,13 +119,13 @@
           font-family="Arial,sans-serif"
           font-weight="bold"
           font-size="72"
-          fill="#0F172A">se-lib</text>
+          fill="navy">se-lib</text>
 
     <text id="subtitle" x="270" y="110"
           text-anchor="middle"
           font-family="Arial,sans-serif"
           font-weight="bold"
           font-size="38"
-          fill="#334155">Systems Engineering Library</text>
+          fill="navy">Systems Engineering Library</text>
   </g>
 </svg>
