@@ -8,7 +8,7 @@ repo_name: se-lib/se-lib
 
 theme:
   name: readthedocs
-  logo: Claude_AI_logo.svg
+  logo: se-lib_banner.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
