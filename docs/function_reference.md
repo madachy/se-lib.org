@@ -9,9 +9,8 @@ import selib
 These function definitions follow the convention whereby required input parameters are shown first, then optional parameters are shown with an equal sign indicating the default values. A graph here is a generic set of nodes representing system elements connected by edges shown as non-directed or directed lines.
 
 ## Diagrams
-
 <section id="diagrams">
-<h2>Diagrams<a class="headerlink" href="#diagrams" title="Permalink to this heading">¶</a></h2>
+
 <section id="context-diagram">
 <h3>context_diagram<a class="headerlink" href="#context-diagram" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
@@ -204,9 +203,8 @@ to identify the adjoining faults. All basic events will have a blank list
 </section>
 
 ## Analyses
-
 <section id="analyses">
-<h2><a class="headerlink" href="#analyses" title="Permalink to this heading">¶</a></h2>
+
 <section id="fault-tree-cutsets">
 <h3>fault_tree_cutsets<a class="headerlink" href="#fault-tree-cutsets" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
@@ -246,8 +244,10 @@ to identify the adjoining faults. All basic events will have a blank list
 ## Simulations
 
 <section id="simulations">
-<h2>Simulations<a class="headerlink" href="#simulations" title="Permalink to this heading">¶</a></h2>
 <section id="system-dynamics">
+
+### System Dynamics
+  
 <h3>System Dynamics<a class="headerlink" href="#system-dynamics" title="Permalink to this heading">¶</a></h3>
 <section id="init-sd-model">
 <h4>init_sd_model<a class="headerlink" href="#init-sd-model" title="Permalink to this heading">¶</a></h4>
