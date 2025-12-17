@@ -33,6 +33,9 @@ theme:
     - content.code.copy
     - content.tabs.link
 
+extra_css:
+  - css/custom.css
+  
 plugins:
   - search
 
