@@ -1,31 +1,115 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" width="540pt" height="120pt" viewBox="0 0 540 120">
+<!--
+  se-lib banner (mkdocs / readthedocs theme)
+  Canvas: 540 x 120 (viewBox 0 0 540 120)
+
+  Change in this revision:
+    - Left icon moved to the top-left corner with a small 2 px safety inset to avoid stroke clipping.
+    - Right icon moved to the top-right corner with the same 2 px inset.
+    - Icon sizes unchanged (125 px wide; scale = 125/206).
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="540pt" height="120pt"
+     viewBox="0 0 540 120"
+     version="1.1">
+
   <g id="graph0" class="graph">
     <title>G</title>
 
-    <!-- Background rectangle (transparent or magenta) -->
+    <!-- Background (emulates ReadTheDocs header color) -->
     <rect x="0" y="0" width="540" height="120" fill="none"/>
 
-    <!-- Logo content -->
-    <g id="node1" class="node">
-      <title>selib</title>
+    <defs>
+      <!-- Embedded requirements tree (native diagram width 206, height 116) -->
+      <g id="requirements-tree" stroke="white" stroke-width="3" fill="white">
+        <g id="graph0_req" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+          <title>D</title>
+          <polygon fill="none" stroke="transparent" points="-4,4 -4,-112 202,-112 202,4 -4,4"/>
+          <g id="node1" class="node">
+            <title>a</title>
+            <polygon fill="none" points="126,-108 72,-108 72,-72 126,-72 126,-108"/>
+          </g>
+          <g id="node2" class="node">
+            <title>b</title>
+            <polygon fill="none" points="54,-36 0,-36 0,0 54,0 54,-36"/>
+          </g>
+          <g id="edge1" class="edge">
+            <title>a-&gt;b</title>
+            <path fill="none" d="M72,-78C55.3848,-78 39.0977,-78 27,-78 27,-78 27,-42.1686 27,-42.1686"/>
+            <polygon points="30.5001,-42.1687 27,-32.1686 23.5001,-42.1686 30.5001,-42.1687"/>
+          </g>
+          <g id="node3" class="node">
+            <title>c</title>
+            <polygon fill="none" points="126,-36 72,-36 72,0 126,0 126,-36"/>
+          </g>
+          <g id="edge2" class="edge">
+            <title>a-&gt;c</title>
+            <path fill="none" d="M99,-72C99,-72 99,-46.1686 99,-46.1686"/>
+            <polygon points="102.5001,-46.1687 99,-36.1686 95.5001,-46.1686 102.5001,-46.1687"/>
+          </g>
+          <g id="node4" class="node">
+            <title>d</title>
+            <polygon fill="none" points="198,-36 144,-36 144,0 198,0 198,-36"/>
+          </g>
+          <g id="edge3" class="edge">
+            <title>a-&gt;d</title>
+            <path fill="none" d="M126,-78C142.6152,-78 158.9023,-78 171,-78 171,-78 171,-42.1686 171,-42.1686"/>
+            <polygon points="174.5001,-42.1687 171,-32.1686 167.5001,-42.1686 174.5001,-42.1687"/>
+          </g>
+        </g>
+      </g>
 
-      <!-- Main title: se-lib -->
-      <text x="270" y="62"
-            text-anchor="middle"
-            font-family="Arial,sans-serif"
-            font-weight="bold"
-            font-size="72"
-            fill="white">se-lib</text>
+      <!-- Notional time-based graph icon (drawn in a 206 x 116 design space) -->
+      <g id="time-graph" stroke="white" stroke-width="3" fill="none">
+        <!-- Axes (unlabeled) -->
+        <line x1="35" y1="96" x2="200" y2="96"/>
+        <line x1="35" y1="96" x2="35"  y2="20"/>
 
-      <!-- Subtitle: Systems Engineering Library -->
-      <text x="270" y="110"
-            text-anchor="middle"
-            font-family="Arial,sans-serif"
-            font-weight="bold"
-            font-size="38"
-            fill="white">Systems Engineering Library</text>
+        <!-- Rayleigh-like intensity curve (solid) -->
+        <path d="M 35 96
+                 C 60 86, 70 52, 97 34
+                 C 120 20, 143 44, 163 72
+                 C 177 90, 190 96, 200 96"
+              stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Cumulative integral (S-curve, dashed) -->
+        <path d="M 35 96
+                 C 63 96, 75 94, 93 84
+                 C 113 72, 121 56, 131 44
+                 C 145 28, 165 22, 200 22"
+              stroke-dasharray="8 6"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </defs>
+
+    <!-- Icons scaled to 125 px wide: scale = 125/206 = 0.606796... -->
+    <!-- Left icon: moved to top-left with 2 px inset -->
+    <g id="icon-left" transform="translate(2,2) scale(0.606796)">
+      <use href="#requirements-tree" xlink:href="#requirements-tree"/>
     </g>
+
+    <!-- Right icon: moved to top-right with 2 px inset
+         x = 540 - 125 - 2 = 413
+    -->
+    <g id="icon-right" transform="translate(413,2) scale(0.606796)">
+      <use href="#time-graph" xlink:href="#time-graph"/>
+    </g>
+
+    <!-- Title and subtitle -->
+    <text id="title" x="270" y="62"
+          text-anchor="middle"
+          font-family="Arial,sans-serif"
+          font-weight="bold"
+          font-size="72"
+          fill="white">se-lib</text>
+
+    <text id="subtitle" x="270" y="110"
+          text-anchor="middle"
+          font-family="Arial,sans-serif"
+          font-weight="bold"
+          font-size="38"
+          fill="white">Systems Engineering Library</text>
   </g>
 </svg>
