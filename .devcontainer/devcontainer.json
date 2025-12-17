@@ -1,4 +1,0 @@
-{
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "postCreateCommand": "bash -c 'cat .bashrc >> ~/.bashrc && source ~/.bashrc'"
-}
