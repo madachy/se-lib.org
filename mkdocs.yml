@@ -9,6 +9,7 @@ repo_name: se-lib/se-lib
 theme:
   name: readthedocs
   logo: se-lib_banner.svg
+  highlightjs: false
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
