@@ -35,7 +35,7 @@
 
 /* Header block background (light, with a subtle bottom rule) */
 .wy-side-nav-search {
-    background: #F1F5F9 !important;          /* whitesmoke #F8FAFC near-white */
+    background: #dce6ef !important;          /* whitesmoke #F8FAFC near-white */
     border-bottom: 1px solid #CBD5E1 !important;
 }
 
