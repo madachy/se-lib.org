@@ -52,7 +52,6 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
-      toc_depth: 4
   - tables
   
 nav:
