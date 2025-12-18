@@ -46,47 +46,6 @@ Key capabilities include:
 - **Project Management:** PERT charts, Gantt charts, critical path analysis, and design structure matrices
 - **Network Analysis:** Using NetworkX for complex system relationships
 
-## Example Usage
-
-```python
-import selib
-
-# Create a simple SysML context diagram
-selib.context_diagram(
-    system="Autonomous Vehicle",
-    external_systems=[
-        "Driver",
-        "Pedestrian", 
-        "Traffic Control System",
-        "Weather Service",
-        "GPS Satellites"
-    ],
-    filename="context_diagram"
-)
-
-# Define and run a discrete event simulation
-selib.init_de_model()
-
-selib.add_source(
-    name='arrivals',
-    connections={'server': 1},
-    num_entities=100,
-    interarrival_time='random.expovariate(1/5)'
-)
-
-selib.add_server(
-    name='server',
-    connections={'exit': 1},
-    service_time='random.expovariate(1/4)',
-    capacity=1
-)
-
-selib.add_terminate(name='exit')
-
-network, entity_data = selib.run_model()
-selib.draw_model_diagram(filename='de_model')
-```
-
 ## Presentations
 
 The following was presented at the 2022 INCOSE San Diego Mini-Conference:
@@ -98,7 +57,6 @@ The following was presented at the 2022 INCOSE San Diego Mini-Conference:
 se-lib research and development is supported by these sponsors:
 
 * [<img src="assets/CSSE-logo-300x210.png" width="30px" alt="csse_logo">](https://boehmcsse.org/) Boehm Center for Systems and Software Engineering
-* Naval Postgraduate School Foundation
 * Naval Postgraduate School Foundation
 * Marine Corps Air Station (MCAS) Miramar
 
