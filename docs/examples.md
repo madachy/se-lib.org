@@ -24,13 +24,9 @@ See the following manuals for further details.
 
 #### System Dynamics Model
 
-<div style="text-align: center">
-<object data="_images/battle_simulator_model.png">
-</object>
-</div>
+![battle_simulator_model.png](assets/battle_simulator_model.png)
 
-
-```
+```python
 # Battle Simulator using Lanchester's Law for Aimed Fire with Reinforcements
 
 init_sd_model(start=0, stop=2, dt=.05)
@@ -53,17 +49,8 @@ save_graph(['blue_troops', 'red_troops'], filename="battle_simulator_troop_level
 save_graph(["red_attrition", "red_reinforcements", 'blue_attrition', 'blue_reinforcements'], filename="battle_simulator_flow_rates")
 ```
 
-<div style="text-align: center">
-<object data="_images/system_dynamics_battle_simulator_output.png">
-</object>
-</div>
+![system_dynamics_battle_simulator_output.png](assets/system_dynamics_battle_simulator_output.png)
 
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{system_dynamics_battle_simulator_output.png}
-
-```  
 
 #### Discrete Event Model
 
@@ -408,7 +395,7 @@ Portion of example Excel file *aav_fault_tree.xlsx*:
 
 ![aav_fault_tree_excel.png](assets/aav_fault_tree_excel.png)
 
-```
+```python
 # read fault tree from Excel file into list of nodes
 fault_tree_list = se.read_fault_tree_excel('aav_fault_tree.xlsx')
 
