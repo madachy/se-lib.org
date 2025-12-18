@@ -389,7 +389,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-#### Discrete Event
+### Discrete Event
 
 #### init_de_model
 <dl class="py function">
