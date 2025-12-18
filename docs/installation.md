@@ -25,13 +25,14 @@ To update from a previous version use ``pip update se-lib``, but to ensure the l
 
 The current version can be found via the ``__doc__`` method:
 
-```{code-block}
+```python
 from selib import *
 print(selib.__doc__)
-
-se-lib Version .26.6
-
 ```
+```
+se-lib Version .42.0
+```
+
 
 
 ## On Replit.com 
@@ -53,8 +54,7 @@ Depending on which functions you want to use, you may also need to install graph
 
 In a custom installation, creation of diagrams will also require adding the 2 lines `pkgs.graphviz` and `pkgs.xdg-utils` to the hidden file "replit.nix" per below.  It can be accessed by selecting "Show Hidden Files" in the Files menu.
 
-```{code-block}
-:emphasize-lines: 6, 7
+``` {hl_lines="6-7"}
 { pkgs }: {
   deps = [
     pkgs.python310Full
@@ -69,8 +69,7 @@ In a custom installation, creation of diagrams will also require adding the 2 li
 
 Updating on replit.com also uses the package installer to remove the current and re-install to the latest. To determine the current version use the same method ``__doc__`` method as above, or look in the Packager file *pyproject.toml* for the highlighted line for se-lib.  This will be the correct version vs. what the package remover may show on the next step.
 
-```{code-block}
-:emphasize-lines: 15
+```toml {hl_lines="15"}
 [tool.poetry]
 name = "python-template"
 version = "0.1.0"
@@ -134,7 +133,7 @@ To verify successfull installation:
 * Open a Jupyter Notebook
 * import selib and create a context diagram
 
-```{code-block]
+```python
 import selib as se
 
 # system model
@@ -151,7 +150,8 @@ If everything worked correctly, you should see something like the figure below:
 > You can ignore the warnings. You may or may not get them when running the program.
 
 Another good test to run is a systems dynamics model. Note that we use `from selib import *` in this example. if we did not do this, we would have to put `se.` in front of each function below.
-```{code-block}
+
+```python
 from selib import *
 
 init_sd_model(start=0, stop=10, dt=.1)
