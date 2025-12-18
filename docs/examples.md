@@ -1,10 +1,3 @@
----
-myst:
-  html_meta:
-    "description": "Systems Engineering Library (se-lib) Examples"
-    "keywords": "se-lib, systems engineering, system modeling, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation"
----
-
 ## Examples
 
 [![open_in_colab.svg](assets/open_in_colab.svg)](https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing) Open these examples in a Google Colaboratory Notebook.
@@ -54,7 +47,7 @@ save_graph(["red_attrition", "red_reinforcements", 'blue_attrition', 'blue_reinf
 
 #### Discrete Event Model
 
-```
+```python
 # electric car charging simulation
 init_de_model()
 
@@ -82,21 +75,16 @@ model_data, entity_data = run_model()
 plot_histogram(model_data['charger']['waiting_times'], xlabel="Charger Waiting Time")
 ```  
 
-<div style="text-align: center">
-<object data="_images/electric_car_model_diagram.png">
-</object>
-</div>
+![electric_car_model_diagram.png](assets/electric_car_model_diagram.png)
 
-<div style="text-align: center">
-<object data="_images/electric_car_model_output.png">
-</object>
-</div>
+![electric_car_model_output.png.png](assets/electric_car_model_output.png.png)
+
 
 ### Analyses
 
 #### Quantitative Fault Tree
 
-```
+```python
 # UUV computed fault tree given probabilities for basic events
 uuv_fault_tree = [
     ("UUV Mission Data Loss", "or", '', ["Communication Loss", "Power Down", "All Sensors Fail"]),
@@ -113,23 +101,14 @@ uuv_fault_tree = [
 se.draw_fault_tree_diagram_quantitative(uuv_fault_tree, filename="uuv_quantitative_fault_tree", format="svg")
 ```
 
-<div style="text-align: center">
-<object data="_images/uuv_quantitative_fault_tree.svg" width=800px>
-</object>
-</div>
+![uuv_quantitative_fault_tree.svg](assets/uuv_quantitative_fault_tree.svg)
 
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{lamp_circuit_fault_tree.svg}
-
-```  
 
 #### Critical Path Analysis
 
 A critical path can be computed from a set of tasks with associated time durations and dependencies as below.
 
-```
+```python
 # tasks, durations and dependencies
 tasks = [('A', {'Duration': 3}),
          ('B', {'Duration': 5}),
@@ -146,18 +125,7 @@ task_dependencies = [('A', 'C'),
 # create diagram
 se.critical_path_diagram(tasks, task_dependencies, filename="critical_path")
 ```
-
-<div style="text-align: center">
-<object data="_images/critical_path.png">
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{critical_path.svg}
-
-```  
+![critical_path.svg](assets/critical_path.svg)
 
 ### Diagrams
 
