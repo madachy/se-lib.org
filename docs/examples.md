@@ -77,7 +77,7 @@ plot_histogram(model_data['charger']['waiting_times'], xlabel="Charger Waiting T
 
 ![electric_car_model_diagram.png](assets/electric_car_model_diagram.png)
 
-![electric_car_model_output.png.png](assets/electric_car_model_output.png.png)
+![electric_car_model_output.png](assets/electric_car_model_output.png)
 
 
 ### Analyses
@@ -101,7 +101,7 @@ uuv_fault_tree = [
 se.draw_fault_tree_diagram_quantitative(uuv_fault_tree, filename="uuv_quantitative_fault_tree", format="svg")
 ```
 
-![uuv_quantitative_fault_tree.svg](assets/uuv_quantitative_fault_tree.svg)
+![uuv_quantitative_fault_tree.png](assets/uuv_quantitative_fault_tree.png)
 
 
 #### Critical Path Analysis
@@ -136,7 +136,7 @@ These examples generate diagrams to be displayed from a Python console or Jupyte
 
 Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.
 
-```{code-block} python
+```python
 import selib as se
 
 # system model
@@ -149,24 +149,13 @@ use_case_relationships = []
 # create diagram
 se.use_case_diagram(system_name, actors, use_cases, interactions, use_case_relationships, filename=system_name+'use case diagram.pdf')
  ```
-
-<div style="text-align: center">
-<object data="_images/Course_Portal_use_case_diagram.svg">
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{Course_Portal_use_case_diagram.svg}
-```
-
+![Course_Portal_use_case_diagram.svg](assets/Course_Portal_use_case_diagram.svg)
 
 #### Sequence Model
 
 A sequence diagram can be constructed per the following.
 
-```
+```python
 # system model
 system_name = "Battle Simulator"
 actors = ['Battle Planner']
@@ -192,20 +181,11 @@ actions = [
 se.sequence_diagram(system_name, actors, objects, actions, filename=system_name+"_sequence_diagram")
 ```
 
-<div style="text-align: center">
-<object data="_images/Battle_Simulator_sequence_diagram.svg">
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{Battle_Simulator_sequence_diagram.svg}
-```
+![Battle_Simulator_sequence_diagram.svg](assets/Battle_Simulator_sequence_diagram.svg)
 
 #### Context Model
 
-```
+```python
 # system model
 system_name = "Python Interpreter with PyML"
 external_actors = ["User", "OS", "Graphviz"]
@@ -213,21 +193,11 @@ external_actors = ["User", "OS", "Graphviz"]
 se.context_diagram(system_name, external_actors, filename="pyml_context_diagram_offline")
 ```
 
-<div style="text-align: center">
-<object data="_images/pyml_context_diagram_offline.svg">
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{pyml_context_diagram_offline.svg}
-```
-
+![pyml_context_diagram_offline.svg](assets/pyml_context_diagram_offline.svg)
 
 #### Requirements Model
 
-```
+```python
 # Intelligence, Surveillance, & Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements
 requirements = [("ISR UUV", "Performance"),
                 ("Performance",
@@ -247,20 +217,11 @@ requirements = [("ISR UUV", "Performance"),
 se.requirements_diagram(requirements, rankdir='LR', filename="uuv_requirements_tree")
 ```
 
-<div style="text-align: center">
-<object data="_images/uuv_requirements_tree.svg">
-</object>
-</div>
+![uuv_requirements_tree.svg](assets/uuv_requirements_tree.svg)
 
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{uuv_requirements_tree.svg}
-
-```
 #### Work Breakdown Structure
 
-```
+```python
 # project work breakdown structure
 wbs_decompositions = [
 ('Skateboard', 'Hardware'), ('Skateboard', 'Software'), ('Skateboard', 'Integration and Test'),
@@ -271,27 +232,16 @@ wbs_decompositions = [
 # create diagram
 se.wbs_diagram(wbs_decompositions, filename="skateboard_wbs")
 ```
-
-<div style="text-align: center">
-<object width="700px" data="_images/skateboard_wbs.svg">
-</object>
-</div>
-
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{skateboard_wbs.svg}
-```
+![skateboard_wbs.svg](assets/skateboard_wbs.svg)
 
 
 #### Design Structure Matrix
 
-```
+```python
 tasks = ['Make Board', 'Acquire Wheels', 'Assemble', 'Test']
 task_dependencies = [('Make Board', 'Assemble'), ('Acquire Wheels', 'Assemble'), ('Assemble', 'Test'), ('Test', 'Assemble')]
 se.design_structure_matrix(tasks, task_dependencies, filename="skateboard_task_dsm_with_feedback")
 ```
-
 
 <div style="text-align: center">
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -355,8 +305,6 @@ se.design_structure_matrix(tasks, task_dependencies, filename="skateboard_task_d
 </div>
 
 
-
-
 #### Read Fault Tree from Excel
 
 Portion of example Excel file *aav_fault_tree.xlsx*:
@@ -376,7 +324,7 @@ se.fault_tree_diagram(fault_tree_list)
 
 #### Causal Diagram
 
-```
+```python
 # causal relationships
 relationships = [('Available personnel',"Workforce gap", "-"),
     ('Required personnel',"Workforce gap", "+"),
@@ -388,14 +336,5 @@ relationships = [('Available personnel',"Workforce gap", "-"),
 se.causal_diagram(relationships)
 ```
 
-<div style="text-align: center">
-<object data="_images/workforce_gap_cld.svg">
-</object>
-</div>
+![workforce_gap_cld.svg](assets/workforce_gap_cld.svg)
 
-```{eval-rst}
-.. raw:: latex
-
-   \includesvg[]{workforce_gap_cld.svg}
-
-```  
