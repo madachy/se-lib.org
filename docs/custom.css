@@ -35,8 +35,14 @@
 
 /* Header block background (light, with a subtle bottom rule) */
 .wy-side-nav-search {
-    background: #dce6ef !important;          /* whitesmoke #F8FAFC near-white */
+    background: whitesmoke !important;          /*  #dce6ef #F8FAFC near-white */
     border-bottom: 1px solid #CBD5E1 !important;
+}
+
+/* Remove extra spacing around the logo link */
+.wy-side-nav-search > a {
+  margin: 0;
+  padding: 0;
 }
 
 /* Site name/logo link text (black) */
