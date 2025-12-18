@@ -9,9 +9,8 @@ import selib
 These function definitions follow the convention whereby required input parameters are shown first, then optional parameters are shown with an equal sign indicating the default values. A graph here is a generic set of nodes representing system elements connected by edges shown as non-directed or directed lines.
 
 ## Diagrams
-<section id="diagrams">
 
-<section id="context-diagram">
+
 <h3>context_diagram<a class="headerlink" href="#context-diagram" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.context_diagram">
@@ -35,8 +34,7 @@ These function definitions follow the convention whereby required input paramete
 </dl>
 </dd></dl>
 
-</section>
-<section id="critical-path-diagram">
+
 <h3>critical_path_diagram<a class="headerlink" href="#critical-path-diagram" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.critical_path_diagram">
@@ -60,8 +58,7 @@ These function definitions follow the convention whereby required input paramete
 </dl>
 </dd></dl>
 
-</section>
-<section id="design-structure-matrix">
+
 <h3>design_structure_matrix<a class="headerlink" href="#design-structure-matrix" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.design_structure_matrix">
@@ -85,8 +82,7 @@ These function definitions follow the convention whereby required input paramete
 </dl>
 </dd></dl>
 
-</section>
-<section id="fault-tree-diagram">
+
 <h3>fault_tree_diagram<a class="headerlink" href="#fault-tree-diagram" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.fault_tree_diagram">
@@ -119,8 +115,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="sequence-diagram">
+
 <h3>sequence_diagram<a class="headerlink" href="#sequence-diagram" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.sequence_diagram">
@@ -146,7 +141,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
+
 <section id="use-case-diagram">
 <span id="id1"></span><h3>use_case_diagram<a class="headerlink" href="#use-case-diagram" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
@@ -174,8 +169,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="wbs-diagram">
+
 <h3>wbs_diagram<a class="headerlink" href="#wbs-diagram" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.wbs_diagram">
@@ -199,13 +193,10 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-</section>
 
 ## Analyses
-<section id="analyses">
 
-<section id="fault-tree-cutsets">
+
 <h3>fault_tree_cutsets<a class="headerlink" href="#fault-tree-cutsets" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.fault_tree_cutsets">
@@ -238,17 +229,13 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-</section>
 
 ## Simulations
 
 ### System Dynamics
 
-<section id="simulations">
-<section id="system-dynamics">
 
-<section id="init-sd-model">
+
 <h4>init_sd_model<a class="headerlink" href="#init-sd-model" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.init_sd_model">
@@ -256,8 +243,7 @@ to identify the adjoining faults. All basic events will have a blank list
 <dd><p>Instantiates a system dynamics model for simulation</p>
 </dd></dl>
 
-</section>
-<section id="add-stock">
+
 <h4>add_stock<a class="headerlink" href="#add-stock" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_stock">
@@ -275,8 +261,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="add-flow">
+
 <h4>add_flow<a class="headerlink" href="#add-flow" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_flow">
@@ -293,8 +278,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="add-auxiliary">
+
 <h4>add_auxiliary<a class="headerlink" href="#add-auxiliary" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_auxiliary">
@@ -311,8 +295,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="plot-graph">
+
 <h4>plot_graph<a class="headerlink" href="#plot-graph" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.plot_graph">
@@ -328,8 +311,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="save-graph">
+
 <h4>save_graph<a class="headerlink" href="#save-graph" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.save_graph">
@@ -345,8 +327,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="run-model">
+
 <h4>run_model<a class="headerlink" href="#run-model" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.run_model">
@@ -363,8 +344,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="set-logical-run-time">
+
 <h4>set_logical_run_time<a class="headerlink" href="#set-logical-run-time" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.set_logical_run_time">
@@ -372,8 +352,7 @@ to identify the adjoining faults. All basic events will have a blank list
 <dd><p>Enables a run time to be measured based on a logical condition for when the simulation should be run (like a while statement).  The logical end time will be available from the ‘get_logical_end_time()’ function in lieu of the fixed end time for a simulation.</p>
 </dd></dl>
 
-</section>
-<section id="get-logical-end-time">
+
 <h4>get_logical_end_time<a class="headerlink" href="#get-logical-end-time" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.get_logical_end_time">
@@ -389,8 +368,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="draw-model-diagram">
+
 <h4>draw_model_diagram<a class="headerlink" href="#draw-model-diagram" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.draw_model_diagram">
@@ -412,11 +390,8 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-</section>
-<section id="discrete-event">
+
 <h3>Discrete Event<a class="headerlink" href="#discrete-event" title="Permalink to this heading">¶</a></h3>
-<section id="init-de-model">
 <h4>init_de_model<a class="headerlink" href="#init-de-model" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.init_de_model">
@@ -424,8 +399,7 @@ to identify the adjoining faults. All basic events will have a blank list
 <dd><p>Instantiates a discrete event model for simulation</p>
 </dd></dl>
 
-</section>
-<section id="add-source">
+
 <h4>add_source<a class="headerlink" href="#add-source" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_source">
@@ -444,8 +418,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="add-server">
+
 <h4>add_server<a class="headerlink" href="#add-server" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_server">
@@ -462,8 +435,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="add-delay">
+
 <h4>add_delay<a class="headerlink" href="#add-delay" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_delay">
@@ -480,8 +452,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="add-terminate">
+
 <h4>add_terminate<a class="headerlink" href="#add-terminate" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_terminate">
@@ -494,8 +465,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="id2">
+
 <h4>run_model<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="id0">
@@ -512,8 +482,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="id3">
+
 <h4>draw_model_diagram<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="id4">
@@ -535,8 +504,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-</section>
-<section id="plot-histogram">
+
 <h4>plot_histogram<a class="headerlink" href="#plot-histogram" title="Permalink to this heading">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.plot_histogram">
