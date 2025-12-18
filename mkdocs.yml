@@ -62,6 +62,8 @@ nav:
   - Online:
       - Playground: online/
       - SysML Scratchpad: https://se-lib.org/online/scratchpad.html
+      - Discrete Event Modeling Demonstrations: https://se-lib.org/online/discrete_event_modeling_demo.html
+      - se-lib playground: https://se-lib.org/online/sysml.html
   - Tutorials:
       - Tutorials: tutorials/
   - Manuals:
