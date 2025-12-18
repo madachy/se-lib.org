@@ -61,6 +61,7 @@ nav:
   - Examples: examples.md
   - Online:
       - Playground: online/
+      - SysML Scratchpad: https://se-lib.org/online/scratchpad.html
   - Tutorials:
       - Tutorials: tutorials/
   - Manuals:
