@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
+  
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="se-lib Development Team" /><link rel="canonical" href="http://se-lib.org/installation/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="se-lib Development Team" /><link rel="canonical" href="https://se-lib.org/installation/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
+  <meta name="keywords" content="se-lib, system engineering, system modeling, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation, continuous systems" />
+
     <title>Installation - Systems Engineering Library (se-lib)</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -30,7 +34,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Systems Engineering Library (se-lib)
+          <a href="..">
+          <img src="../se-lib_banner.svg" class="logo" alt="Logo"/>
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
@@ -75,7 +80,11 @@
               </ul>
               <p class="caption"><span class="caption-text">Online</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="" href="../online/">Playground</a>
+                  <li class="toctree-l1"><a class="" href="https://se-lib.org/online/scratchpad.html">SysML Scratchpad</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://se-lib.org/online/discrete_event_modeling_demo.html">Discrete Event Modeling Demonstrations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://se-lib.org/online/sysml.html">se-lib playground</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Tutorials</span></p>
@@ -126,11 +135,11 @@
 <h2 id="updating">Updating<a class="headerlink" href="#updating" title="Permanent link">&para;</a></h2>
 <p>To update from a previous version use <code>pip update se-lib</code>, but to ensure the latest is actually installed use <code>pip install se-lib==0.26.6</code> which may be necessary.</p>
 <p>The current version can be found via the <code>__doc__</code> method:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>from selib import *
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>print(selib.__doc__)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>se-lib Version .26.6
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">selib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">selib</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
 </code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>se-lib Version .42.0
+</code></pre></div></p>
 <h2 id="on-replitcom">On Replit.com<a class="headerlink" href="#on-replitcom" title="Permanent link">&para;</a></h2>
 <p>Repls are available that are pre-installed with the latest se-lib baseline, other dependent packages and executables. These can be forked into a user account to develop new scripts.  Any of these will work for this purpose:</p>
 <ul>
@@ -142,35 +151,33 @@
 <p>Depending on which functions you want to use, you may also need to install graphviz, pysd, pandas, netCDF4 and simpy similarly.  </p>
 <h3 id="diagrams">Diagrams<a class="headerlink" href="#diagrams" title="Permanent link">&para;</a></h3>
 <p>In a custom installation, creation of diagrams will also require adding the 2 lines <code>pkgs.graphviz</code> and <code>pkgs.xdg-utils</code> to the hidden file "replit.nix" per below.  It can be accessed by selecting "Show Hidden Files" in the Files menu.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>:emphasize-lines: 6, 7
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{ pkgs }: {
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  deps = [
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    pkgs.python310Full
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    pkgs.replitPackages.prybar-python310
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    pkgs.replitPackages.stderred
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    pkgs.graphviz
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    pkgs.xdg-utils
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  ];
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{ pkgs }: {
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  deps = [
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    pkgs.python310Full
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    pkgs.replitPackages.prybar-python310
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    pkgs.replitPackages.stderred
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="hll">    pkgs.graphviz
+</span><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="hll">    pkgs.xdg-utils
+</span><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  ];
 </code></pre></div>
 <h3 id="updating_1">Updating<a class="headerlink" href="#updating_1" title="Permanent link">&para;</a></h3>
 <p>Updating on replit.com also uses the package installer to remove the current and re-install to the latest. To determine the current version use the same method <code>__doc__</code> method as above, or look in the Packager file <em>pyproject.toml</em> for the highlighted line for se-lib.  This will be the correct version vs. what the package remover may show on the next step.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>:emphasize-lines: 15
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>[tool.poetry]
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>name = &quot;python-template&quot;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>version = &quot;0.1.0&quot;
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>description = &quot;&quot;
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>[tool.poetry.dependencies]
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>python = &quot;&gt;=3.10.0,&lt;3.11&quot;
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>numpy = &quot;^1.22.2&quot;
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>replit = &quot;^3.2.4&quot;
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Flask = &quot;^2.2.0&quot;
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>urllib3 = &quot;^1.26.12&quot;
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>graphviz = &quot;^0.20.1&quot;
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>simpy = &quot;^4.0.1&quot;
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>se-lib = &quot;0.26.4&quot;
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>matplotlib = &quot;^3.7.1&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[tool.poetry]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;python-template&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Your Name &lt;you@example.com&gt;&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">[tool.poetry.dependencies]</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10.0,&lt;3.11&quot;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">numpy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^1.22.2&quot;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">replit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^3.2.4&quot;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">Flask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^2.2.0&quot;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">urllib3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^1.26.12&quot;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">graphviz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^0.20.1&quot;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">simpy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^4.0.1&quot;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="hll"><span class="n">se-lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.26.4&quot;</span>
+</span><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">matplotlib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^3.7.1&quot;</span>
 </code></pre></div>
 <p>To update the library for an existing repl first remove it as below after searching for "se-lib" in the package installer.  It will appear as below and may inaccurately show the current version.  The pyproject.toml is correct.  Choose to remove and it will take a few minutes.</p>
 <p><img alt="replit_package_remove.png" src="../assets/replit_package_remove.png" /></p>
@@ -210,32 +217,31 @@
 <p>To verify successfull installation:
 * Open a Jupyter Notebook
 * import selib and create a context diagram</p>
-<p>```{code-block]
-import selib as se</p>
-<h1 id="system-model">system model<a class="headerlink" href="#system-model" title="Permanent link">&para;</a></h1>
-<p>system_name = "Python Integrator with selib"
-external_actors = ["User", "OS", "Graphviz"]</p>
-<h1 id="create-context-diagram">create context diagram<a class="headerlink" href="#create-context-diagram" title="Permanent link">&para;</a></h1>
-<p>se.context_diagram(system_name, external_actors, filename="selib_contest_diagram_offline")
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>If everything worked correctly, you should see something like the figure below:
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>![context_diagram](assets/context_diagram.png)
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&gt; You can ignore the warnings. You may or may not get them when running the program.
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Another good test to run is a systems dynamics model. Note that we use `from selib import *` in this example. if we did not do this, we would have to put `se.` in front of each function below.
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>```{code-block}
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>from selib import *
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>init_sd_model(start=0, stop=10, dt=.1)
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>add_stock(&quot;level&quot;, 50, inflows=[&quot;rate&quot;])
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>add_auxiliary(&quot;time_constant&quot;, .5)
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>add_auxiliary(&quot;goal&quot;, 100)
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>add_flow(&quot;rate&quot;, &quot;(goal - level) / time_constant&quot;)
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>run_model()
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>plot_graph(&#39;level&#39;)
-</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">selib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">se</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># system model</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;Python Integrator with selib&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">external_actors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;User&quot;</span><span class="p">,</span> <span class="s2">&quot;OS&quot;</span><span class="p">,</span> <span class="s2">&quot;Graphviz&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># create context diagram</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">se</span><span class="o">.</span><span class="n">context_diagram</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">external_actors</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;selib_contest_diagram_offline&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>If everything worked correctly, you should see something like the figure below:</p>
+<p><img alt="context_diagram" src="../assets/context_diagram.png" /></p>
+<blockquote>
+<p>You can ignore the warnings. You may or may not get them when running the program.</p>
+</blockquote>
+<p>Another good test to run is a systems dynamics model. Note that we use <code>from selib import *</code> in this example. if we did not do this, we would have to put <code>se.</code> in front of each function below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">selib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">init_sd_model</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">add_stock</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">inflows</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;rate&quot;</span><span class="p">])</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;time_constant&quot;</span><span class="p">,</span> <span class="mf">.5</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">add_auxiliary</span><span class="p">(</span><span class="s2">&quot;goal&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">add_flow</span><span class="p">(</span><span class="s2">&quot;rate&quot;</span><span class="p">,</span> <span class="s2">&quot;(goal - level) / time_constant&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">run_model</span><span class="p">()</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">plot_graph</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">)</span>
+</code></pre></div>
 <p>If everything worked correctly, you should see something similar to the figure below.</p>
 <p><img alt="system dynamics example" src="../assets/sdexample.png" /></p>
               

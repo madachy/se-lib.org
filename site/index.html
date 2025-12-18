@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
+  
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Open source Python library for integrated systems modeling" /><meta name="author" content="se-lib Development Team" /><link rel="canonical" href="http://se-lib.org/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Open source Python library for integrated systems modeling" /><meta name="author" content="se-lib Development Team" /><link rel="canonical" href="https://se-lib.org/" />
       <link rel="shortcut icon" href="img/favicon.ico" />
+  <meta name="keywords" content="se-lib, system engineering, system modeling, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation, continuous systems" />
+
     <title>Systems Engineering Library (se-lib)</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -30,7 +34,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> Systems Engineering Library (se-lib)
+          <a href=".">
+          <img src="se-lib_banner.svg" class="logo" alt="Logo"/>
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
@@ -43,6 +48,10 @@
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#current-features">Current Features</a>
     </li>
@@ -69,7 +78,11 @@
               </ul>
               <p class="caption"><span class="caption-text">Online</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="" href="online/">Playground</a>
+                  <li class="toctree-l1"><a class="" href="https://se-lib.org/online/scratchpad.html">SysML Scratchpad</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://se-lib.org/online/discrete_event_modeling_demo.html">Discrete Event Modeling Demonstrations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://se-lib.org/online/sysml.html">se-lib playground</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Tutorials</span></p>
@@ -108,29 +121,56 @@
               
                 <h1 id="home">Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>Welcome to the Systems Engineering Library (se-lib) (previously called PyML). It provides capabilities for integrated systems modeling, simulation, analysis and diagrams covering SysML, discrete event and continuous system dynamics simulation, reliability analysis, causal analysis, project management, and more using simple Python code as the glue.</p>
-<p>The open source Python scientific computing ecosystem enables advanced analysis with powerful libraries and language features. se-lib is built with Graphviz, Matplotlib, NetworkX, NumPy and SciPy integrated with Python for all systems modeling.</p>
-<p><strong>New Online Capability and Simulation</strong></p>
-<p>The upcoming se-lib v.3 can run online in a browser. Try it at the <a href="http://se-lib.org/online/scratchpad.html">SysML Diagram Scratchpad</a> or the <a href="http://se-lib.org/online/discrete_event_modeling_demo.html">Discrete Event Modeling Demonstrations</a>. We have also added <code class="interpreted-text" role="ref">causal loop modeling&lt;Causal Diagram&gt;</code> (causal diagrams) and <code class="interpreted-text" role="ref">system dynamics modeling and simulation&lt;System Dynamics Model&gt;</code> capabilities.</p>
-<p>Inputs and Outputs ==============</p>
-<p>The diagram below shows the primary inputs and outputs of se-lib, and was generated with se-lib utilities.</p>
-<p><img alt="image" src="./images/se-lib_input_output_diagram.png" width="500px" /></p>
-<h2 id="current-features">Current Features<a class="headerlink" href="#current-features" title="Permanent link">&para;</a></h2>
-<p>This current features of se-lib can be found under <a href="function_reference.html">Function Reference</a>.</p>
-<h2 id="presentations">Presentations<a class="headerlink" href="#presentations" title="Permanent link">&para;</a></h2>
-<p>The following was presented at the2022 INCOSE San Diego Mini-Conference.</p>
+<p>Welcome to the <strong>Systems Engineering Library (se-lib)</strong> (previously called PyML). It provides capabilities for integrated systems modeling, simulation, analysis and diagrams covering SysML, discrete event and continuous system dynamics simulation, reliability analysis, causal analysis, project management, and more using simple Python code as the glue.</p>
+<p>The open source Python scientific computing ecosystem enables advanced analysis with powerful libraries and language features. se-lib is built with Graphviz, Matplotlib, NetworkX, NumPy, PySD, SciPy, and SimPy.</p>
+<p><a href="https://github.com/se-lib/se-lib"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-se--lib-181717?logo=github" /></a>
+<a href="https://pypi.org/project/se-lib/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/se-lib" /></a>
+<a href="https://pypi.org/project/se-lib/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/se-lib" /></a>
+<a href="https://github.com/se-lib/se-lib/blob/main/LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-green" /></a></p>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>Try se-lib instantly with these Colab notebooks in a browser, no installation required.</p>
 <ul>
-<li><a href="http://pyml.fun/presentations/2022%20INCOSE%20San%20Diego%20Mini-Conference%20- %20Introduction%20to%20PyML.pdf">Introduction to PyML</a></li>
+<li><a href="https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing">se-lib examples</a> <a href="https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></li>
+<li><a href="https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing">System dynamics modeling user's guide and examples</a></li>
+<li><a href="https://colab.research.google.com/drive/1arDDaaltEyGLomaGo5ZKVumtviloUAyG?usp=sharing">Discrete event modeling user's guide and examples</a></li>
+</ul>
+<p>se-lib also runs on standalone web pages for rapid experimentation and instruction.</p>
+<ul>
+<li><a href="online/scratchpad.md">SysML Diagram Scratchpad</a></li>
+<li><a href="online/discrete_event_modeling_demo.md">Discrete Event Modeling Demonstrations</a></li>
+<li><a href="online/sysml.md">se-lib playground</a></li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>se-lib
+</code></pre></div>
+<p>For more detailed installation instructions, see the <a href="installation/">Installation</a> page.</p>
+<h2 id="current-features">Current Features<a class="headerlink" href="#current-features" title="Permanent link">&para;</a></h2>
+<p>The current features of se-lib can be found under <a href="function_reference/">Function Reference</a>.</p>
+<p>Key capabilities include:</p>
+<ul>
+<li><strong>SysML Diagrams:</strong> Context diagrams, use case diagrams, activity diagrams, requirements diagrams, block diagrams, and more</li>
+<li><strong>Discrete Event Simulation:</strong> Model and simulate discrete event systems with queues, servers, and resources</li>
+<li><strong>System Dynamics:</strong> Continuous simulation and causal loop diagrams</li>
+<li><strong>Reliability Analysis:</strong> Fault tree analysis and reliability block diagrams</li>
+<li><strong>Project Management:</strong> PERT charts, Gantt charts, critical path analysis, and design structure matrices</li>
+<li><strong>Network Analysis:</strong> Using NetworkX for complex system relationships</li>
+</ul>
+<h2 id="presentations">Presentations<a class="headerlink" href="#presentations" title="Permanent link">&para;</a></h2>
+<p>The following was presented at the 2022 INCOSE San Diego Mini-Conference:</p>
+<ul>
+<li><a href="http://pyml.fun/presentations/2022%20INCOSE%20San%20Diego%20Mini-Conference%20-%20Introduction%20to%20PyML.pdf">Introduction to PyML</a></li>
 </ul>
 <h2 id="acknowledgments">Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permanent link">&para;</a></h2>
 <p>se-lib research and development is supported by these sponsors:</p>
 <ul>
-<li><a href="https://boehmcsse.org"><img alt="csse_logo" src="./images/CSSE-logo-300x210.png" width="30px" /></a> <a href="https://boehmcsse.org/">Boehm Center for Systems and Software Engineering</a></li>
+<li><a href="https://boehmcsse.org/"><img src="assets/CSSE-logo-300x210.png" width="30px" alt="csse_logo"></a> Boehm Center for Systems and Software Engineering</li>
 <li>Naval Postgraduate School Foundation</li>
 <li>Marine Corps Air Station (MCAS) Miramar</li>
 </ul>
 <h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
-<p>We value your feedback. Tell us how we can make se-lib, its documentation and this website more useful. Please send comments, suggestions and interest in supporting the development to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#115;&#101;&#45;&#108;&#105;&#98;&#46;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#64;&#115;&#101;&#45;&#108;&#105;&#98;&#46;&#111;&#114;&#103;</a>.</p>
+<p>We value your feedback. Tell us how we can make se-lib, its documentation and this website more useful. Please send comments, suggestions and interest in supporting the development to <a href="mailto:info@se-lib.org">info@se-lib.org</a>.</p>
+<hr />
+<p>© Copyright 2025, se-lib Development Team. Last updated on Dec 12, 2025.</p>
               
             </div>
           </div><footer>
@@ -184,5 +224,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-12-14 01:48:20.228702+00:00
+Build Date UTC : 2025-12-18 23:48:46.353411+00:00
 -->

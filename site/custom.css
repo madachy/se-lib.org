@@ -1,0 +1,161 @@
+/* ==========================================================================
+   ReadTheDocs Theme - Light Neutral Header + Slate Sidebar (Diagram-friendly)
+   Goals:
+     - Header: light background for black title text and natural diagram colors
+     - Sidebar: subtle slate tint with clear hover/active states
+     - Accent: single consistent blue for focus and active markers
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   MAIN NAVIGATION SIDEBAR
+   -------------------------------------------------------------------------- */
+
+/* Sidebar container */
+.wy-nav-side {
+    background: whitesmoke !important;          /* slate-100 */
+    border-right: 1px solid #CBD5E1 !important; /* slate-300 */
+}
+
+/* Custom scrollbar styling (WebKit browsers: Chrome, Safari, Edge) */
+.wy-side-scroll::-webkit-scrollbar-track {
+    background: whitesmoke;
+}
+
+.wy-side-scroll::-webkit-scrollbar-thumb {
+    background: #CBD5E1; /* slate-300 */
+}
+
+.wy-side-scroll::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8; /* slate-400/500-ish for clearer affordance */
+}
+
+/* --------------------------------------------------------------------------
+   SITE HEADER (Logo/Title Block)
+   -------------------------------------------------------------------------- */
+
+/* Header block background (light, with a subtle bottom rule) */
+.wy-side-nav-search {
+    background: #F1F5F9 !important;          /* whitesmoke #dce6ef #F8FAFC near-white */
+    border-bottom: 1px solid #CBD5E1 !important;
+}
+
+/* Remove extra spacing around the logo link */
+.wy-side-nav-search > a {
+  margin: 0;
+  padding: 0;
+}
+
+/* Site name/logo link text (black) */
+.wy-side-nav-search a.icon-home {
+    color: #0F172A !important;               /* slate-900 */
+}
+
+/* Backup selector for site name link without icon-home class */
+.wy-side-nav-search > a.icon {
+    color: #0F172A !important;
+}
+
+/* Search input field styling */
+.wy-side-nav-search input[type="text"] {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    color: #0F172A !important;
+}
+
+/* Improve focus visibility (keyboard and accessibility) */
+.wy-side-nav-search input[type="text"]:focus {
+    outline: none;
+    border-color: #2563EB !important;        /* blue-600 */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* Version selector text (if version dropdown is enabled) */
+.wy-side-nav-search > div.version {
+    color: #334155 !important;               /* slate-700 */
+}
+
+/* --------------------------------------------------------------------------
+   NAVIGATION MENU ITEMS - HIERARCHY & STRUCTURE
+   -------------------------------------------------------------------------- */
+
+/* Default state for all navigation links */
+.wy-menu-vertical a {
+    color: #0F172A !important;               /* slate-900 */
+}
+
+/* Top-level and nested menu item backgrounds */
+.wy-menu-vertical li.toctree-l2,
+.wy-menu-vertical li.toctree-l3,
+.wy-menu-vertical li.toctree-l4 {
+    background: whitesmoke !important;
+}
+
+.wy-menu-vertical li.toctree-l2 > a,
+.wy-menu-vertical li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l4 > a {
+    background: whitesmoke !important;
+}
+
+/* Nested items within expanded/current section */
+.wy-menu-vertical li.current a {
+    color: #0F172A !important;
+    background: whitesmoke !important;
+}
+
+/* --------------------------------------------------------------------------
+   NAVIGATION MENU ITEMS - INTERACTIVE STATES
+   -------------------------------------------------------------------------- */
+
+/* Hover state for all menu items */
+.wy-menu-vertical a:hover {
+    background-color: #E2E8F0 !important;    /* slate-200 */
+    color: #0F172A !important;
+}
+
+/* Hover state for nested items in current section */
+.wy-menu-vertical li.current a:hover {
+    background-color: #E2E8F0 !important;
+    color: #0F172A !important;
+}
+
+/* Current/selected page:
+   Use a light blue highlight + a left accent bar (more standard than right bar) */
+.wy-menu-vertical li.current > a {
+    background: #DBEAFE !important;          /* blue-100 */
+    color: #0F172A !important;
+    border-left: 4px solid #2563EB !important; /* blue-600 */
+    border-right: none !important;
+}
+
+/* Expanded section container background */
+.wy-menu-vertical li.current {
+    background: whitesmoke !important;
+}
+
+/* Active/selected nested item within current section */
+.wy-menu-vertical li.current li.current > a {
+    background: #BFDBFE !important;          /* blue-200 */
+    color: #0F172A !important;
+    border-left: 4px solid #2563EB !important;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION HEADERS & UI ELEMENTS
+   -------------------------------------------------------------------------- */
+
+/* Section headers (e.g., "ONLINE", "TUTORIALS", "MANUALS") */
+.wy-menu-vertical p.caption {
+    color: #1E3A8A !important;               /* blue-900 */
+    font-weight: 700;
+}
+
+/* Expand/collapse icons (+/-) next to expandable menu items */
+.wy-menu-vertical li.toctree-l1 > a .toctree-expand,
+.wy-menu-vertical li.toctree-l2 > a .toctree-expand {
+    color: #64748B !important;               /* slate-500 */
+}
+
+/* Optional: improve contrast of the little +/- control on hover */
+.wy-menu-vertical a:hover .toctree-expand {
+    color: #334155 !important;               /* slate-700 */
+}
