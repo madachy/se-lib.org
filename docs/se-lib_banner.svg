@@ -34,8 +34,8 @@
 
     <defs>
       <!-- Requirements tree (monochrome near-black). Arrowheads filled to match stroke. -->
-      <g id="requirements-tree" stroke="#111827" stroke-width="3" fill="#111827">
-        <g id="graph0_req" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+      <g id="requirements-tree" stroke="#111827" stroke-width="4" fill="#111827">
+        <g id="graph0_req" class="graph" transform="scale(1 .9) rotate(0) translate(4 112)">
           <title>D</title>
           <polygon fill="none" stroke="transparent" points="-4,4 -4,-112 202,-112 202,4 -4,4"/>
 
