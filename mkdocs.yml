@@ -1,7 +1,9 @@
 site_name: Systems Engineering Library (se-lib)
-site_url: http://se-lib.org
+site_url: https://se-lib.org
 site_description: Open source Python library for integrated systems modeling
 site_author: se-lib Development Team
+site_keywords: se-lib, system engineering, system modeling, python modeling library, PyML, system modeling, SysML, UML, python, systems modeling language, unified modeling language, systems engineering, requirements diagram, use case diagram, sequence diagram, context diagram, work breakdown structure, WBS, wbs diagram, critical path, critical path diagram, fault tree analysis, fault tree diagram, fault tree cutsets, system dynamics, simulation, continuous systems
+
 
 repo_url: https://github.com/se-lib/se-lib
 repo_name: se-lib/se-lib
@@ -9,7 +11,8 @@ repo_name: se-lib/se-lib
 theme:
   name: readthedocs
   logo: se-lib_banner.svg
-  highlightjs: false
+  highlightjs: true
+  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -61,7 +64,6 @@ nav:
   - Function Reference: function_reference.md
   - Examples: examples.md
   - Online:
-      - Playground: online/
       - SysML Scratchpad: https://se-lib.org/online/scratchpad.html
       - Discrete Event Modeling Demonstrations: https://se-lib.org/online/discrete_event_modeling_demo.html
       - se-lib playground: https://se-lib.org/online/sysml.html
