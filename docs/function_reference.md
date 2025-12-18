@@ -141,8 +141,6 @@ to identify the adjoining faults. All basic events will have a blank list
 </dl>
 </dd></dl>
 
-
-<section id="use-case-diagram">
 <span id="id1"></span>### use_case_diagram
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.use_case_diagram">
@@ -523,5 +521,3 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd>
 </dl>
 </dd></dl>
-
-</section>
