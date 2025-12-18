@@ -234,7 +234,7 @@ to identify the adjoining faults. All basic events will have a blank list
 
 
 
-### init_sd_model
+#### init_sd_model
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.init_sd_model">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">init_sd_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.init_sd_model" title="Permalink to this definition">¶</a></dt>
@@ -242,7 +242,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### add_stock
+#### add_stock
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_stock">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_stock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inflows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outflows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_stock" title="Permalink to this definition">¶</a></dt>
@@ -260,7 +260,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### add_flow
+#### add_flow
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_flow">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_flow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_flow" title="Permalink to this definition">¶</a></dt>
@@ -277,7 +277,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### add_auxiliary
+#### add_auxiliary
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_auxiliary">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_auxiliary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_auxiliary" title="Permalink to this definition">¶</a></dt>
@@ -294,7 +294,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### plot_graph
+#### plot_graph
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.plot_graph">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">plot_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">outputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.plot_graph" title="Permalink to this definition">¶</a></dt>
@@ -310,7 +310,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### save_graph
+#### save_graph
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.save_graph">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">save_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'graph.png'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.save_graph" title="Permalink to this definition">¶</a></dt>
@@ -326,7 +326,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### run_model
+#### run_model
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.run_model">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">run_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.run_model" title="Permalink to this definition">¶</a></dt>
@@ -343,7 +343,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### set_logical_run_time
+#### set_logical_run_time
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.set_logical_run_time">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">set_logical_run_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">condition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.set_logical_run_time" title="Permalink to this definition">¶</a></dt>
@@ -351,7 +351,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### get_logical_end_time
+#### get_logical_end_time
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.get_logical_end_time">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">get_logical_end_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#selib.get_logical_end_time" title="Permalink to this definition">¶</a></dt>
@@ -367,7 +367,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### draw_model_diagram
+#### draw_model_diagram
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.draw_model_diagram">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">draw_model_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.draw_model_diagram" title="Permalink to this definition">¶</a></dt>
@@ -389,8 +389,9 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### Discrete Event
-### init_de_model
+#### Discrete Event
+
+#### init_de_model
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.init_de_model">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">init_de_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#selib.init_de_model" title="Permalink to this definition">¶</a></dt>
@@ -398,7 +399,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### add_source
+#### add_source
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_source">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interarrival_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_source" title="Permalink to this definition">¶</a></dt>
@@ -417,7 +418,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### add_server
+#### add_server
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_server">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_server" title="Permalink to this definition">¶</a></dt>
@@ -434,7 +435,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### add_delay
+#### add_delay
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_delay">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_delay" title="Permalink to this definition">¶</a></dt>
@@ -451,7 +452,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### add_terminate
+#### add_terminate
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.add_terminate">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">add_terminate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.add_terminate" title="Permalink to this definition">¶</a></dt>
@@ -464,7 +465,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### run_model
+#### run_model
 <dl class="py function">
 <dt class="sig sig-object py" id="id0">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">run_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
@@ -481,7 +482,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### draw_model_diagram
+#### draw_model_diagram
 <dl class="py function">
 <dt class="sig sig-object py" id="id4">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">draw_model_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
@@ -503,7 +504,7 @@ to identify the adjoining faults. All basic events will have a blank list
 </dd></dl>
 
 
-### plot_histogram
+#### plot_histogram
 <dl class="py function">
 <dt class="sig sig-object py" id="selib.plot_histogram">
 <span class="sig-prename descclassname"><span class="pre">selib.</span></span><span class="sig-name descname"><span class="pre">plot_histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Data'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#selib.plot_histogram" title="Permalink to this definition">¶</a></dt>
