@@ -163,6 +163,38 @@
 /* --------------------------------------------------------------------------
    OTHER FIXES
    -------------------------------------------------------------------------- */
+
+/* Replace mobile header text with logo */
+@media screen and (max-width: 768px) {
+  /* Hide the text in mobile header */
+  .wy-nav-top {
+    background-color: #2980B9; /* Adjust to match your color scheme */
+    text-indent: -9999px; /* Hides the text */
+    position: relative;
+  }
+  
+  /* Add logo as background */
+  .wy-nav-top::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url('se-lib_banner.svg') no-repeat center;
+    background-size: contain;
+    height: 40px;
+    width: 200px; /* Adjust based on your logo dimensions */
+    text-indent: 0;
+  }
+  
+  /* Keep hamburger icon visible */
+  .wy-nav-top i {
+    text-indent: 0;
+    position: relative;
+    z-index: 1;
+  }
+}
+
 /* Hide breadcrumbs and the separator rule that follows them */
 .wy-breadcrumbs {
   display: none !important;
