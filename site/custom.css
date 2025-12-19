@@ -159,3 +159,19 @@
 .wy-menu-vertical a:hover .toctree-expand {
     color: #334155 !important;               /* slate-700 */
 }
+
+/* --------------------------------------------------------------------------
+   OTHER FIXES
+   -------------------------------------------------------------------------- */
+/* Remove outer border from code blocks in mkdocs */
+.highlight {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Alternative: target the pre element directly */
+div.highlight pre {
+    border: none !important;
+    margin: 0 !important;
+}
