@@ -1,0 +1,214 @@
+/*
+ * VS Code Python Syntax Theme for Highlight.js
+ * Designed for MkDocs integration
+ * Based on Visual Studio Code's default light theme
+ */
+
+/* Base code block styling */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Comments */
+.hljs-comment {
+  color: #008000;
+  font-style: italic;
+}
+
+/* Strings */
+.hljs-string {
+  color: #a31515;
+}
+
+/* Numbers */
+.hljs-number {
+  color: #098658;
+}
+
+/* Keywords (def, class, if, for, while, etc.) */
+.hljs-keyword {
+  color: #0000ff;
+}
+
+/* Built-in functions and types (print, len, int, str, etc.) */
+.hljs-built_in {
+  color: #267f99;
+}
+
+/* Function and class names in definitions */
+.hljs-title.function_,
+.hljs-title.class_ {
+  color: #795e26;
+}
+
+/* Class names when used */
+.hljs-type {
+  color: #267f99;
+}
+
+/* Variables and parameters */
+.hljs-variable,
+.hljs-params {
+  color: #001080;
+}
+
+/* Decorators (@property, @staticmethod, etc.) */
+.hljs-meta {
+  color: #795e26;
+}
+
+/* Operators */
+.hljs-operator {
+  color: #000000;
+}
+
+/* Boolean values (True, False) */
+.hljs-literal {
+  color: #0000ff;
+}
+
+/* Special variables (self, cls, __init__, etc.) */
+.hljs-variable.language_ {
+  color: #0000ff;
+}
+
+/* Attributes and properties */
+.hljs-attribute,
+.hljs-property {
+  color: #001080;
+}
+
+/* Regex patterns */
+.hljs-regexp {
+  color: #811f3f;
+}
+
+/* Docstrings (triple-quoted strings) */
+.hljs-doctag {
+  color: #008000;
+}
+
+/* Section (module level docstrings) */
+.hljs-section {
+  color: #a31515;
+}
+
+/* Symbols and punctuation */
+.hljs-punctuation {
+  color: #000000;
+}
+
+/* Additions (for diffs) */
+.hljs-addition {
+  color: #098658;
+  background-color: #e6ffed;
+}
+
+/* Deletions (for diffs) */
+.hljs-deletion {
+  color: #a31515;
+  background-color: #ffebe9;
+}
+
+/* Emphasis */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* Strong emphasis */
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* Optional: Dark theme variant for MkDocs dark mode */
+@media (prefers-color-scheme: dark) {
+  .hljs {
+    background: #1e1e1e;
+    color: #d4d4d4;
+  }
+  
+  .hljs-comment {
+    color: #6a9955;
+  }
+  
+  .hljs-string {
+    color: #ce9178;
+  }
+  
+  .hljs-number {
+    color: #b5cea8;
+  }
+  
+  .hljs-keyword {
+    color: #569cd6;
+  }
+  
+  .hljs-built_in {
+    color: #4ec9b0;
+  }
+  
+  .hljs-title.function_,
+  .hljs-title.class_ {
+    color: #dcdcaa;
+  }
+  
+  .hljs-type {
+    color: #4ec9b0;
+  }
+  
+  .hljs-variable,
+  .hljs-params {
+    color: #9cdcfe;
+  }
+  
+  .hljs-meta {
+    color: #dcdcaa;
+  }
+  
+  .hljs-operator {
+    color: #d4d4d4;
+  }
+  
+  .hljs-literal {
+    color: #569cd6;
+  }
+  
+  .hljs-variable.language_ {
+    color: #569cd6;
+  }
+  
+  .hljs-attribute,
+  .hljs-property {
+    color: #9cdcfe;
+  }
+  
+  .hljs-regexp {
+    color: #d16969;
+  }
+  
+  .hljs-doctag {
+    color: #6a9955;
+  }
+  
+  .hljs-section {
+    color: #ce9178;
+  }
+  
+  .hljs-punctuation {
+    color: #d4d4d4;
+  }
+  
+  .hljs-addition {
+    color: #b5cea8;
+    background-color: #1e3a1e;
+  }
+  
+  .hljs-deletion {
+    color: #ce9178;
+    background-color: #3a1e1e;
+  }
+}
