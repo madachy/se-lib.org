@@ -39,7 +39,8 @@ theme:
 
 extra_css:
   - custom.css
-  - vs.css
+  # - vs.css
+  - spyder_light.css
   
 plugins:
   - search
