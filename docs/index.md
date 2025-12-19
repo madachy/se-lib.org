@@ -63,7 +63,3 @@ se-lib research and development is supported by these sponsors:
 ## Feedback
 
 We value your feedback. Tell us how we can make se-lib, its documentation and this website more useful. Please send comments, suggestions and interest in supporting the development to [info@se-lib.org](mailto:info@se-lib.org).
-
----
-
-© Copyright 2025, se-lib Development Team. Last updated on Dec 12, 2025.
