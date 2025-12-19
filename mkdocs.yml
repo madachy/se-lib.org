@@ -39,6 +39,7 @@ theme:
 
 extra_css:
   - custom.css
+  - vs.css
   
 plugins:
   - search
