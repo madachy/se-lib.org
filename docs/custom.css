@@ -163,10 +163,15 @@
 /* --------------------------------------------------------------------------
    OTHER FIXES
    -------------------------------------------------------------------------- */
-/* Hide the breadcrumb bar in the RTD theme */
+/* Hide breadcrumbs and the separator rule that follows them */
 .wy-breadcrumbs {
-  display: none;
+  display: none !important;
 }
+
+.wy-breadcrumbs + hr {
+  display: none !important;
+}
+
 
 /* Remove outer border from code blocks in mkdocs */
 .highlight {
