@@ -168,7 +168,7 @@
 @media screen and (max-width: 768px) {
   /* Hide the text in mobile header */
   .wy-nav-top {
-    background-color: #2980B9; /* Adjust to match your color scheme */
+    background-color: #F1F5F9; /* Adjust to match your color scheme */
     text-indent: -9999px; /* Hides the text */
     position: relative;
   }
