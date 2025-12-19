@@ -5,6 +5,7 @@ site_author: se-lib Development Team
 
 repo_url: https://github.com/se-lib/se-lib
 repo_name: se-lib/se-lib
+edit_uri: ""
 
 theme:
   name: readthedocs
