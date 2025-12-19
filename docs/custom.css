@@ -163,6 +163,11 @@
 /* --------------------------------------------------------------------------
    OTHER FIXES
    -------------------------------------------------------------------------- */
+/* Hide the breadcrumb bar in the RTD theme */
+.wy-breadcrumbs {
+  display: none;
+}
+
 /* Remove outer border from code blocks in mkdocs */
 .highlight {
     border: none !important;
