@@ -39,9 +39,9 @@ The current features of se-lib can be found under [Function Reference](function_
 
 Key capabilities include:
 
-- **SysML Diagrams:** Context diagrams, use case diagrams, activity diagrams, requirements diagrams, block diagrams, and more
+- **SysML and other Diagrams:** Context diagrams, use case diagrams, sequence diagrams, activity diagrams, requirements diagrams, block diagrams, and more
 - **Discrete Event Simulation:** Model and simulate discrete event systems with queues, servers, and resources
-- **System Dynamics:** Continuous simulation and causal loop diagrams
+- **System Dynamics:** Continuous systems simulation and causal loop diagrams.  Compatible with Vensim, and iThink/Stella using the common XMILE format.
 - **Reliability Analysis:** Fault tree analysis and reliability block diagrams
 - **Project Management:** PERT charts, Gantt charts, critical path analysis, and design structure matrices
 - **Network Analysis:** Using NetworkX for complex system relationships
