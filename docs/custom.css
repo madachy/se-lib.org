@@ -172,6 +172,15 @@
   display: none !important;
 }
 
+/* 1) Remove the extra top padding created by the content wrapper */
+.wy-nav-content {
+  padding-top: 0 !important;
+}
+
+/* 2) Reduce padding around the inner content area */
+.wy-nav-content .rst-content {
+  padding-top: 0 !important;
+}
 
 /* Remove outer border from code blocks in mkdocs */
 .highlight {
