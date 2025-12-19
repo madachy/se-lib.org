@@ -159,3 +159,10 @@
 .wy-menu-vertical a:hover .toctree-expand {
     color: #334155 !important;               /* slate-700 */
 }
+
+/* --------------------------------------------------------------------------
+   OTHER FIXES
+   -------------------------------------------------------------------------- */
+.highlight pre {
+    border: none !important;
+}
