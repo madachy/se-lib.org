@@ -44,7 +44,6 @@ Key capabilities include:
 - **System Dynamics:** Continuous systems simulation and causal loop diagrams.  Compatible with Vensim, and iThink/Stella using the common XMILE format.
 - **Reliability Analysis:** Fault tree analysis and reliability block diagrams
 - **Project Management:** PERT charts, Gantt charts, critical path analysis, and design structure matrices
-- **Network Analysis:** Using NetworkX for complex system relationships
 
 ## Presentations
 
