@@ -66,8 +66,9 @@ nav:
       - Discrete Event Modeling Demonstrations: https://se-lib.org/online/discrete_event_modeling_demo.html
       - se-lib playground: https://se-lib.org/online/sysml.html
   - Tutorials:
-      - Tutorials: tutorials/
+      - Tutorials: https://se-lib.org/tutorials/sd_incose.html
   - Manuals:
-      - Manuals: manuals/
-
+      - System Dynamics Simulation: https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing
+      - Discrete Event Simulation: https://colab.research.google.com/drive/1arDDaaltEyGLomaGo5ZKVumtviloUAyG?usp=sharing
+      
 copyright: Copyright &copy; 2025 se-lib Development Team
