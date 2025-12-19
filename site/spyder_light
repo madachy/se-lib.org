@@ -1,0 +1,226 @@
+/*
+ * Spyder IDE Light Theme for Highlight.js
+ * Designed for MkDocs integration
+ * Based on Spyder's default light syntax highlighting
+ */
+
+/* Base code block styling */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Comments - green */
+.hljs-comment {
+  color: #008000;
+  font-style: italic;
+}
+
+/* Strings - red/magenta */
+.hljs-string {
+  color: #ba2121;
+}
+
+/* Numbers - magenta/purple */
+.hljs-number {
+  color: #666666;
+}
+
+/* Keywords (def, class, if, for, while, return, import, etc.) - green */
+.hljs-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+
+/* Built-in functions (print, len, range, etc.) - dark magenta */
+.hljs-built_in {
+  color: #aa22ff;
+}
+
+/* Function names in definitions - blue */
+.hljs-title.function_ {
+  color: #0000ff;
+  font-weight: bold;
+}
+
+/* Class names in definitions - blue */
+.hljs-title.class_ {
+  color: #0000ff;
+  font-weight: bold;
+}
+
+/* Class names when used - normal text */
+.hljs-type {
+  color: #000000;
+}
+
+/* Variables and parameters - normal text */
+.hljs-variable,
+.hljs-params {
+  color: #000000;
+}
+
+/* Decorators (@property, @staticmethod, etc.) - gray/purple */
+.hljs-meta {
+  color: #aa22ff;
+}
+
+/* Operators - normal text */
+.hljs-operator {
+  color: #000000;
+}
+
+/* Boolean values and None - purple */
+.hljs-literal {
+  color: #aa22ff;
+}
+
+/* Special variables (self, cls) - purple */
+.hljs-variable.language_ {
+  color: #aa22ff;
+}
+
+/* Attributes and properties - normal text */
+.hljs-attribute,
+.hljs-property {
+  color: #000000;
+}
+
+/* Regex patterns - red */
+.hljs-regexp {
+  color: #ba2121;
+}
+
+/* Docstrings - green italic */
+.hljs-doctag {
+  color: #008000;
+  font-style: italic;
+}
+
+/* Section (module level docstrings) - red */
+.hljs-section {
+  color: #ba2121;
+}
+
+/* Symbols and punctuation - normal text */
+.hljs-punctuation {
+  color: #000000;
+}
+
+/* Additions (for diffs) */
+.hljs-addition {
+  color: #008000;
+  background-color: #e6ffed;
+}
+
+/* Deletions (for diffs) */
+.hljs-deletion {
+  color: #ba2121;
+  background-color: #ffebe9;
+}
+
+/* Emphasis */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* Strong emphasis */
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* Optional: Dark theme variant for Spyder dark mode */
+@media (prefers-color-scheme: dark) {
+  .hljs {
+    background: #19232d;
+    color: #ffffff;
+  }
+  
+  .hljs-comment {
+    color: #7f7f7f;
+    font-style: italic;
+  }
+  
+  .hljs-string {
+    color: #e6db74;
+  }
+  
+  .hljs-number {
+    color: #ae81ff;
+  }
+  
+  .hljs-keyword {
+    color: #66d9ef;
+    font-weight: bold;
+  }
+  
+  .hljs-built_in {
+    color: #f92672;
+  }
+  
+  .hljs-title.function_,
+  .hljs-title.class_ {
+    color: #a6e22e;
+    font-weight: bold;
+  }
+  
+  .hljs-type {
+    color: #ffffff;
+  }
+  
+  .hljs-variable,
+  .hljs-params {
+    color: #ffffff;
+  }
+  
+  .hljs-meta {
+    color: #f92672;
+  }
+  
+  .hljs-operator {
+    color: #ffffff;
+  }
+  
+  .hljs-literal {
+    color: #f92672;
+  }
+  
+  .hljs-variable.language_ {
+    color: #f92672;
+  }
+  
+  .hljs-attribute,
+  .hljs-property {
+    color: #ffffff;
+  }
+  
+  .hljs-regexp {
+    color: #e6db74;
+  }
+  
+  .hljs-doctag {
+    color: #7f7f7f;
+    font-style: italic;
+  }
+  
+  .hljs-section {
+    color: #e6db74;
+  }
+  
+  .hljs-punctuation {
+    color: #ffffff;
+  }
+  
+  .hljs-addition {
+    color: #a6e22e;
+    background-color: #1e3a1e;
+  }
+  
+  .hljs-deletion {
+    color: #f92672;
+    background-color: #3a1e1e;
+  }
+}
