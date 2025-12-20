@@ -159,8 +159,8 @@ A sequence diagram can be constructed per the following.
 ```python
 # system model
 system_name = "Battle Simulator"
-actors = ['Battle Planner']
-objects = ['main']
+actors = ["Battle Planner"]
+objects = ["main"]
 actions = [
 ('Battle Planner', 'main', 'run()'),
 ('main', 'Battle Planner', 'request for side 1 name'),
