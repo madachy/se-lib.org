@@ -148,7 +148,7 @@ use_case_relationships = []
 
 # create diagram
 se.use_case_diagram(system_name, actors, use_cases, interactions, use_case_relationships, filename=system_name+'use case diagram.pdf')
- ```
+```
 
 ![Course_Portal_use_case_diagram.svg](assets/Course_Portal_use_case_diagram.svg)
 
