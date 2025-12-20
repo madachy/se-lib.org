@@ -192,6 +192,7 @@
     text-indent: 0;
     position: relative;
     z-index: 1;
+    color: #333333 !important;
   }
 }
 
