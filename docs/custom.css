@@ -171,6 +171,7 @@
     background-color: #F1F5F9; /* Adjust to match your color scheme */
     text-indent: -9999px; /* Hides the text */
     position: relative;
+    border-bottom: 1px solid #cccccc !important; /* Light gray border */
   }
   
   /* Add logo as background */
