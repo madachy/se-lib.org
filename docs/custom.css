@@ -36,7 +36,7 @@
 /* Header block background (light, with a subtle bottom rule) */
 .wy-side-nav-search {
     background: #F1F5F9 !important;          /* whitesmoke #dce6ef #F8FAFC near-white */
-    border-bottom: 1px solid #CBD5E1 !important;
+    border-bottom: 1px solid #cccccc !important; /* Light gray border, before #CBD5E1 */
 }
 
 /* Remove extra spacing around the logo link */
