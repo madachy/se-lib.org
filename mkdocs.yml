@@ -15,8 +15,10 @@ theme:
 
 extra_css:
   - custom.css
-  - vs.css
-  - vs_pygments.css
+  # with highlightjs
+  # - vs.css
+  # with pygments
+  # - vs_pygments.css
   
 plugins:
   - search
