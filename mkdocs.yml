@@ -28,6 +28,7 @@ markdown_extensions:
   - pymdownx.highlight:
       use_pygments: true
       anchor_linenums: true
+      # below could be moot with noclasses: true
       pygments_lang_class: true
       # use inline styles not custom css classes
       noclasses: true
