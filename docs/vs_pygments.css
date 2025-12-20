@@ -91,7 +91,7 @@
 .highlight .nv,  /* Name.Variable */
 .highlight .vi,  /* Name.Variable.Instance */
 .highlight .vg {  /* Name.Variable.Global */
-  color: #001080;
+  color: black;
 }
 
 /* Special variables (self, cls) */
