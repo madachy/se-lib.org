@@ -11,9 +11,7 @@
     <title>Systems Engineering Library (se-lib)</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="custom.css" rel="stylesheet" />
-        <link href="vs.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -24,9 +22,7 @@
     
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+    <![endif]--> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -143,19 +139,18 @@
 <li><a href="online/sysml.md">se-lib playground</a></li>
 </ul>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>se-lib
+<div class="language-bash highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install se-lib
 </code></pre></div>
 <p>For more detailed installation instructions, see the <a href="installation/">Installation</a> page.</p>
 <h2 id="current-features">Current Features<a class="headerlink" href="#current-features" title="Permanent link">&para;</a></h2>
 <p>The current features of se-lib can be found under <a href="function_reference/">Function Reference</a>.</p>
 <p>Key capabilities include:</p>
 <ul>
-<li><strong>SysML Diagrams:</strong> Context diagrams, use case diagrams, activity diagrams, requirements diagrams, block diagrams, and more</li>
+<li><strong>SysML and other Diagrams:</strong> Context diagrams, use case diagrams, sequence diagrams, activity diagrams, requirements diagrams, block diagrams, and more</li>
 <li><strong>Discrete Event Simulation:</strong> Model and simulate discrete event systems with queues, servers, and resources</li>
-<li><strong>System Dynamics:</strong> Continuous simulation and causal loop diagrams</li>
+<li><strong>System Dynamics:</strong> Continuous systems simulation and causal loop diagrams.  Compatible with Vensim, and iThink/Stella using the common XMILE format.</li>
 <li><strong>Reliability Analysis:</strong> Fault tree analysis and reliability block diagrams</li>
 <li><strong>Project Management:</strong> PERT charts, Gantt charts, critical path analysis, and design structure matrices</li>
-<li><strong>Network Analysis:</strong> Using NetworkX for complex system relationships</li>
 </ul>
 <h2 id="presentations">Presentations<a class="headerlink" href="#presentations" title="Permanent link">&para;</a></h2>
 <p>The following was presented at the 2022 INCOSE San Diego Mini-Conference:</p>
@@ -224,5 +219,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-12-19 18:11:40.752117+00:00
+Build Date UTC : 2025-12-22 19:29:21.999203+00:00
 -->

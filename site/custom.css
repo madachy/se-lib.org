@@ -36,7 +36,7 @@
 /* Header block background (light, with a subtle bottom rule) */
 .wy-side-nav-search {
     background: #F1F5F9 !important;          /* whitesmoke #dce6ef #F8FAFC near-white */
-    border-bottom: 1px solid #CBD5E1 !important;
+    border-bottom: 1px solid #cccccc !important; /* Light gray border, before #CBD5E1 */
 }
 
 /* Remove extra spacing around the logo link */
@@ -163,6 +163,59 @@
 /* --------------------------------------------------------------------------
    OTHER FIXES
    -------------------------------------------------------------------------- */
+
+/* Replace mobile header text with logo */
+@media screen and (max-width: 768px) {
+  /* Hide the text in mobile header */
+  .wy-nav-top {
+    background-color: #F1F5F9; /* Adjust to match your color scheme */
+    text-indent: -9999px; /* Hides the text */
+    position: relative;
+    border-bottom: 1px solid #cccccc !important; /* Light gray border */
+  }
+  
+  /* Add logo as background */
+  .wy-nav-top::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url('se-lib_banner.svg') no-repeat center;
+    background-size: contain;
+    height: 40px;
+    width: 200px; /* Adjust based on your logo dimensions */
+    text-indent: 0;
+  }
+  
+  /* Keep hamburger icon visible */
+  .wy-nav-top i {
+    text-indent: 0;
+    position: relative;
+    z-index: 1;
+    color: #333333 !important;
+  }
+}
+
+/* Hide breadcrumbs and the separator rule that follows them */
+.wy-breadcrumbs {
+  display: none !important;
+}
+
+.wy-breadcrumbs + hr {
+  display: none !important;
+}
+
+/* 1) Remove the extra top padding created by the content wrapper */
+.wy-nav-content {
+  padding-top: "2px" !important;
+}
+
+/* 2) Reduce padding around the inner content area */
+.wy-nav-content .rst-content {
+  padding-top: 0 !important;
+}
+
 /* Remove outer border from code blocks in mkdocs */
 .highlight {
     border: none !important;
