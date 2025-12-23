@@ -49,7 +49,7 @@ nav:
   - Function Reference: function_reference.md
   - Examples: examples.md
   - Online:
-      - SysML Scratchpad: https://se-lib.org/online/scratchpad.html
+      - SysML Scratchpad: scratchpad.md
       - Discrete Event Modeling Demonstrations: https://se-lib.org/online/discrete_event_modeling_demo.html
       - se-lib playground: https://se-lib.org/online/sysml.html
   - Tutorials:
