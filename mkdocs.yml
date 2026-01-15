@@ -60,6 +60,7 @@ nav:
       - se-lib playground: https://se-lib.org/online/sysml.html
   - AI chatbots:
     - se-lib chatbot: https://se-lib.org/ai/ai.html
+    - se-lib chatbot2: chatbot.md
   - Tutorials:
       - Tutorials: https://se-lib.org/tutorials/sd_incose.html
   - Manuals:
