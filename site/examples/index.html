@@ -97,13 +97,16 @@
               </ul>
               <p class="caption"><span class="caption-text">Online</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../online/scratchpad/">SysML Scratchpad here</a>
-                  </li>
-                  <li class="toctree-l1"><a class="" href="https://se-lib.org/online/scratchpad.html">SysML Scratchpad online</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../online/scratchpad/">SysML Scratchpad</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="https://se-lib.org/online/discrete_event_modeling_demo.html">Discrete Event Modeling Demonstrations</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="https://se-lib.org/online/sysml.html">se-lib playground</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI chatbots</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://se-lib.org/ai/ai.html">se-lib chatbot</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Tutorials</span></p>
@@ -159,48 +162,48 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>step_size = 600
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>add_stock(<span style="color: #A31515">&quot;blue_troops&quot;</span>, 1000, inflows=[<span style="color: #A31515">&quot;blue_reinforcements&quot;</span>], outflows=[<span style="color: #A31515">&quot;blue_attrition&quot;</span>])
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>add_flow(<span style="color: #A31515">&quot;blue_attrition&quot;</span>, <span style="color: #A31515">&quot;red_troops*red_lethality&quot;</span>)
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>add_flow(<span style="color: #A31515">&quot;blue_reinforcements&quot;</span>, <span style="color: #A31515">&quot;step(200, .7)-step(200, 1.2)&quot;</span>)
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>add_auxiliary(<span style="color: #A31515">&quot;blue_lethality&quot;</span>, <span style="color: #A31515">&quot;random.uniform(.7, .9)&quot;</span>)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>add_stock(<span style="color: #a31515">&quot;blue_troops&quot;</span>, 1000, inflows=[<span style="color: #a31515">&quot;blue_reinforcements&quot;</span>], outflows=[<span style="color: #a31515">&quot;blue_attrition&quot;</span>])
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>add_flow(<span style="color: #a31515">&quot;blue_attrition&quot;</span>, <span style="color: #a31515">&quot;red_troops*red_lethality&quot;</span>)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>add_flow(<span style="color: #a31515">&quot;blue_reinforcements&quot;</span>, <span style="color: #a31515">&quot;step(200, .7)-step(200, 1.2)&quot;</span>)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>add_auxiliary(<span style="color: #a31515">&quot;blue_lethality&quot;</span>, <span style="color: #a31515">&quot;random.uniform(.7, .9)&quot;</span>)
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>add_stock(<span style="color: #A31515">&quot;red_troops&quot;</span>, 800, inflows=[<span style="color: #A31515">&quot;red_reinforcements&quot;</span>], outflows=[<span style="color: #A31515">&quot;red_attrition&quot;</span>])
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>add_flow(<span style="color: #A31515">&quot;red_attrition&quot;</span>, <span style="color: #A31515">&quot;blue_troops*blue_lethality&quot;</span>)
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>add_flow(<span style="color: #A31515">&quot;red_reinforcements&quot;</span>, <span style="color: #A31515">f&quot;step({</span>step_size<span style="color: #A31515">}, .3)-step({</span>step_size<span style="color: #A31515">}, .7)&quot;</span>)
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>add_auxiliary(<span style="color: #A31515">&quot;red_lethality&quot;</span>, <span style="color: #A31515">&quot;random.uniform(.8, 1.0)&quot;</span>)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>add_stock(<span style="color: #a31515">&quot;red_troops&quot;</span>, 800, inflows=[<span style="color: #a31515">&quot;red_reinforcements&quot;</span>], outflows=[<span style="color: #a31515">&quot;red_attrition&quot;</span>])
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>add_flow(<span style="color: #a31515">&quot;red_attrition&quot;</span>, <span style="color: #a31515">&quot;blue_troops*blue_lethality&quot;</span>)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>add_flow(<span style="color: #a31515">&quot;red_reinforcements&quot;</span>, <span style="color: #a31515">f&quot;step({</span>step_size<span style="color: #a31515">}, .3)-step({</span>step_size<span style="color: #a31515">}, .7)&quot;</span>)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>add_auxiliary(<span style="color: #a31515">&quot;red_lethality&quot;</span>, <span style="color: #a31515">&quot;random.uniform(.8, 1.0)&quot;</span>)
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>run_model()
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>save_graph([<span style="color: #A31515">&#39;blue_troops&#39;</span>, <span style="color: #A31515">&#39;red_troops&#39;</span>], filename=<span style="color: #A31515">&quot;battle_simulator_troop_levels&quot;</span>)
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>save_graph([<span style="color: #A31515">&quot;red_attrition&quot;</span>, <span style="color: #A31515">&quot;red_reinforcements&quot;</span>, <span style="color: #A31515">&#39;blue_attrition&#39;</span>, <span style="color: #A31515">&#39;blue_reinforcements&#39;</span>], filename=<span style="color: #A31515">&quot;battle_simulator_flow_rates&quot;</span>)
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>save_graph([<span style="color: #a31515">&#39;blue_troops&#39;</span>, <span style="color: #a31515">&#39;red_troops&#39;</span>], filename=<span style="color: #a31515">&quot;battle_simulator_troop_levels&quot;</span>)
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>save_graph([<span style="color: #a31515">&quot;red_attrition&quot;</span>, <span style="color: #a31515">&quot;red_reinforcements&quot;</span>, <span style="color: #a31515">&#39;blue_attrition&#39;</span>, <span style="color: #a31515">&#39;blue_reinforcements&#39;</span>], filename=<span style="color: #a31515">&quot;battle_simulator_flow_rates&quot;</span>)
 </code></pre></div>
 <p><img alt="system_dynamics_battle_simulator_output.png" src="../assets/system_dynamics_battle_simulator_output.png" /></p>
 <h4 id="discrete-event-model">Discrete Event Model<a class="headerlink" href="#discrete-event-model" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span style="color: #008000"># electric car charging simulation</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>init_de_model()
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>add_source(<span style="color: #A31515">&#39;incoming_cars&#39;</span>,
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>           entity_name=<span style="color: #A31515">&quot;Car&quot;</span>,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>add_source(<span style="color: #a31515">&#39;incoming_cars&#39;</span>,
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>           entity_name=<span style="color: #a31515">&quot;Car&quot;</span>,
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>           num_entities = 50,
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>           connections={<span style="color: #A31515">&#39;charger&#39;</span>: .7, <span style="color: #A31515">&#39;impatient_cars&#39;</span>: .3},
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>           interarrival_time=<span style="color: #A31515">&#39;np.random.exponential(5)&#39;</span>)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>           connections={<span style="color: #a31515">&#39;charger&#39;</span>: .7, <span style="color: #a31515">&#39;impatient_cars&#39;</span>: .3},
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>           interarrival_time=<span style="color: #a31515">&#39;np.random.exponential(5)&#39;</span>)
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>add_server(name=<span style="color: #A31515">&#39;charger&#39;</span>,
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>           connections={<span style="color: #A31515">&#39;payment&#39;</span>: 1},
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>           service_time=<span style="color: #A31515">&#39;np.random.uniform(0, 16)&#39;</span>,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>add_server(name=<span style="color: #a31515">&#39;charger&#39;</span>,
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>           connections={<span style="color: #a31515">&#39;payment&#39;</span>: 1},
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>           service_time=<span style="color: #a31515">&#39;np.random.uniform(0, 16)&#39;</span>,
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>           capacity = 1)
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>add_delay(name=<span style="color: #A31515">&#39;payment&#39;</span>,
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>           delay_time = <span style="color: #A31515">&#39;np.random.uniform(1, 3)&#39;</span>,
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>           connections={<span style="color: #A31515">&#39;served_cars&#39;</span>: 1},)
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>add_delay(name=<span style="color: #a31515">&#39;payment&#39;</span>,
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>           delay_time = <span style="color: #a31515">&#39;np.random.uniform(1, 3)&#39;</span>,
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>           connections={<span style="color: #a31515">&#39;served_cars&#39;</span>: 1},)
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>add_terminate(<span style="color: #A31515">&#39;served_cars&#39;</span>)
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>add_terminate(<span style="color: #A31515">&#39;impatient_cars&#39;</span>)
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>add_terminate(<span style="color: #a31515">&#39;served_cars&#39;</span>)
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>add_terminate(<span style="color: #a31515">&#39;impatient_cars&#39;</span>)
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>draw_model_diagram()
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>model_data, entity_data = run_model()
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>plot_histogram(model_data[<span style="color: #A31515">&#39;charger&#39;</span>][<span style="color: #A31515">&#39;waiting_times&#39;</span>], xlabel=<span style="color: #A31515">&quot;Charger Waiting Time&quot;</span>)
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>plot_histogram(model_data[<span style="color: #a31515">&#39;charger&#39;</span>][<span style="color: #a31515">&#39;waiting_times&#39;</span>], xlabel=<span style="color: #a31515">&quot;Charger Waiting Time&quot;</span>)
 </code></pre></div>
 <p><img alt="electric_car_model_diagram.png" src="../assets/electric_car_model_diagram.png" /></p>
 <p><img alt="electric_car_model_output.png" src="../assets/electric_car_model_output.png" /></p>
@@ -208,127 +211,127 @@
 <h4 id="quantitative-fault-tree">Quantitative Fault Tree<a class="headerlink" href="#quantitative-fault-tree" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span style="color: #008000"># UUV computed fault tree given probabilities for basic events</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>uuv_fault_tree = [
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    (<span style="color: #A31515">&quot;UUV Mission Data Loss&quot;</span>, <span style="color: #A31515">&quot;or&quot;</span>, <span style="color: #A31515">&#39;&#39;</span>, [<span style="color: #A31515">&quot;Communication Loss&quot;</span>, <span style="color: #A31515">&quot;Power Down&quot;</span>, <span style="color: #A31515">&quot;All Sensors Fail&quot;</span>]),
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    (<span style="color: #A31515">&#39;All Sensors Fail&#39;</span>, <span style="color: #A31515">&#39;and&#39;</span>, <span style="color: #A31515">&#39;&#39;</span>, [<span style="color: #A31515">&#39;Low Resolution Sensor 1 Fails&#39;</span>, <span style="color: #A31515">&#39;Low Resolution Sensor 2 Fails&#39;</span>, <span style="color: #A31515">&#39;High Resolution Sensor 3 Fails&#39;</span>]),
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    (<span style="color: #A31515">&#39;Power Down&#39;</span>, <span style="color: #A31515">&#39;and&#39;</span>, <span style="color: #A31515">&#39;&#39;</span>, [<span style="color: #A31515">&quot;Main Power Down&quot;</span>, <span style="color: #A31515">&quot;Backup Power Down&quot;</span>]),
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    (<span style="color: #A31515">&#39;Communication Loss&#39;</span>, <span style="color: #A31515">&#39;basic&#39;</span>, .003),
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    (<span style="color: #A31515">&#39;Main Power Down&#39;</span>, <span style="color: #A31515">&#39;basic&#39;</span>, .02),    
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    (<span style="color: #A31515">&#39;Backup Power Down&#39;</span>, <span style="color: #A31515">&#39;basic&#39;</span>, .08),
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    (<span style="color: #A31515">&#39;Low Resolution Sensor 1 Fails&#39;</span>, <span style="color: #A31515">&#39;basic&#39;</span>, .001),
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    (<span style="color: #A31515">&#39;Low Resolution Sensor 2 Fails&#39;</span>, <span style="color: #A31515">&#39;basic&#39;</span>, .001),
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    (<span style="color: #A31515">&#39;High Resolution Sensor 3 Fails&#39;</span>, <span style="color: #A31515">&#39;basic&#39;</span>, .003),
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    (<span style="color: #a31515">&quot;UUV Mission Data Loss&quot;</span>, <span style="color: #a31515">&quot;or&quot;</span>, <span style="color: #a31515">&#39;&#39;</span>, [<span style="color: #a31515">&quot;Communication Loss&quot;</span>, <span style="color: #a31515">&quot;Power Down&quot;</span>, <span style="color: #a31515">&quot;All Sensors Fail&quot;</span>]),
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    (<span style="color: #a31515">&#39;All Sensors Fail&#39;</span>, <span style="color: #a31515">&#39;and&#39;</span>, <span style="color: #a31515">&#39;&#39;</span>, [<span style="color: #a31515">&#39;Low Resolution Sensor 1 Fails&#39;</span>, <span style="color: #a31515">&#39;Low Resolution Sensor 2 Fails&#39;</span>, <span style="color: #a31515">&#39;High Resolution Sensor 3 Fails&#39;</span>]),
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    (<span style="color: #a31515">&#39;Power Down&#39;</span>, <span style="color: #a31515">&#39;and&#39;</span>, <span style="color: #a31515">&#39;&#39;</span>, [<span style="color: #a31515">&quot;Main Power Down&quot;</span>, <span style="color: #a31515">&quot;Backup Power Down&quot;</span>]),
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    (<span style="color: #a31515">&#39;Communication Loss&#39;</span>, <span style="color: #a31515">&#39;basic&#39;</span>, .003),
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    (<span style="color: #a31515">&#39;Main Power Down&#39;</span>, <span style="color: #a31515">&#39;basic&#39;</span>, .02),    
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    (<span style="color: #a31515">&#39;Backup Power Down&#39;</span>, <span style="color: #a31515">&#39;basic&#39;</span>, .08),
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    (<span style="color: #a31515">&#39;Low Resolution Sensor 1 Fails&#39;</span>, <span style="color: #a31515">&#39;basic&#39;</span>, .001),
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    (<span style="color: #a31515">&#39;Low Resolution Sensor 2 Fails&#39;</span>, <span style="color: #a31515">&#39;basic&#39;</span>, .001),
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    (<span style="color: #a31515">&#39;High Resolution Sensor 3 Fails&#39;</span>, <span style="color: #a31515">&#39;basic&#39;</span>, .003),
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    ]
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>se.draw_fault_tree_diagram_quantitative(uuv_fault_tree, filename=<span style="color: #A31515">&quot;uuv_quantitative_fault_tree&quot;</span>, format=<span style="color: #A31515">&quot;svg&quot;</span>)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>se.draw_fault_tree_diagram_quantitative(uuv_fault_tree, filename=<span style="color: #a31515">&quot;uuv_quantitative_fault_tree&quot;</span>, format=<span style="color: #a31515">&quot;svg&quot;</span>)
 </code></pre></div>
 <p><img alt="uuv_quantitative_fault_tree.png" src="../assets/uuv_quantitative_fault_tree.png" /></p>
 <h4 id="critical-path-analysis">Critical Path Analysis<a class="headerlink" href="#critical-path-analysis" title="Permanent link">&para;</a></h4>
 <p>A critical path can be computed from a set of tasks with associated time durations and dependencies as below.</p>
 <p><div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span style="color: #008000"># tasks, durations and dependencies</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tasks = [(<span style="color: #A31515">&#39;A&#39;</span>, {<span style="color: #A31515">&#39;Duration&#39;</span>: 3}),
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>         (<span style="color: #A31515">&#39;B&#39;</span>, {<span style="color: #A31515">&#39;Duration&#39;</span>: 5}),
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>         (<span style="color: #A31515">&#39;C&#39;</span>, {<span style="color: #A31515">&#39;Duration&#39;</span>: 2}),
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>         (<span style="color: #A31515">&#39;D&#39;</span>, {<span style="color: #A31515">&#39;Duration&#39;</span>: 3}),
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>         (<span style="color: #A31515">&#39;E&#39;</span>, {<span style="color: #A31515">&#39;Duration&#39;</span>: 5})]
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tasks = [(<span style="color: #a31515">&#39;A&#39;</span>, {<span style="color: #a31515">&#39;Duration&#39;</span>: 3}),
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>         (<span style="color: #a31515">&#39;B&#39;</span>, {<span style="color: #a31515">&#39;Duration&#39;</span>: 5}),
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>         (<span style="color: #a31515">&#39;C&#39;</span>, {<span style="color: #a31515">&#39;Duration&#39;</span>: 2}),
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>         (<span style="color: #a31515">&#39;D&#39;</span>, {<span style="color: #a31515">&#39;Duration&#39;</span>: 3}),
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>         (<span style="color: #a31515">&#39;E&#39;</span>, {<span style="color: #a31515">&#39;Duration&#39;</span>: 5})]
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>task_dependencies = [(<span style="color: #A31515">&#39;A&#39;</span>, <span style="color: #A31515">&#39;C&#39;</span>),
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>                (<span style="color: #A31515">&#39;B&#39;</span>, <span style="color: #A31515">&#39;C&#39;</span>),
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                (<span style="color: #A31515">&#39;A&#39;</span>, <span style="color: #A31515">&#39;D&#39;</span>),
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                (<span style="color: #A31515">&#39;C&#39;</span>, <span style="color: #A31515">&#39;E&#39;</span>),
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                (<span style="color: #A31515">&#39;D&#39;</span>, <span style="color: #A31515">&#39;E&#39;</span>)]
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>task_dependencies = [(<span style="color: #a31515">&#39;A&#39;</span>, <span style="color: #a31515">&#39;C&#39;</span>),
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>                (<span style="color: #a31515">&#39;B&#39;</span>, <span style="color: #a31515">&#39;C&#39;</span>),
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                (<span style="color: #a31515">&#39;A&#39;</span>, <span style="color: #a31515">&#39;D&#39;</span>),
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                (<span style="color: #a31515">&#39;C&#39;</span>, <span style="color: #a31515">&#39;E&#39;</span>),
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                (<span style="color: #a31515">&#39;D&#39;</span>, <span style="color: #a31515">&#39;E&#39;</span>)]
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span style="color: #008000"># create diagram</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>se.critical_path_diagram(tasks, task_dependencies, filename=<span style="color: #A31515">&quot;critical_path&quot;</span>)
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>se.critical_path_diagram(tasks, task_dependencies, filename=<span style="color: #a31515">&quot;critical_path&quot;</span>)
 </code></pre></div>
 <img alt="critical_path.svg" src="../assets/critical_path.svg" /></p>
 <h3 id="diagrams">Diagrams<a class="headerlink" href="#diagrams" title="Permanent link">&para;</a></h3>
 <p>These examples generate diagrams to be displayed from a Python console or Jupyter Notebook.  After importing se-lib, model elements can be specified as simple lists.  Element relationships are designated as lists of tuple pairs. The output filenames are optional and used here to generate the included SVG images.</p>
 <h4 id="use-case-model">Use Case Model<a class="headerlink" href="#use-case-model" title="Permanent link">&para;</a></h4>
 <p>Actors and use cases are first specified in lists.  The interactions between actors and use cases are identified by their tuple pairs and drawn accordingly on the diagram.</p>
-<div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span style="color: #00F">import</span> selib <span style="color: #00F">as</span> se
+<div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span style="color: #0000ff">import</span> selib <span style="color: #0000ff">as</span> se
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span style="color: #008000"># system model</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>system_name = <span style="color: #A31515">&quot;Course Portal&quot;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>actors = [<span style="color: #A31515">&#39;Student&#39;</span>, <span style="color: #A31515">&#39;Instructor&#39;</span>]
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>use_cases = [<span style="color: #A31515">&#39;Post Discussion&#39;</span>, <span style="color: #A31515">&#39;Take Quiz&#39;</span>, <span style="color: #A31515">&#39;Create Quiz&#39;</span>]
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>interactions = [(<span style="color: #A31515">&#39;Student&#39;</span>, <span style="color: #A31515">&#39;Post Discussion&#39;</span>), (<span style="color: #A31515">&#39;Instructor&#39;</span>, <span style="color: #A31515">&#39;Post Discussion&#39;</span>), (<span style="color: #A31515">&#39;Student&#39;</span>, <span style="color: #A31515">&#39;Take Quiz&#39;</span>), (<span style="color: #A31515">&#39;Instructor&#39;</span>, <span style="color: #A31515">&#39;Create Quiz&#39;</span>)]
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>system_name = <span style="color: #a31515">&quot;Course Portal&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>actors = [<span style="color: #a31515">&#39;Student&#39;</span>, <span style="color: #a31515">&#39;Instructor&#39;</span>]
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>use_cases = [<span style="color: #a31515">&#39;Post Discussion&#39;</span>, <span style="color: #a31515">&#39;Take Quiz&#39;</span>, <span style="color: #a31515">&#39;Create Quiz&#39;</span>]
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>interactions = [(<span style="color: #a31515">&#39;Student&#39;</span>, <span style="color: #a31515">&#39;Post Discussion&#39;</span>), (<span style="color: #a31515">&#39;Instructor&#39;</span>, <span style="color: #a31515">&#39;Post Discussion&#39;</span>), (<span style="color: #a31515">&#39;Student&#39;</span>, <span style="color: #a31515">&#39;Take Quiz&#39;</span>), (<span style="color: #a31515">&#39;Instructor&#39;</span>, <span style="color: #a31515">&#39;Create Quiz&#39;</span>)]
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>use_case_relationships = []
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span style="color: #008000"># create diagram</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>se.use_case_diagram(system_name, actors, use_cases, interactions, use_case_relationships, filename=system_name+<span style="color: #A31515">&#39;use case diagram.pdf&#39;</span>)
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>se.use_case_diagram(system_name, actors, use_cases, interactions, use_case_relationships, filename=system_name+<span style="color: #a31515">&#39;use case diagram.pdf&#39;</span>)
 </code></pre></div>
 <p><img alt="Course_Portal_use_case_diagram.svg" src="../assets/Course_Portal_use_case_diagram.svg" /></p>
 <h4 id="sequence-model">Sequence Model<a class="headerlink" href="#sequence-model" title="Permanent link">&para;</a></h4>
 <p>A sequence diagram can be constructed per the following.</p>
 <div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span style="color: #008000"># system model</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>system_name = <span style="color: #A31515">&quot;Battle Simulator&quot;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>actors = [<span style="color: #A31515">&quot;Battle Planner&quot;</span>]
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>objects = [<span style="color: #A31515">&quot;main&quot;</span>]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>system_name = <span style="color: #a31515">&quot;Battle Simulator&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>actors = [<span style="color: #a31515">&quot;Battle Planner&quot;</span>]
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>objects = [<span style="color: #a31515">&quot;main&quot;</span>]
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>actions = [
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>(<span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;run()&#39;</span>),
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>(<span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;request for side 1 name&#39;</span>),
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>(<span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;side 1 name&#39;</span>),
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>(<span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;request for side 2 name&#39;</span>),
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>(<span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;side 2 name&#39;</span>),
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>(<span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;request for side 1 starting level&#39;</span>),
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>(<span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;side 1 starting level&#39;</span>),
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>(<span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;request for side 1 lethality coefficient&#39;</span>),
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>(<span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;side 1 lethality coefficient&#39;</span>),
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>(<span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;request for side 2 starting level&#39;</span>),
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>(<span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;side 2 starting level&#39;</span>),
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>(<span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;request for side 2 lethality coefficient&#39;</span>),
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>(<span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;side 2 lethality coefficient&#39;</span>),
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>(<span style="color: #A31515">&#39;main&#39;</span>, <span style="color: #A31515">&#39;Battle Planner&#39;</span>, <span style="color: #A31515">&#39;time history of troops and victor&#39;</span>),
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>(<span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;run()&#39;</span>),
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>(<span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;request for side 1 name&#39;</span>),
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>(<span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;side 1 name&#39;</span>),
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>(<span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;request for side 2 name&#39;</span>),
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>(<span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;side 2 name&#39;</span>),
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>(<span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;request for side 1 starting level&#39;</span>),
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>(<span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;side 1 starting level&#39;</span>),
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>(<span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;request for side 1 lethality coefficient&#39;</span>),
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>(<span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;side 1 lethality coefficient&#39;</span>),
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>(<span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;request for side 2 starting level&#39;</span>),
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>(<span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;side 2 starting level&#39;</span>),
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>(<span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;request for side 2 lethality coefficient&#39;</span>),
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>(<span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;side 2 lethality coefficient&#39;</span>),
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>(<span style="color: #a31515">&#39;main&#39;</span>, <span style="color: #a31515">&#39;Battle Planner&#39;</span>, <span style="color: #a31515">&#39;time history of troops and victor&#39;</span>),
 <a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>]
 <a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
 <a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span style="color: #008000"># create diagram</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>se.sequence_diagram(system_name, actors, objects, actions, filename=system_name+<span style="color: #A31515">&quot;_sequence_diagram&quot;</span>)
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>se.sequence_diagram(system_name, actors, objects, actions, filename=system_name+<span style="color: #a31515">&quot;_sequence_diagram&quot;</span>)
 </code></pre></div>
 <p><img alt="Battle_Simulator_sequence_diagram.svg" src="../assets/Battle_Simulator_sequence_diagram.svg" /></p>
 <h4 id="context-model">Context Model<a class="headerlink" href="#context-model" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span style="color: #008000"># system model</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>system_name = <span style="color: #A31515">&quot;Python Interpreter with PyML&quot;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>external_actors = [<span style="color: #A31515">&quot;User&quot;</span>, <span style="color: #A31515">&quot;OS&quot;</span>, <span style="color: #A31515">&quot;Graphviz&quot;</span>]
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>system_name = <span style="color: #a31515">&quot;Python Interpreter with PyML&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>external_actors = [<span style="color: #a31515">&quot;User&quot;</span>, <span style="color: #a31515">&quot;OS&quot;</span>, <span style="color: #a31515">&quot;Graphviz&quot;</span>]
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span style="color: #008000"># create context diagram</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>se.context_diagram(system_name, external_actors, filename=<span style="color: #A31515">&quot;pyml_context_diagram_offline&quot;</span>)
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>se.context_diagram(system_name, external_actors, filename=<span style="color: #a31515">&quot;pyml_context_diagram_offline&quot;</span>)
 </code></pre></div>
 <p><img alt="pyml_context_diagram_offline.svg" src="../assets/pyml_context_diagram_offline.svg" /></p>
 <h4 id="requirements-model">Requirements Model<a class="headerlink" href="#requirements-model" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span style="color: #008000"># Intelligence, Surveillance, &amp; Reconnaissance Unmanned Underwater Vehicle (ISR UUV) un-numbered requirements</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>requirements = [(<span style="color: #A31515">&quot;ISR UUV&quot;</span>, <span style="color: #A31515">&quot;Performance&quot;</span>),
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                (<span style="color: #A31515">&quot;Performance&quot;</span>,
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                (<span style="color: #A31515">&quot;The UUV shall be capable of completing a mission of 6 hours duration.&quot;</span>,
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                <span style="color: #A31515">&quot;The UUV shall be capable of a top speed of 14 knots.&quot;</span>,
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>                <span style="color: #A31515">&quot;The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.&quot;</span>,
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>                <span style="color: #A31515">&quot;The UUV shall avoid detection.&quot;</span>)),
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>                (<span style="color: #A31515">&quot;ISR UUV&quot;</span>, <span style="color: #A31515">&quot;Communication&quot;</span>),
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>                (<span style="color: #A31515">&quot;Communication&quot;</span>,
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>                (<span style="color: #A31515">&quot;Mission parameters shall be uploadable to the UUV&quot;</span>,
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>                <span style="color: #A31515">&quot;The UUV shall receive remote commands&quot;</span>,
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>                <span style="color: #A31515">&quot;The UUV shall commence its mission when commanded&quot;</span>,
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>                <span style="color: #A31515">&quot;The UUV shall be capable of transmitting data in a host ship compatible format&quot;</span>,
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>                <span style="color: #A31515">&quot;The UUV shall indicate that it is ready for recovery&quot;</span>)),]
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>requirements = [(<span style="color: #a31515">&quot;ISR UUV&quot;</span>, <span style="color: #a31515">&quot;Performance&quot;</span>),
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                (<span style="color: #a31515">&quot;Performance&quot;</span>,
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                (<span style="color: #a31515">&quot;The UUV shall be capable of completing a mission of 6 hours duration.&quot;</span>,
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                <span style="color: #a31515">&quot;The UUV shall be capable of a top speed of 14 knots.&quot;</span>,
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>                <span style="color: #a31515">&quot;The UUV shall be capable of surviving in an open ocean environment to a depth of 1500 meters.&quot;</span>,
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>                <span style="color: #a31515">&quot;The UUV shall avoid detection.&quot;</span>)),
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>                (<span style="color: #a31515">&quot;ISR UUV&quot;</span>, <span style="color: #a31515">&quot;Communication&quot;</span>),
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>                (<span style="color: #a31515">&quot;Communication&quot;</span>,
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>                (<span style="color: #a31515">&quot;Mission parameters shall be uploadable to the UUV&quot;</span>,
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>                <span style="color: #a31515">&quot;The UUV shall receive remote commands&quot;</span>,
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>                <span style="color: #a31515">&quot;The UUV shall commence its mission when commanded&quot;</span>,
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>                <span style="color: #a31515">&quot;The UUV shall be capable of transmitting data in a host ship compatible format&quot;</span>,
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>                <span style="color: #a31515">&quot;The UUV shall indicate that it is ready for recovery&quot;</span>)),]
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span style="color: #008000"># draw requirements diagram as horizontal tree left -&gt; right</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>se.requirements_diagram(requirements, rankdir=<span style="color: #A31515">&#39;LR&#39;</span>, filename=<span style="color: #A31515">&quot;uuv_requirements_tree&quot;</span>)
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>se.requirements_diagram(requirements, rankdir=<span style="color: #a31515">&#39;LR&#39;</span>, filename=<span style="color: #a31515">&quot;uuv_requirements_tree&quot;</span>)
 </code></pre></div>
 <p><img alt="uuv_requirements_tree.svg" src="../assets/uuv_requirements_tree.svg" /></p>
 <h4 id="work-breakdown-structure">Work Breakdown Structure<a class="headerlink" href="#work-breakdown-structure" title="Permanent link">&para;</a></h4>
 <p><div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span style="color: #008000"># project work breakdown structure</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>wbs_decompositions = [
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>(<span style="color: #A31515">&#39;Skateboard&#39;</span>, <span style="color: #A31515">&#39;Hardware&#39;</span>), (<span style="color: #A31515">&#39;Skateboard&#39;</span>, <span style="color: #A31515">&#39;Software&#39;</span>), (<span style="color: #A31515">&#39;Skateboard&#39;</span>, <span style="color: #A31515">&#39;Integration and Test&#39;</span>),
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>                (<span style="color: #A31515">&#39;Hardware&#39;</span>, <span style="color: #A31515">&#39;Board&#39;</span>), (<span style="color: #A31515">&#39;Hardware&#39;</span>, <span style="color: #A31515">&#39;Wheels&#39;</span>), (<span style="color: #A31515">&#39;Hardware&#39;</span>, <span style="color: #A31515">&#39;Mounting&#39;</span>),
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>                (<span style="color: #A31515">&#39;Software&#39;</span>, <span style="color: #A31515">&#39;OS&#39;</span>), (<span style="color: #A31515">&#39;Software&#39;</span>, <span style="color: #A31515">&#39;GPS Driver&#39;</span>), (<span style="color: #A31515">&#39;Software&#39;</span>, <span style="color: #A31515">&#39;Route Tracking&#39;</span>),
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>                (<span style="color: #A31515">&#39;Integration and Test&#39;</span>, <span style="color: #A31515">&#39;Fixed Platform&#39;</span>), (<span style="color: #A31515">&#39;Integration and Test&#39;</span>, <span style="color: #A31515">&#39;Street Testing&#39;</span>)]
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>(<span style="color: #a31515">&#39;Skateboard&#39;</span>, <span style="color: #a31515">&#39;Hardware&#39;</span>), (<span style="color: #a31515">&#39;Skateboard&#39;</span>, <span style="color: #a31515">&#39;Software&#39;</span>), (<span style="color: #a31515">&#39;Skateboard&#39;</span>, <span style="color: #a31515">&#39;Integration and Test&#39;</span>),
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>                (<span style="color: #a31515">&#39;Hardware&#39;</span>, <span style="color: #a31515">&#39;Board&#39;</span>), (<span style="color: #a31515">&#39;Hardware&#39;</span>, <span style="color: #a31515">&#39;Wheels&#39;</span>), (<span style="color: #a31515">&#39;Hardware&#39;</span>, <span style="color: #a31515">&#39;Mounting&#39;</span>),
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>                (<span style="color: #a31515">&#39;Software&#39;</span>, <span style="color: #a31515">&#39;OS&#39;</span>), (<span style="color: #a31515">&#39;Software&#39;</span>, <span style="color: #a31515">&#39;GPS Driver&#39;</span>), (<span style="color: #a31515">&#39;Software&#39;</span>, <span style="color: #a31515">&#39;Route Tracking&#39;</span>),
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>                (<span style="color: #a31515">&#39;Integration and Test&#39;</span>, <span style="color: #a31515">&#39;Fixed Platform&#39;</span>), (<span style="color: #a31515">&#39;Integration and Test&#39;</span>, <span style="color: #a31515">&#39;Street Testing&#39;</span>)]
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span style="color: #008000"># create diagram</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>se.wbs_diagram(wbs_decompositions, filename=<span style="color: #A31515">&quot;skateboard_wbs&quot;</span>)
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>se.wbs_diagram(wbs_decompositions, filename=<span style="color: #a31515">&quot;skateboard_wbs&quot;</span>)
 </code></pre></div>
 <img alt="skateboard_wbs.svg" src="../assets/skateboard_wbs.svg" /></p>
 <h4 id="design-structure-matrix">Design Structure Matrix<a class="headerlink" href="#design-structure-matrix" title="Permanent link">&para;</a></h4>
-<div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>tasks = [<span style="color: #A31515">&#39;Make Board&#39;</span>, <span style="color: #A31515">&#39;Acquire Wheels&#39;</span>, <span style="color: #A31515">&#39;Assemble&#39;</span>, <span style="color: #A31515">&#39;Test&#39;</span>]
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>task_dependencies = [(<span style="color: #A31515">&#39;Make Board&#39;</span>, <span style="color: #A31515">&#39;Assemble&#39;</span>), (<span style="color: #A31515">&#39;Acquire Wheels&#39;</span>, <span style="color: #A31515">&#39;Assemble&#39;</span>), (<span style="color: #A31515">&#39;Assemble&#39;</span>, <span style="color: #A31515">&#39;Test&#39;</span>), (<span style="color: #A31515">&#39;Test&#39;</span>, <span style="color: #A31515">&#39;Assemble&#39;</span>)]
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>se.design_structure_matrix(tasks, task_dependencies, filename=<span style="color: #A31515">&quot;skateboard_task_dsm_with_feedback&quot;</span>)
+<div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>tasks = [<span style="color: #a31515">&#39;Make Board&#39;</span>, <span style="color: #a31515">&#39;Acquire Wheels&#39;</span>, <span style="color: #a31515">&#39;Assemble&#39;</span>, <span style="color: #a31515">&#39;Test&#39;</span>]
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>task_dependencies = [(<span style="color: #a31515">&#39;Make Board&#39;</span>, <span style="color: #a31515">&#39;Assemble&#39;</span>), (<span style="color: #a31515">&#39;Acquire Wheels&#39;</span>, <span style="color: #a31515">&#39;Assemble&#39;</span>), (<span style="color: #a31515">&#39;Assemble&#39;</span>, <span style="color: #a31515">&#39;Test&#39;</span>), (<span style="color: #a31515">&#39;Test&#39;</span>, <span style="color: #a31515">&#39;Assemble&#39;</span>)]
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>se.design_structure_matrix(tasks, task_dependencies, filename=<span style="color: #a31515">&quot;skateboard_task_dsm_with_feedback&quot;</span>)
 </code></pre></div>
 <div style="text-align: center">
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -395,7 +398,7 @@
 <p>Portion of example Excel file <em>aav_fault_tree.xlsx</em>:</p>
 <p><img alt="aav_fault_tree_excel.png" src="../assets/aav_fault_tree_excel.png" /></p>
 <div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span style="color: #008000"># read fault tree from Excel file into list of nodes</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>fault_tree_list = se.read_fault_tree_excel(<span style="color: #A31515">&#39;aav_fault_tree.xlsx&#39;</span>)
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>fault_tree_list = se.read_fault_tree_excel(<span style="color: #a31515">&#39;aav_fault_tree.xlsx&#39;</span>)
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span style="color: #008000"># create fault tree diagram</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>se.fault_tree_diagram(fault_tree_list)
@@ -403,10 +406,10 @@
 <p><img alt="aav_fault_tree.png" src="../assets/aav_fault_tree.png" /></p>
 <h4 id="causal-diagram">Causal Diagram<a class="headerlink" href="#causal-diagram" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight" style="background: #ffffff"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span style="color: #008000"># causal relationships</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>relationships = [(<span style="color: #A31515">&#39;Available personnel&#39;</span>,<span style="color: #A31515">&quot;Workforce gap&quot;</span>, <span style="color: #A31515">&quot;-&quot;</span>),
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    (<span style="color: #A31515">&#39;Required personnel&#39;</span>,<span style="color: #A31515">&quot;Workforce gap&quot;</span>, <span style="color: #A31515">&quot;+&quot;</span>),
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    (<span style="color: #A31515">&quot;Workforce gap&quot;</span>, <span style="color: #A31515">&quot;Hiring rate&quot;</span>, <span style="color: #A31515">&quot;+&quot;</span>),
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    (<span style="color: #A31515">&quot;Hiring rate&quot;</span>, <span style="color: #A31515">&quot;Available personnel&quot;</span>, <span style="color: #A31515">&quot;+&quot;</span>),
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>relationships = [(<span style="color: #a31515">&#39;Available personnel&#39;</span>,<span style="color: #a31515">&quot;Workforce gap&quot;</span>, <span style="color: #a31515">&quot;-&quot;</span>),
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    (<span style="color: #a31515">&#39;Required personnel&#39;</span>,<span style="color: #a31515">&quot;Workforce gap&quot;</span>, <span style="color: #a31515">&quot;+&quot;</span>),
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    (<span style="color: #a31515">&quot;Workforce gap&quot;</span>, <span style="color: #a31515">&quot;Hiring rate&quot;</span>, <span style="color: #a31515">&quot;+&quot;</span>),
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    (<span style="color: #a31515">&quot;Hiring rate&quot;</span>, <span style="color: #a31515">&quot;Available personnel&quot;</span>, <span style="color: #a31515">&quot;+&quot;</span>),
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>                ]
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span style="color: #008000"># draw diagram</span>
@@ -418,14 +421,14 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../function_reference/" class="btn btn-neutral float-left" title="Function Reference"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../online/scratchpad/" class="btn btn-neutral float-right" title="SysML Scratchpad here">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../online/scratchpad/" class="btn btn-neutral float-right" title="SysML Scratchpad">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>Copyright &copy; 2025 se-lib Development Team</p>
+      <p>Copyright &copy; 2026 se-lib Development Team</p>
   </div>
 
   <!-- Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. -->

@@ -12,6 +12,7 @@ theme:
   logo: se-lib_banner.svg
   highlightjs: false
   custom_dir: overrides
+  favicon: assets/favicon.ico
 
 extra_css:
   - custom.css
@@ -53,10 +54,12 @@ nav:
       - SysML Scratchpad: online/scratchpad.md
       - Discrete Event Modeling Demonstrations: https://se-lib.org/online/discrete_event_modeling_demo.html
       - se-lib playground: https://se-lib.org/online/sysml.html
+  - AI chatbots:
+    - se-lib chatbot: https://se-lib.org/ai/ai.html
   - Tutorials:
       - Tutorials: https://se-lib.org/tutorials/sd_incose.html
   - Manuals:
       - System Dynamics Simulation: https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing
       - Discrete Event Simulation: https://colab.research.google.com/drive/1arDDaaltEyGLomaGo5ZKVumtviloUAyG?usp=sharing
       
-copyright: Copyright &copy; 2025 se-lib Development Team
+copyright: Copyright &copy; 2026 se-lib Development Team

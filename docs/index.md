@@ -16,8 +16,8 @@ The open source Python scientific computing ecosystem enables advanced analysis 
 Try se-lib instantly with these Colab notebooks in a browser, no installation required.
 
 * [se-lib examples](https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1J0Dnb2qmoMiuJWJTAsMQ5c3F6vjn4CzQ?usp=sharing)
-* [System dynamics modeling user's guide and examples](https://colab.research.google.com/drive/1oE5TBdF-hpJTQbQgSmPgmPoofBgOTR0B?usp=sharing)
-* [Discrete event modeling user's guide and examples](https://colab.research.google.com/drive/1arDDaaltEyGLomaGo5ZKVumtviloUAyG?usp=sharing)
+- [System dynamics modeling user's guide and examples](https://colab.research.google.com/github/se-lib/se-lib/blob/main/notebooks/se_lib_system_dynamics_modeling_users_guide_and_examples.ipynb)&nbsp;[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/se-lib/se-lib/blob/main/notebooks/se_lib_system_dynamics_modeling_users_guide_and_examples.ipynb)
+* [Discrete event modeling user's guide and examples](https://colab.research.google.com/github/se-lib/se-lib/blob/main/notebooks/se_lib_discrete_event_modeling_users_guide_and_examples.ipynb)&nbsp;[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/se-lib/se-lib/blob/main/notebooks/se_lib_discrete_event_modeling_users_guide_and_examples.ipynb)
 
 se-lib also runs on standalone web pages for rapid experimentation and instruction.
 
